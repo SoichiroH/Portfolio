@@ -1,0 +1,234 @@
+
+/* Colors */
+$blue: #00b8d4;
+$grey: #2c2c2c;
+
+
+/* Fonts */
+@font-face {
+  font-family: LondonBetween;
+  src: url(../fonts/LondonBetween.ttf);
+}
+
+a {
+  color: $grey;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* General */
+html{
+  font-family: LondonBetween;
+  background-image: url("../image/cityBlurred.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.container {
+  margin: 0 auto 0 20%;
+  max-width: 1280px;
+  width: 90%;
+}
+
+
+@mixin containerModifier($marginAmount, $class) {
+  .container--#{$class}
+  {
+    margin: 0 auto 0 $marginAmount;
+  }
+};
+
+@include containerModifier(auto, nested);
+
+
+/* Nav bars */
+.wrapper {
+  position: relative;
+  height: 100%;
+}
+
+nav {
+  color: #fff;
+  background-color: $blue;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+}
+
+.side-nav {
+  position: fixed;
+  width: 200px;
+  left: 0;
+  top: 0;
+  margin: 0;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  height: calc(100% + 60px);
+  height: -moz-calc(100% - 60px);
+  padding-bottom: 60px;
+  background-color: #fff;
+  z-index: 999;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow-y: auto;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);
+  a{
+    color: rgba(9, 16, 49, 0.99);
+    display: block;
+    font-size: 1rem;
+    height: 64px;
+    line-height: 64px;
+    padding: 0 30px;
+    &:hover{
+      background-color: $blue;
+    }
+  }
+
+}
+
+/* Button */
+
+.buttonWithShadow{
+  display: inline-block;
+  padding: 10px 20px;
+  font:inherit;
+  border: 0;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: $blue;
+  &:hover{
+    background: darken($blue, 10%);
+    transition: all 300ms ease;
+  }
+}
+
+
+
+/**
+ * Component: Button
+ * --------------------------------------------------
+ */
+
+.c-button {
+  -webkit-appearance: none;
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0;
+  vertical-align: middle;
+  overflow: visible;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 0;
+  user-select: none;
+  box-shadow: 2px 2px 0 0 darken(#434A54, 5%);
+  transition: all 0.2s ease;
+&:hover,
+&:focus {
+  outline: 0;
+  text-decoration: none;
+ }
+&:not(:disabled) {
+  cursor: pointer;
+ }
+}
+
+/**
+ * Mixin: Button Modifier
+ * --------------------------------------------------
+ */
+
+@mixin button-modifier($color, $class) {
+  .c-button--#{$class} 
+  {
+      background: $color;
+      text-shadow: 2px 2px 0 darken($color, 10%);
+      &:hover {
+        background: darken($color, 5%);
+      }
+  }
+};
+
+/**
+ * Component: Button
+ * Modifier: Purple
+ * --------------------------------------------------
+ */
+
+@include button-modifier(#967ADC, purple);
+
+/**
+ * Component: Button
+ * Modifier: Blue
+ * --------------------------------------------------
+ */
+
+@include button-modifier(#4A89DC, blue);
+
+/**
+ * Component: Button
+ * Modifier: Red
+ * --------------------------------------------------
+ */
+
+@include button-modifier(#E9573F, red);
+
+/**
+ * Utility: Ripple
+ * --------------------------------------------------
+ */
+
+.c-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.c-ripple__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .25);
+.c-ripple.is-active & {
+  animation: a-ripple .4s ease-in;
+}
+}
+
+/**
+ * Animation: Ripple
+ * --------------------------------------------------
+ */
+
+@keyframes a-ripple {
+  0% {
+      opacity: 0;
+  }
+  25% {
+      opacity: 1;
+  }
+  100% {
+      width: 200%;
+      padding-bottom: 200%;
+      opacity: 0;
+  }
+}
