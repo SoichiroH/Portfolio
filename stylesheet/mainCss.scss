@@ -19,7 +19,7 @@ a {
 /* General */
 html{
   font-family: LondonBetween, Helvetica, sans-serif;
-  background: url("../image/cityBlurred.jpg"), url("../image/cityStreet.jpg") no-repeat fixed;
+  /* background: url("../image/cityBlurred.jpg"), url("../image/cityStreet.jpg") no-repeat fixed; */
   -webkit-background-size: auto;
   -moz-background-size: auto;
   -o-background-size: auto;
@@ -30,6 +30,10 @@ body {
   margin: 0;
 }
 
+main {
+  padding-left: 200px;
+}
+
 ul {
   display: block;
   list-style-type: none;
@@ -38,11 +42,33 @@ ul {
 }
 
 .container {
-  margin: 0 auto 0 20%;
+  margin: 0 auto 0 auto;
   max-width: 1280px;
   width: 90%;
 }
 
+@media only screen and (min-width: 601px) {
+  .container .pane{
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .container .pane{
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  main {
+    padding-left: 0;
+  }
+}
+
+.container .row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
 
 @mixin containerModifier($marginAmount, $class) {
   .container--#{$class}
@@ -97,7 +123,7 @@ ul {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   overflow-y: auto;
-
+  box-shadow: 5px 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   a {
     color: rgba(9, 16, 49, 0.99);
     display: block;
@@ -107,6 +133,8 @@ ul {
     padding: 0 30px;
     &:hover{
       background-color: $blue;
+      background: darken($blue, 10%);
+      transition: all 600ms ease;
     }
   }
 }
@@ -126,11 +154,19 @@ ul {
   width: 100%;
   height: 300px;
   background-color: $blue;
-  margin: 200px auto;
+  margin: 100px 0;
   padding: 20px 20px 20px 20px;
 }
 
+.myDraggable {
+  background-color: $blue;
+  width: 150px;
+  height: 150px;
+  padding: 0.5em;
+  box-shadow: 5px 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
+.myDraggable.ui-draggable-dragging { background: rgba(255, 0, 0, 0.71); }
 
 /* Button */
 
