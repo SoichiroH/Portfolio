@@ -10,12 +10,21 @@ a {
 
 /* General */
 html {
-  font-family: LondonBetween;
-  background-image: url("../image/cityBlurred.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
+  font-family: LondonBetween, Helvetica, sans-serif;
+  background: url("../image/cityBlurred.jpg"), url("../image/cityStreet.jpg") no-repeat fixed;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto; }
+
+body {
+  margin: 0; }
+
+ul {
+  display: block;
+  list-style-type: none;
+  margin: 0 0;
+  padding: 0 0; }
 
 .container {
   margin: 0 auto 0 20%;
@@ -25,17 +34,30 @@ html {
 .container--nested {
   margin: 0 auto 0 auto; }
 
+.container--wide {
+  margin: 0 auto 0 0; }
+
 /* Nav bars */
 .wrapper {
   position: relative;
   height: 100%; }
 
-nav {
-  color: #fff;
+.nav {
   background-color: #00b8d4;
   width: 100%;
-  height: 56px;
-  line-height: 56px; }
+  height: 90px; }
+
+.navContainer {
+  margin: 0 0 0 20%;
+  max-width: 1280px;
+  width: 90%;
+  height: 100%; }
+
+.name {
+  font-size: 40px;
+  color: #fff;
+  line-height: 90px;
+  vertical-align: text-bottom; }
 
 .side-nav {
   position: fixed;
@@ -43,8 +65,8 @@ nav {
   left: 0;
   top: 0;
   margin: 0;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
   height: calc(100% + 60px);
   height: -moz-calc(100% - 60px);
   padding-bottom: 60px;
@@ -52,12 +74,7 @@ nav {
   z-index: 999;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  overflow-y: auto;
-  will-change: transform;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateX(-105%);
-  transform: translateX(-105%); }
+  overflow-y: auto; }
   .side-nav a {
     color: rgba(9, 16, 49, 0.99);
     display: block;
@@ -67,6 +84,21 @@ nav {
     padding: 0 30px; }
     .side-nav a:hover {
       background-color: #00b8d4; }
+
+.logo {
+  width: 220px;
+  height: 90px; }
+
+.logoContainer {
+  height: 90px; }
+
+/* Columns */
+.pane {
+  width: 100%;
+  height: 300px;
+  background-color: #00b8d4;
+  margin: 200px auto;
+  padding: 20px 20px 20px 20px; }
 
 /* Button */
 .buttonWithShadow {
