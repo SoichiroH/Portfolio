@@ -3,8 +3,11 @@
  */
 $(document).ready(function(){
 
+    if(window.innerWidth < 1000) {
+        $("#sideNav").css('transform', 'translateX(-100%)');
+    }
     $(window).resize(function(){
-        if(window.innerWidth < 950) {
+        if(window.innerWidth < 1000) {
             $("#sideNav").css('transform', 'translateX(-100%)');
         }else {
             $("#sideNav").css('transform', 'translateX(0)');
