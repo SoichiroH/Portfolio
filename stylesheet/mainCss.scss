@@ -16,9 +16,22 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+p {
+  color: white;
+  font-size: 20px;
+  text-shadow: 1px 1px $grey;
+}
+
 .center {
   text-align: center;
 }
+
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+
+
 
 /*
   General -----------------------------------------------------------------------
@@ -27,7 +40,6 @@ a {
 html{
   max-width: 100%;
   font-family: LondonBetween, Helvetica, sans-serif;
-  /* background: url("../image/cityBlurred.jpg"), url("../image/cityStreet.jpg") no-repeat fixed; */
   -webkit-background-size: auto;
   -moz-background-size: auto;
   -o-background-size: auto;
@@ -174,32 +186,78 @@ ul {
   Main -----------------------------------------------------------------------
 */
 
+/*
+  Banner -----------------------------------------------------------------------
+*/
+
 .mainBackgroundContainer {
   position: relative;
   overflow: hidden;
-  height: 1200px;
+  height: 1000px;
 }
 
 .mainBackground {
+  background: url("../image/seacity.jpg");
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: -2;
 }
 
 .mainBackground img {
   position: absolute;
-  left: 50%;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
 }
 
+.greyerShade {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.8;
+}
+
+.flag {
+  width: 150px;
+  height: 150px;
+}
+
 .mainFont {
   font-size: 50px;
   color: #FFFFFF;
+}
+
+/*
+  About -----------------------------------------------------------------------
+*/
+
+.aboutBackgroundContainer {
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+}
+
+.aboutBackground {
+  background: url("../image/cityCross.jpeg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+}
+
+.blueShade {
+  background-color: $blue;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.5;
 }
 
 .pane {
@@ -219,6 +277,70 @@ ul {
   padding: 0 auto;
 }
 
+.profile {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile img{
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+/*
+  Projects -----------------------------------------------------------------------
+*/
+
+.projectsBackgroundContainer {
+  position: relative;
+  overflow: hidden;
+  height: 900px;
+}
+
+.projectsBackground {
+  background: url("../image/coffeeBW.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+}
+
+/*
+  Links -----------------------------------------------------------------------
+*/
+
+.linksBackgroundContainer {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+.linksBackground {
+  background: url("../image/stars.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+}
+
+.links-font{
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.links-list li{
+  display: inline;
+}
+
 .myDraggable {
   background-color: $blue;
   width: 150px;
@@ -235,7 +357,6 @@ ul {
 
 .buttonWithShadow{
   display: inline-block;
-  padding: 10px 20px;
   font:inherit;
   border: 0;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -246,128 +367,11 @@ ul {
   }
 }
 
-
-
-/**
- * Component: Button
- * --------------------------------------------------
- */
-
-.c-button {
-  -webkit-appearance: none;
+.buttonCircle {
+  width: 80px;
+  height: 80px;
   position: relative;
-  display: inline-block;
-  padding: 12px 24px;
-  margin: 0;
-  vertical-align: middle;
-  overflow: visible;
-  color: #fff;
-  font: inherit;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
-  text-align: center;
-  letter-spacing: 1px;
-  background: transparent;
-  border: 0;
-  user-select: none;
-  box-shadow: 2px 2px 0 0 darken(#434A54, 5%);
-  transition: all 0.2s ease;
-&:hover,
-&:focus {
-  outline: 0;
-  text-decoration: none;
- }
-&:not(:disabled) {
-  cursor: pointer;
- }
-}
-
-/**
- * Mixin: Button Modifier
- * --------------------------------------------------
- */
-
-@mixin button-modifier($color, $class) {
-  .c-button--#{$class} 
-  {
-      background: $color;
-      text-shadow: 2px 2px 0 darken($color, 10%);
-      &:hover {
-        background: darken($color, 5%);
-      }
-  }
-};
-
-/**
- * Component: Button
- * Modifier: Purple
- * --------------------------------------------------
- */
-
-@include button-modifier(#967ADC, purple);
-
-/**
- * Component: Button
- * Modifier: Blue
- * --------------------------------------------------
- */
-
-@include button-modifier(#4A89DC, blue);
-
-/**
- * Component: Button
- * Modifier: Red
- * --------------------------------------------------
- */
-
-@include button-modifier(#E9573F, red);
-
-/**
- * Utility: Ripple
- * --------------------------------------------------
- */
-
-.c-ripple {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
-  background: transparent;
-}
-
-.c-ripple__circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  width: 0;
-  height: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, .25);
-.c-ripple.is-active & {
-  animation: a-ripple .4s ease-in;
-}
 }
 
-/**
- * Animation: Ripple
- * --------------------------------------------------
- */
-
-@keyframes a-ripple {
-  0% {
-      opacity: 0;
-  }
-  25% {
-      opacity: 1;
-  }
-  100% {
-      width: 200%;
-      padding-bottom: 200%;
-      opacity: 0;
-  }
-}
