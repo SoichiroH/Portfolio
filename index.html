@@ -10,6 +10,7 @@
         <script type="text/javascript" src="js/cssAnimations.js"></script>
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="stylesheet/mainCss.css">
+        <link rel="stylesheet" href="octicons/octicons.css">
         <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
         <title>Portfolio</title>
     </head>
@@ -41,83 +42,96 @@
         </header>
 
         <main>
+            <!-- Banner -->
             <div class="mainBackgroundContainer">
                 <div class="container">
                     <br><br><br><br>
-                    <h1 class="center mainFont">Web Developer</h1>
+                    <h1 class="center mainFont">Web Developer :)</h1>
+                    <h1 class="center mainFont">From</h1>
+                    <img class="center flag" src="image/flagOfJapan.png">
                 </div>
                 <div class="mainBackground">
-                    <img src="image/cityNight.jpg" alt="img"/>
+                    <div class="greyShade"></div>
                 </div>
             </div>
 
-            <div class="container">
-                <!-- About -->
+            <!-- About -->
+            <div class="aboutBackgroundContainer">
                 <div class="container">
-                    <div class="pane" >
-                        <div class="container">
-                            <p>About</p>
-                            <ul>
-                                <li>
-                                    <p>Japanese</p>
-                                </li>
-                                <li>
-                                    <p>Graduated</p>
-                                </li>
-                                <li>
-                                    <p>Blah</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Familiar Languages -->
-                <div class="pane">
-                    <p>Languages</p>
-                    <div class="container container--nested">
-                        <ul>
-                           <li>
-                               <p>Front-End</p>
-                           </li>
-                           <li>
-                               <p>Back-End</p>
-                           </li>
-                           <li>
-                               <p>Source Control</p>
-                           </li>
-                       </ul>
-                    </div>
-                </div>
-                <!-- Projects carousel -->
-                <!-- Descriptions about the project -->
-                <!-- Screenshot modals -->
-                <div class="pane">
-                    <p>Projects</p>
-                    <div class="container container--nested">
+                    <h1 class="center mainFont">About</h1>
+                    <div class="container center">
                         <ul>
                             <li>
-                                <p>Front-End</p>
+                                <img src="image/profile.jpg" class="profile">
                             </li>
                             <li>
-                                <p>Back-End</p>
+                                <p>I have recently graduated from University of North Florida
+                                    with a BS in Computer Information Science</p>
+
                             </li>
                             <li>
-                                <p>Source Control</p>
+                                <p>Feel free to download my resume from below.</p>
+                                <button class="buttonWithShadow buttonCircle center" type="button" id="downloadResume">
+                                    <img src="image/glyphicons-707-file-cloud-download.png">
+                                </button>
                             </li>
                         </ul>
-                        <div id="draggable" class="myDraggable">
-                            <p>Drag me</p>
-                        </div>
                     </div>
                 </div>
+                <div class="aboutBackground" >
+                    <div class="blueShade"></div>
+                </div>
+            </div>
 
+            <!-- Familiar Languages -->
+            <!-- Projects carousel -->
+            <div class="projectsBackgroundContainer">
+                <div class="container">
+                    <h1 class="center mainFont">Projects</h1>
+                    <div class="container center">
+                        <ul>
+                            <li>
+                                <p>NWBHS Stuff</p>
+                            </li>
+                            <li>
+                                <p>Details</p>
 
+                            </li>
+                            <li>
+                                <p>More Details</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="projectsBackground" >
+                    <div class="greyerShade"></div>
+                </div>
+            </div>
 
-                <!-- Links to linkedin, github, resume  -->
-                <button class="buttonWithShadow" type="button" id="downloadResume">Download Resume</button>
+            <div class="linksBackgroundContainer">
+                <div class="container">
+                    <h1 class="center mainFont">Links</h1>
+                    <div class="container center" >
+                        <br><br>
+                        <ul>
+                            <li>
+                                <span class="mega-octicon octicon-mark-github"></span>
+                                <a href="https://github.com/SoichiroH" class="links-font">Github</a>
+                            </li>
+                            <li>
+                                <p>Details</p>
+                            </li>
+                            <li>
+                                <p>More Details</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="linksBackground" >
+                    <div class="greyerShade"></div>
+                </div>
             </div>
         </main>
-
         <footer>
 
         </footer>

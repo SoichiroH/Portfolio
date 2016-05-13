@@ -8,8 +8,17 @@ a {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent; }
 
+p {
+  color: white;
+  font-size: 20px;
+  text-shadow: 1px 1px #2c2c2c; }
+
 .center {
   text-align: center; }
+
+img.center {
+  display: block;
+  margin: 0 auto; }
 
 /*
   General -----------------------------------------------------------------------
@@ -17,7 +26,6 @@ a {
 html {
   max-width: 100%;
   font-family: LondonBetween, Helvetica, sans-serif;
-  /* background: url("../image/cityBlurred.jpg"), url("../image/cityStreet.jpg") no-repeat fixed; */
   -webkit-background-size: auto;
   -moz-background-size: auto;
   -o-background-size: auto;
@@ -132,29 +140,68 @@ ul {
 /*
   Main -----------------------------------------------------------------------
 */
+/*
+  Banner -----------------------------------------------------------------------
+*/
 .mainBackgroundContainer {
   position: relative;
   overflow: hidden;
-  height: 1200px; }
+  height: 1000px; }
 
 .mainBackground {
+  background: url("../image/seacity.jpg");
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1; }
+  z-index: -2; }
 
 .mainBackground img {
   position: absolute;
-  left: 50%;
   bottom: 0;
   min-width: 100%;
   min-height: 100%; }
 
+.greyerShade {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.8; }
+
+.flag {
+  width: 150px;
+  height: 150px; }
+
 .mainFont {
   font-size: 50px;
   color: #FFFFFF; }
+
+/*
+  About -----------------------------------------------------------------------
+*/
+.aboutBackgroundContainer {
+  position: relative;
+  overflow: hidden;
+  height: 600px; }
+
+.aboutBackground {
+  background: url("../image/cityCross.jpeg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2; }
+
+.blueShade {
+  background-color: #00b8d4;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.5; }
 
 .pane {
   height: 300px;
@@ -169,6 +216,60 @@ ul {
 .paneBackgroundSize {
   width: 100%;
   padding: 0 auto; }
+
+.profile {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%; }
+
+.profile img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto; }
+
+/*
+  Projects -----------------------------------------------------------------------
+*/
+.projectsBackgroundContainer {
+  position: relative;
+  overflow: hidden;
+  height: 900px; }
+
+.projectsBackground {
+  background: url("../image/coffeeBW.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2; }
+
+/*
+  Links -----------------------------------------------------------------------
+*/
+.linksBackgroundContainer {
+  position: relative;
+  overflow: hidden;
+  height: 300px; }
+
+.linksBackground {
+  background: url("../image/stars.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2; }
+
+.links-font {
+  font-size: 20px;
+  color: #FFFFFF; }
+
+.links-list li {
+  display: inline; }
 
 .myDraggable {
   background-color: #00b8d4;
@@ -185,7 +286,6 @@ ul {
 */
 .buttonWithShadow {
   display: inline-block;
-  padding: 10px 20px;
   font: inherit;
   border: 0;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -194,111 +294,11 @@ ul {
     background: #008ca1;
     transition: all 300ms ease; }
 
-/**
- * Component: Button
- * --------------------------------------------------
- */
-.c-button {
-  -webkit-appearance: none;
+.buttonCircle {
+  width: 80px;
+  height: 80px;
   position: relative;
-  display: inline-block;
-  padding: 12px 24px;
-  margin: 0;
-  vertical-align: middle;
-  overflow: visible;
-  color: #fff;
-  font: inherit;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
-  text-align: center;
-  letter-spacing: 1px;
-  background: transparent;
-  border: 0;
-  user-select: none;
-  box-shadow: 2px 2px 0 0 #383e46;
-  transition: all 0.2s ease; }
-  .c-button:hover, .c-button:focus {
-    outline: 0;
-    text-decoration: none; }
-  .c-button:not(:disabled) {
-    cursor: pointer; }
-
-/**
- * Mixin: Button Modifier
- * --------------------------------------------------
- */
-/**
- * Component: Button
- * Modifier: Purple
- * --------------------------------------------------
- */
-.c-button--purple {
-  background: #967ADC;
-  text-shadow: 2px 2px 0 #7652d1; }
-  .c-button--purple:hover {
-    background: #8666d7; }
-
-/**
- * Component: Button
- * Modifier: Blue
- * --------------------------------------------------
- */
-.c-button--blue {
-  background: #4A89DC;
-  text-shadow: 2px 2px 0 #276ecc; }
-  .c-button--blue:hover {
-    background: #357bd8; }
-
-/**
- * Component: Button
- * Modifier: Red
- * --------------------------------------------------
- */
-.c-button--red {
-  background: #E9573F;
-  text-shadow: 2px 2px 0 #dc3519; }
-  .c-button--red:hover {
-    background: #e64328; }
-
-/**
- * Utility: Ripple
- * --------------------------------------------------
- */
-.c-ripple {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
-  background: transparent; }
-
-.c-ripple__circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25); }
-  .c-ripple.is-active .c-ripple__circle {
-    animation: a-ripple .4s ease-in; }
-
-/**
- * Animation: Ripple
- * --------------------------------------------------
- */
-@keyframes a-ripple {
-  0% {
-    opacity: 0; }
-  25% {
-    opacity: 1; }
-  100% {
-    width: 200%;
-    padding-bottom: 200%;
-    opacity: 0; } }
+  border-radius: 50%; }
 
 /*# sourceMappingURL=mainCss.css.map */
