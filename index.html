@@ -16,14 +16,14 @@
     </head>
     <body>
         <header>
-            <!-- Top Nav Bar -->
+            <div id="topNav"></div>
+            <!-- Top Nav Bar
             <nav class="nav">
                 <div class="navContainer">
                     <a class="name">Soichiro Hirata</a>
                 </div>
             </nav>
-            <!-- Margin-left was still 20% after side nav went away. -->
-
+            -->
             <!-- Vertical Nav bar -->
             <ul class="side-nav" id="sideNav" >
                 <li class="logoContainer">
@@ -46,12 +46,15 @@
             <div class="mainBackgroundContainer">
                 <div class="container">
                     <br><br><br><br>
+                    <div  id="bannerName">
+                        <h1 id='newName' class='center mainFont'>Soichiro Hirata</h1>
+                    </div>
                     <h1 class="center mainFont">Web Developer :)</h1>
                     <h1 class="center mainFont">From</h1>
                     <img class="center flag" src="image/flagOfJapan.png">
                 </div>
                 <div class="mainBackground">
-                    <div class="greyShade"></div>
+                    <div class="greyerShade"></div>
                 </div>
             </div>
 
@@ -65,12 +68,12 @@
                                 <img src="image/profile.jpg" class="profile">
                             </li>
                             <li>
-                                <p>I have recently graduated from University of North Florida
-                                    with a BS in Computer Information Science</p>
-
-                            </li>
-                            <li>
-                                <p>Feel free to download my resume from below.</p>
+                                <p>Hello! I'm Soichiro Hirata, I have graduated from University of North Florida
+                                    with a BS in Computer Information Science on 4/29/16.
+                                    I am currently seeking for a web developer position around the Bay Area.
+                                    Thank you for visiting my portfolio site and
+                                    feel free to download my resume from below!
+                                </p>
                                 <button class="buttonWithShadow buttonCircle center" type="button" id="downloadResume">
                                     <img src="image/glyphicons-707-file-cloud-download.png">
                                 </button>
@@ -113,10 +116,12 @@
                     <h1 class="center mainFont">Links</h1>
                     <div class="container center" >
                         <br><br>
-                        <ul>
+                        <ul id="links">
                             <li>
-                                <span class="mega-octicon octicon-mark-github"></span>
-                                <a href="https://github.com/SoichiroH" class="links-font">Github</a>
+                                <a href="https://github.com/SoichiroH" class="links-font">
+                                    <span class="mega-octicon octicon-mark-github"></span>
+                                    Github
+                                </a>
                             </li>
                             <li>
                                 <p>Details</p>
@@ -133,7 +138,9 @@
             </div>
         </main>
         <footer>
-
+            <div class="navContainer">
+                <p class="footerFont">© 2016 - </p>
+            </div>
         </footer>
     </body>
 </html>
