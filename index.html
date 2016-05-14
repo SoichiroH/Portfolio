@@ -3,15 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-        <script   src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"   integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="   crossorigin="anonymous"></script>
-        <!-- <script type="text/javascript" src="js/materialize.min.js"></script>-->
-        <script type="text/javascript" src="js/coreFunctions.js"></script>
-        <script type="text/javascript" src="js/cssAnimations.js"></script>
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>-->
         <link rel="stylesheet" href="stylesheet/mainCss.css">
         <link rel="stylesheet" href="octicons/octicons.css">
-        <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+        <link rel="shortcut icon" href="image/logoSmall.ico">
         <title>Portfolio</title>
     </head>
     <body>
@@ -25,33 +21,35 @@
             </nav>
             -->
             <!-- Vertical Nav bar -->
-            <ul class="side-nav" id="sideNav" >
-                <li class="logoContainer">
-                    <img src="image/logo.jpg" class="logo">
-                </li>
-                <li class="">
-                    <a href="#">About</a>
-                </li>
-                <li class="">
-                    <a href="#">Projects</a>
-                </li>
-                <li class="">
-                    <a href="#">Links</a>
-                </li>
-            </ul>
+            <div class="side-nav" id="sideNav">
+                <ul>
+                    <li class="logoContainer">
+                        <a href="#" style="padding: 0;" id="bannerlink">
+                            <img src="image/logo.png" class="logo">
+                        </a>
+                    </li>
+                    <li >
+                        <a href="#" id="aboutlink">About</a>
+                    </li>
+                    <li >
+                        <a href="#" id="projectslink">Projects</a>
+                    </li>
+                    <li >
+                        <a href="#" id="otherSiteslink">Links</a>
+                    </li>
+                </ul>
+            </div>
         </header>
 
         <main>
             <!-- Banner -->
-            <div class="mainBackgroundContainer">
+            <div class="mainBackgroundContainer" id="banner">
                 <div class="container">
                     <br><br><br><br>
                     <div  id="bannerName">
                         <h1 id='newName' class='center mainFont'>Soichiro Hirata</h1>
                     </div>
                     <h1 class="center mainFont">Web Developer :)</h1>
-                    <h1 class="center mainFont">From</h1>
-                    <img class="center flag" src="image/flagOfJapan.png">
                 </div>
                 <div class="mainBackground">
                     <div class="greyerShade"></div>
@@ -59,7 +57,7 @@
             </div>
 
             <!-- About -->
-            <div class="aboutBackgroundContainer">
+            <div class="aboutBackgroundContainer" id="about">
                 <div class="container">
                     <h1 class="center mainFont">About</h1>
                     <div class="container center">
@@ -88,7 +86,7 @@
 
             <!-- Familiar Languages -->
             <!-- Projects carousel -->
-            <div class="projectsBackgroundContainer">
+            <div class="projectsBackgroundContainer" id="projects">
                 <div class="container">
                     <h1 class="center mainFont">Projects</h1>
                     <div class="container center">
@@ -104,6 +102,25 @@
                                 <p>More Details</p>
                             </li>
                         </ul>
+
+                        <!-- nwbhs screen shot sliders -->
+                        <div class="imageSlider">
+                            <ul class="slideContainer">
+                                <li class="slide">
+                                    <img src="image/screenshots/nwbhs/caselist.JPG"> <!-- random image -->
+                                </li>
+                                <li class="slide">
+                                    <img src="image/screenshots/nwbhs/editcase.JPG"> <!-- random image -->
+                                </li>
+                                <li class="slide">
+                                    <img src="image/screenshots/nwbhs/caseinformation.JPG"> <!-- random image -->
+                                </li>
+                                <li class="slide">
+                                   <img src="image/screenshots/nwbhs/waitinglist.JPG"> <!-- random image --> -->
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slideButtons"></div>
                     </div>
                 </div>
                 <div class="projectsBackground" >
@@ -111,12 +128,12 @@
                 </div>
             </div>
 
-            <div class="linksBackgroundContainer">
+            <div class="linksBackgroundContainer" id="otherSites">
                 <div class="container">
                     <h1 class="center mainFont">Links</h1>
                     <div class="container center" >
                         <br><br>
-                        <ul id="links">
+                        <ul id="linksInUl">
                             <li>
                                 <a href="https://github.com/SoichiroH" class="links-font">
                                     <span class="mega-octicon octicon-mark-github"></span>
@@ -142,5 +159,10 @@
                 <p class="footerFont">© 2016 - </p>
             </div>
         </footer>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+        <script   src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"   integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="   crossorigin="anonymous"></script>
+        <!--<script type="text/javascript" src="js/materialize.min.js"></script>-->
+        <script type="text/javascript" src="js/coreFunctions.js"></script>
+        <script type="text/javascript" src="js/animations.js"></script>
     </body>
 </html>

@@ -43,6 +43,7 @@ img.center {
 */
 
 html{
+  background-color: $navy;
   max-width: 100%;
   font-family: LondonBetween, Helvetica, sans-serif;
   -webkit-background-size: auto;
@@ -192,13 +193,15 @@ ul {
 }
 
 .logo {
-  width: 220px;
+  width: 200px;
   height: 90px;
 }
 
 .logoContainer {
   height: 90px;
 }
+
+
 
 /*
   Main -----------------------------------------------------------------------
@@ -216,7 +219,7 @@ ul {
 }
 
 .mainBackground {
-  background: url("../image/seacity.jpg");
+  background: url("../image/stars.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -331,6 +334,38 @@ ul {
   z-index: -2;
 }
 
+          /*
+            Slider -----------------------------------------------------------------------
+          */
+
+.imageSlider {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+
+.slideContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+}
+
+.slide img{
+  width: 100%;
+}
+
+.slide:first-child {
+  display: block;
+}
+
+
     /*
       Links -----------------------------------------------------------------------
     */
@@ -356,7 +391,7 @@ ul {
   color: #FFFFFF;
 }
 
-ul#links li{
+ul#linksInUl li{
   display: inline;
 }
 
@@ -405,7 +440,8 @@ ul#links li{
 
 .footerFont{
   margin: 0;
-  padding-top: 10px;
+  font-size: 15px;
+  padding-top: 15px;
   color: white;
   text-shadow: none;
 }
