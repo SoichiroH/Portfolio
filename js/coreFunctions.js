@@ -43,13 +43,10 @@ $(document).ready(function(){
         var currentIndex = 0;
         var timeOut;
 
-        console.log('imageSlider each function ran');
-
         function move(newIndex){
             var animateLeft, slideLeft;
 
             advance();
-            console.log('imageSlider advance ran');
 
             if ($sliderContainer.is(':animated') || currentIndex === newIndex){
                 return;
@@ -81,8 +78,6 @@ $(document).ready(function(){
             timeOut = setTimeout(function(){
                 if (currentIndex < ($eachSlides.length - 1)){
                     move(currentIndex + 1);
-                    console.log('imageSlider move ran');
-
                 } else {
                     move(0);
                 }
@@ -90,7 +85,7 @@ $(document).ready(function(){
         }
 
         $.each($eachSlides, function (index) {
-            var $button = $('<button type="button" class="slide-btn">&bull;</button>');
+            var $button = $('<button type="button" class="slide-btn"></button>');
             if (index === currentIndex) {
                 $button.addClass('active');
             }
@@ -98,11 +93,9 @@ $(document).ready(function(){
                 move(index);
             }).appendTo('.slideButtons');
             buttonArray.push($button);
-            console.log('appendTo ran');
         });
 
         advance();
-
 
     });
 

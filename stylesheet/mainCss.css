@@ -248,10 +248,10 @@ ul {
 .projectsBackgroundContainer {
   position: relative;
   overflow: hidden;
-  height: 900px; }
+  height: 1800px; }
 
 .projectsBackground {
-  background: url("../image/coffeeBW.jpg");
+  background: url("../image/footer_lodyas.png");
   position: absolute;
   top: 0;
   left: 0;
@@ -265,7 +265,7 @@ ul {
 .imageSlider {
   position: relative;
   overflow: hidden;
-  height: 400px; }
+  height: 600px; }
 
 .slideContainer {
   position: relative;
@@ -283,6 +283,23 @@ ul {
 
 .slide:first-child {
   display: block; }
+
+.slide-btn {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 5px 12px;
+  border-radius: 50%;
+  background-color: white;
+  border: 0;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 3; }
+  .slide-btn:hover {
+    background: #008ca1;
+    transition: all 300ms ease; }
+
+.active {
+  background-color: #a68750; }
 
 /*
   Links -----------------------------------------------------------------------
