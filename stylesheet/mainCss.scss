@@ -3,7 +3,7 @@
 $beige: #f5dfbf;
 $goldish: #a68750;
 $lightGoldish: #e1c158;
-$blue: #00b8d4;
+$blue: #010101;
 $lightNavy: #0f6186;
 $navy: #0d243a;
 $darkGrey: rgba(1, 1, 1, 0.86);
@@ -30,7 +30,6 @@ a {
 p {
   color: white;
   font-size: 20px;
-  text-shadow: 1px 1px $grey;
 }
 
 .center {
@@ -95,6 +94,7 @@ ul {
   margin: 0 0;
   padding: 0 0;
 }
+
 
 .container {
   margin: 0 auto 0 auto;
@@ -227,7 +227,7 @@ ul {
 }
 
 .mainBackground {
-  background: url("../image/background/seacity.jpg");
+  background: url("../image/background/cityBW.jpeg");
   position: absolute;
   top: 0;
   left: 0;
@@ -272,6 +272,56 @@ ul {
   color: $beige;
 }
 
+.paneAlignment {
+  li{
+    margin: 20px 0 0 20px;
+    display: inline;
+    float: right;
+  }
+}
+
+.pane {
+  background-color: $darkGrey;
+  height: 50px;
+  width: 190px;
+  margin: 0 0 0 auto;
+  padding: 20px 20px 20px 20px;
+  z-index: 0;
+  a {
+    color: $beige;
+    &:hover {
+      color: $grey;
+    }
+  }
+  &:hover{
+    background: darken($lightNavy, 10%);
+    transition: all 600ms ease;
+    border-bottom-style: ridge;
+    border-width: 0.8px;
+    border-color: $goldish;
+  }
+}
+
+.paneBackground {
+  background-color: black;
+  position: absolute;
+  height: 50px;
+  width: 200px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.no-margin {
+  margin: 0 0 0 0;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
     /*
       About -----------------------------------------------------------------------
     */
@@ -301,22 +351,6 @@ ul {
   opacity: 0.5;
 }
 
-.pane {
-  height: 300px;
-  background-color: $blue;
-  margin: 0 auto 0 auto;
-  padding: 20px 20px 20px 20px;
-}
-
-.paneBackground {
-  position: relative;
-  width: 100%;
-}
-
-.paneBackgroundSize {
-  width: 100%;
-  padding: 0 auto;
-}
 
 .profile {
   width: 150px;
@@ -338,6 +372,10 @@ ul {
   color: $beige;
 }
 
+.descriptionBackground {
+  background-color: $darkGrey;
+
+}
 
     /*
       Projects -----------------------------------------------------------------------

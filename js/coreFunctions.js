@@ -26,15 +26,19 @@ $(document).ready(function(){
             $("#sideNav").css('transform', 'translateX(0)');
             $("#newNav").remove();
             if (visible){
-                $("#bannerName").append("<h1 id='newName' class='center mainFont'>Soichiro Hirata</h1>");
+                $("#bannerName").append("<h1 id='newName' class='mainFont'>Soichiro Hirata</h1>");
             }
 
             visible = false;
         }
     });
 
-    //Image sliders
+    //Download Resume
+    $("#downloadResume").click(function () {
+        window.location = 'download/Resume-Hirata Soichiro.pdf';
+    });
 
+    //Image sliders
     $(".imageSlider").each(function(){
         var $this = $(this);
         var $sliderContainer = $this.find(".slideContainer");
