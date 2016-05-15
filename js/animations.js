@@ -21,7 +21,5 @@ $(document).ready(function(){
         scrollToDiv($(this).attr("id"));
     });
 
-
-    $('#draggable').draggable({ containment: "parent" });
 });
 

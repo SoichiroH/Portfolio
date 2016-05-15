@@ -3,6 +3,9 @@
 @font-face {
   font-family: LondonBetween;
   src: url(../fonts/LondonBetween.ttf); }
+@font-face {
+  font-family: LondonMM;
+  src: url(../fonts/LondonMM.ttf); }
 a {
   color: #2c2c2c;
   text-decoration: none;
@@ -24,9 +27,9 @@ img.center {
   General -----------------------------------------------------------------------
 */
 html {
-  background-color: #0d243a;
+  background: url("../image/background/darkgrey.jpg");
   max-width: 100%;
-  font-family: LondonBetween, Helvetica, sans-serif;
+  font-family: LondonBetween, LondonMM, Helvetica, sans-serif;
   -webkit-background-size: auto;
   -moz-background-size: auto;
   -o-background-size: auto;
@@ -106,6 +109,7 @@ ul {
   height: 100%; }
 
 .name {
+  font-family: LondonMM;
   font-size: 40px;
   color: #fff;
   line-height: 90px;
@@ -129,7 +133,7 @@ ul {
   overflow-y: auto;
   box-shadow: 5px 8px 16px 0 rgba(166, 135, 80, 0.2), 0 6px 20px 0 rgba(166, 135, 80, 0.19); }
   .side-nav a {
-    color: white;
+    color: #f5dfbf;
     display: block;
     font-size: 1rem;
     height: 64px;
@@ -158,16 +162,25 @@ ul {
 .mainBackgroundContainer {
   position: relative;
   overflow: hidden;
-  height: 1000px; }
+  height: 900px;
+  margin-bottom: 60px; }
 
 .mainBackground {
-  background: url("../image/stars.jpg");
+  background: url("../image/background/seacity.jpg");
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: -2; }
+
+.shadowFade {
+  background: url("../image/background/gradient.png");
+  bottom: 0;
+  left: 0;
+  height: 140px;
+  width: 100%;
+  position: absolute; }
 
 .mainBackground img {
   position: absolute;
@@ -188,8 +201,9 @@ ul {
   height: 150px; }
 
 .mainFont {
-  font-size: 50px;
-  color: #FFFFFF; }
+  font-family: LondonMM;
+  font-size: 55px;
+  color: #f5dfbf; }
 
 /*
   About -----------------------------------------------------------------------
@@ -197,10 +211,11 @@ ul {
 .aboutBackgroundContainer {
   position: relative;
   overflow: hidden;
-  height: 600px; }
+  height: 600px;
+  margin-bottom: 60px; }
 
 .aboutBackground {
-  background: url("../image/cityCross.jpeg");
+  background: url("../image/background/cityCross.jpeg");
   position: absolute;
   top: 0;
   left: 0;
@@ -242,16 +257,21 @@ ul {
   height: 100%;
   width: auto; }
 
+.description {
+  font-family: LondonMM;
+  color: #f5dfbf; }
+
 /*
   Projects -----------------------------------------------------------------------
 */
 .projectsBackgroundContainer {
   position: relative;
   overflow: hidden;
-  height: 1800px; }
+  height: 1800px;
+  margin-bottom: 60px; }
 
 .projectsBackground {
-  background: url("../image/footer_lodyas.png");
+  background: url("../image/background/footer_lodyas.png");
   position: absolute;
   top: 0;
   left: 0;
@@ -310,7 +330,7 @@ ul {
   height: 300px; }
 
 .linksBackground {
-  background: url("../image/stars.jpg");
+  background: url("../image/background/stars.jpg");
   position: absolute;
   top: 0;
   left: 0;

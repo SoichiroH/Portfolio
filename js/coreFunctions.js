@@ -98,10 +98,4 @@ $(document).ready(function(){
         advance();
 
     });
-
-
-
-    $("#downloadResume").click(function () {
-        window.location = 'download/Resume-Hirata Soichiro.pdf';
-    });
 });
