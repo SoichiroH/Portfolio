@@ -95,6 +95,9 @@ ul {
   padding: 0 0;
 }
 
+button:focus {
+  outline:0;
+}
 
 .container {
   margin: 0 auto 0 auto;
@@ -160,7 +163,7 @@ ul {
 .name {
   font-family: LondonMM;
   font-size: 40px;
-  color: #fff;
+  color: $beige;
   line-height: 90px;
   vertical-align: text-bottom;
 }
@@ -274,7 +277,7 @@ ul {
 
 .paneAlignment {
   li{
-    margin: 20px 0 0 20px;
+    margin: 0 0 20px 20px;
     display: inline;
     float: right;
   }
@@ -329,7 +332,6 @@ ul {
 .aboutBackgroundContainer {
   position: relative;
   overflow: hidden;
-  height: 600px;
   margin-bottom: 60px;
 }
 
@@ -357,7 +359,7 @@ ul {
   height: 150px;
   position: relative;
   overflow: hidden;
-  border-radius: 50%;
+  //border-radius: 50%;
 }
 
 .profile img{
@@ -374,7 +376,8 @@ ul {
 
 .descriptionBackground {
   background-color: $darkGrey;
-
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 25px;
 }
 
     /*

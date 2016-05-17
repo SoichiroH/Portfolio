@@ -66,6 +66,9 @@ ul {
   margin: 0 0;
   padding: 0 0; }
 
+button:focus {
+  outline: 0; }
+
 .container {
   margin: 0 auto 0 auto;
   width: 90%; }
@@ -110,7 +113,7 @@ ul {
 .name {
   font-family: LondonMM;
   font-size: 40px;
-  color: #fff;
+  color: #f5dfbf;
   line-height: 90px;
   vertical-align: text-bottom; }
 
@@ -205,7 +208,7 @@ ul {
   color: #f5dfbf; }
 
 .paneAlignment li {
-  margin: 20px 0 0 20px;
+  margin: 0 0 20px 20px;
   display: inline;
   float: right; }
 
@@ -250,7 +253,6 @@ ul {
 .aboutBackgroundContainer {
   position: relative;
   overflow: hidden;
-  height: 600px;
   margin-bottom: 60px; }
 
 .aboutBackground {
@@ -273,8 +275,7 @@ ul {
   width: 150px;
   height: 150px;
   position: relative;
-  overflow: hidden;
-  border-radius: 50%; }
+  overflow: hidden; }
 
 .profile img {
   display: inline;
@@ -287,7 +288,9 @@ ul {
   color: #f5dfbf; }
 
 .descriptionBackground {
-  background-color: rgba(1, 1, 1, 0.86); }
+  background-color: rgba(1, 1, 1, 0.86);
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 25px; }
 
 /*
   Projects -----------------------------------------------------------------------
