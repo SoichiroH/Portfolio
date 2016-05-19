@@ -41,10 +41,16 @@ $(document).ready(function(){
 //Description Accordion
     $('.accordion').on('click', '.accordionButton', function (e) {
         e.preventDefault();
-        $('.accordionButton').removeClass('activePanel');
-        $('.accordionPanel').slideUp();
-        $(this).next('.accordionPanel').not(':animated').slideToggle();
-        $(this).addClass('activePanel');
+
+        if ($(this).hasClass('activeButton')){
+            $('.accordionButton').removeClass('activeButton');
+            $('.accordionPanel').slideUp();
+        } else {
+            $('.accordionButton').removeClass('activeButton');
+            $('.accordionPanel').slideUp();
+            $(this).next('.accordionPanel').not(':animated').slideToggle();
+            $(this).addClass('activeButton');
+        }
     });
 
 //Image sliders
