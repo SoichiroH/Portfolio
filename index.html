@@ -45,14 +45,14 @@
                 </div>
                 <div class="container" style="margin-top: 300px;">
                     <ul class="paneAlignment">
-                        <li class="pane align-right ">
+                        <li class="bannerPane align-right ">
                             <p class="description no-margin">Contact</p>
                             <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">soichiro.h21@gmail.com</p>
                             <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">904-401-2740</p>
                         </li>
-                        <li class="pane align-right">
+                        <li class="bannerPane align-right">
                             <p class="description no-margin">Resume</p>
-                            <a class="" href="#" id="downloadResume">Download ></a>
+                            <a href="#" id="downloadResume">Download ></a>
                         </li>
                     </ul>
                 </div>
@@ -66,10 +66,10 @@
             <div class="aboutBackgroundContainer" id="about">
                 <div class="container">
                     <h1 class="mainFont">About</h1>
-                    <div class="container center">
+                    <div class="container">
                         <ul class="paneAlignment">
                             <li class="descriptionBackground" style="float: left;">
-                                <img src="image/profile.jpg" class="profile">
+                                <img src="image/profile.jpg" class="profile" style="float: left; margin: 24px 5px 5px 5px;">
                             <!--</li>
                             <li class="descriptionBackground" style="text-align: left;">-->
                                 <p class="description align-left">Hello! I'm Soichiro Hirata, I have graduated from University of North Florida
@@ -92,83 +92,170 @@
             <div class="projectsBackgroundContainer" id="projects">
                 <div class="container">
                     <h1 class="mainFont">Projects</h1>
-                    <div class="center">
-                        <ul>
-                            <li>
-                                <p>Web Application</p>
-                            </li>
-                            <li>
-                                <p>NWBHS Patient Form Tracker</p>
-                            </li>
-                            <li>
-                                <p>This web application was created and deployed for our client North West Behavioral Health Service (NWBHS), a non-profit organization in Jacksonville Florida, who requested for more efficient, useful and organized method to keep track of their patients’ personal information including government required form due dates. This was a project of UNF’s most practical two-semester sequence programming course, Information Systems Senior Project I & II. http://www.unf.edu/~k.umapathy/sp/seniorproject.html </p>
-                            </li>
-                            <li>
-                                <p>NWBHS has over 300 active patients, with 20 – 30 new patients coming in every month. They are responsible for submitting 3 forms (each with different due dates) to the state for every patients. They were managing their clients with a Microsoft Excel sheet in which it was not shared over the network.</p>
-                            </li>
-                            <li>
-                                <p>Our solution was to build an online web application to let every employee in NWBHS to have access and view/edit the current status of each patients in a simple and organized way. We have used Microsoft Azure and its security to bypass the HIPAA compliant issue.</p>
-                            </li>
-                            <li>
-                                <p> •	Log in: User name and password are required for every user. We created hierarchical role such as manager, provider and user based on the actual organization structure.
-                                    •	Patient Information: Information for each of the patients is stored in Microsoft Azure cloud database and reflected in a table in the application for easy access for users.
-                                    •	Waiting List: Lists the names of patients who are waiting to be able to start treatment. Each patient’s case and basic information will be created from this page.
-                                    •	Case List: The case list page provides a place for users to view their patients, form due dates, and other details about their cases. When a patient is clicked, a modal with multiple tabs will pop up with the patient’s information and the user will be able to update its information.
-                                    •	Adding and Removal of Forms: Being that the requirements given by the state may change, we have provided a way for the manager role to add, remove, and edit form due dates as it is needed.
-                                    •	User List: A manager role has the privilege to add new users and specify the role that these users will have in the system.
-                                    •	Color Coded Sorting: The application provides a way for its users to color code the cases that they have, which can also be used as a parameter for searches.
-                                    •	Activity Logs: Records the user name, time and its action done to the system.
-                                </p>
-                            </li>
-                            <li>
-                                <p>Our group won 4th place and the Honorable Mention in the UNF CCEC Symposium Spring 2016!
-                                    http://www.unf.edu/ccec/computing/Symposium/Spring_2016_UNF_Computing_Symposium.aspx </p>
-                            </li>
-                        </ul>
-
-                        <!-- nwbhs screen shot sliders -->
-                        <div class="imageSlider">
-                            <ul class="slideContainer">
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caselist.JPG"> <!-- random image -->
+                        <div class="projectPaneTitle">
+                            <ul>
+                                <li>
+                                    <p>NWBHS Patient Form Tracker</p>
                                 </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/editcase.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caseinformation.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/addforms.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/formmanagement.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                   <img src="image/screenshots/nwbhs/waitinglist.JPG"> <!-- random image --> -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caselabels.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/manageusers.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/activitylogs.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caseinformation.JPG"> <!-- random image -->
+                                <li>
+                                    <p style="font-size: 18px;">Web Application</p>
                                 </li>
                             </ul>
                         </div>
-                        <img src="image/icons/glyphicons-175-pause.png" id="pauseSlide" class="pausePlay">
-                        <img src="image/icons/glyphicons-174-play.png" id="playSlide" class="pausePlay">
-                        <div class="slideButtons"></div>
+                </div>
+
+                <div class="container">
+                    <ul class="paneAlignmentProject">
+                        <li>
+                            <div class="projectPane">
+                                <ul>
+                                    <li class="description align-left">
+                                        <p>This web application was created and deployed for our client North West Behavioral Health Service (NWBHS),
+                                            a non-profit organization in Jacksonville Florida, who requested for more efficient, useful and organized
+                                            method to keep track of their patients’ personal information including government required form due dates.
+                                            This was a project of UNF’s most practical two-semester sequence programming course. <br>
+                                            <a href="http://www.unf.edu/~k.umapathy/sp/seniorproject.html" style="text-decoration: underline;">Systems Senior Project I & II ></a>
+                                        </p>
+                                    </li>
+                                    <li class="description align-left">
+                                        <p>NWBHS has over 300 active patients, with 20 – 30 new patients coming in every month. They are responsible
+                                            for submitting 3 forms (each with different due dates) to the state for every patients. They were managing
+                                            their clients with a Microsoft Excel sheet in which it was not shared over the network.
+                                        </p>
+                                    </li>
+                                    <li class="description align-left">
+                                        <p>Our solution was to build an online web application to let every employee in NWBHS to have access and
+                                            view/edit the current status of each patients in a simple and organized way. We have used Microsoft
+                                            Azure and its security to bypass the HIPAA compliant issue.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="projectPane">
+                                <ul class="accordion">
+                                    <li class="description align-left" style="display: inline;">
+                                        <button class="accordionButton">Log in</button>
+                                        <div class="accordionPanel">
+                                            <p>
+                                                User name and password are required for every user. We created hierarchical role such as manager, provider and user based on the actual organization structure.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="description align-left" style="display: inline;">
+                                        <button class="accordionButton">Patient Information</button>
+                                        <div class="accordionPanel">
+                                            <p>
+                                                Information for each of the patients is stored in Microsoft Azure cloud database and reflected in a table in the application for easy access for users.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="description align-left" style="display: inline;">
+                                        <button class="accordionButton">Waiting List</button>
+                                        <div class="accordionPanel">
+                                            <p>
+                                                Lists the names of patients who are waiting to be able to start treatment. Each patient’s case and basic information will be created from this page.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="description align-left" style="display: inline;">
+                                        <button class="accordionButton">Case List</button>
+                                        <div class="accordionPanel">
+                                            <p>
+                                                The case list page provides a place for users to view their patients, form due dates, and other details about their cases. When a patient is clicked, a modal with multiple tabs will pop up with the patient’s information and the user will be able to update its information.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="description align-left" style="display: inline;">
+                                        <button class="accordionButton">Add/Remove Forms</button>
+                                        <div class="accordionPanel">
+                                            <p>
+                                                Being that the requirements given by the state may change, we have provided a way for the manager role to add, remove, and edit form due dates as it is needed.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="description align-left" style="display: inline;">
+                                        <button class="accordionButton">User List</button>
+                                        <div class="accordionPanel">
+                                            <p>
+                                                A manager role has the privilege to add new users and specify the role that these users will have in the system.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="description align-left" style="display: inline;">
+                                        <button class="accordionButton">Color Coded Sorting</button>
+                                        <div class="accordionPanel">
+                                            <p>
+                                                The application provides a way for its users to color code the cases that they have, which can also be used as a parameter for searches.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="description align-left" style="display: inline;">
+                                        <button class="accordionButton">Activity Logs</button>
+                                        <div class="accordionPanel">
+                                            <p>
+                                                Records the user name, time and its action done to the system.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="description align-left">
+                                        <p>Our group won 4th place and the Honorable Mention in the
+                                            <a href="www.unf.edu/ccec/computing/Symposium/Spring_2016_UNF_Computing_Symposium.aspx" style="text-decoration: underline;">UNF CCEC Symposium Spring 2016! ></a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                        <!-- End: Description Accordion -->
+                <div class="container">
+                    <div> <!-- nwbhs screen shot sliders -->
+                        <div class="center">
+                            <div class="imageSlider">
+                                <ul class="slideContainer">
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/caselist.JPG"> <!-- random image -->
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/editcase.JPG"> <!-- random image -->
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/caseinformation.JPG"> <!-- random image -->
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/addforms.JPG"> <!-- random image -->
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/formmanagement.JPG"> <!-- random image -->
+                                    </li>
+                                    <li class="slide">
+                                       <img src="image/screenshots/nwbhs/waitinglist.JPG"> <!-- random image --> -->
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/caselabels.JPG"> <!-- random image -->
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/manageusers.JPG"> <!-- random image -->
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/activitylogs.JPG"> <!-- random image -->
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/caseinformation.JPG"> <!-- random image -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <img src="image/icons/glyphicons-175-pause.png" id="pauseSlide" class="pausePlay">
+                            <img src="image/icons/glyphicons-174-play.png" id="playSlide" class="pausePlay">
+                            <div class="slideButtons"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="projectsBackground" >
-                </div>
-            </div>
+                <!-- End: nwbhs screen shot sliders -->
+                <div class="projectsBackground" ></div>
+            </div> <!-- End: Project background container -->
 
             <div class="linksBackgroundContainer" id="otherSites">
                 <div class="container">

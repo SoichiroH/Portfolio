@@ -12,7 +12,7 @@ a {
   -webkit-tap-highlight-color: transparent; }
 
 p {
-  color: white;
+  color: #f5dfbf;
   font-size: 20px; }
 
 .center {
@@ -65,6 +65,9 @@ ul {
   list-style-type: none;
   margin: 0 0;
   padding: 0 0; }
+
+button {
+  outline: 0; }
 
 button:focus {
   outline: 0; }
@@ -203,7 +206,7 @@ button:focus {
   height: 150px; }
 
 .mainFont {
-  font-family: LondonMM;
+  font-family: LondonMM, sans-serif;
   font-size: 55px;
   color: #f5dfbf; }
 
@@ -212,18 +215,18 @@ button:focus {
   display: inline;
   float: right; }
 
-.pane {
+.bannerPane {
   background-color: rgba(1, 1, 1, 0.86);
   height: 50px;
   width: 190px;
   margin: 0 0 0 auto;
   padding: 20px 20px 20px 20px;
   z-index: 0; }
-  .pane a {
+  .bannerPane a {
     color: #f5dfbf; }
-    .pane a:hover {
+    .bannerPane a:hover {
       color: #2c2c2c; }
-  .pane:hover {
+  .bannerPane:hover {
     background: #0a4058;
     transition: all 600ms ease;
     border-bottom-style: ridge;
@@ -284,8 +287,12 @@ button:focus {
   width: auto; }
 
 .description {
-  font-family: LondonMM;
+  font-family: LondonMM, sans-serif;
   color: #f5dfbf; }
+  .description a {
+    color: #f5dfbf; }
+    .description a:hover {
+      color: #2c2c2c; }
 
 .descriptionBackground {
   background-color: rgba(1, 1, 1, 0.86);
@@ -309,6 +316,38 @@ button:focus {
   right: 0;
   bottom: 0;
   z-index: -2; }
+
+.projectPaneTitle {
+  background-color: rgba(1, 1, 1, 0.86);
+  height: 100%;
+  width: 370px;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 20px; }
+  .projectPaneTitle p {
+    font-size: 28px;
+    margin: 0; }
+
+.projectPane {
+  background-color: rgba(1, 1, 1, 0.86);
+  height: 100%;
+  width: 45%;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 20px; }
+
+.accordionButton {
+  background-color: rgba(1, 1, 1, 0.86);
+  font-family: LondonBetween, sans-serif;
+  border: 0;
+  color: #f5dfbf; }
+  .accordionButton:hover {
+    background: #0a4058;
+    transition: all 600ms ease;
+    border-bottom-style: ridge;
+    border-width: 0.8px;
+    border-color: #a68750; }
+
+.accordionPanel {
+  display: none; }
 
 /*
   Slider -----------------------------------------------------------------------

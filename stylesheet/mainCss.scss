@@ -28,7 +28,7 @@ a {
 }
 
 p {
-  color: white;
+  color: $beige;
   font-size: 20px;
 }
 
@@ -93,6 +93,10 @@ ul {
   list-style-type: none;
   margin: 0 0;
   padding: 0 0;
+}
+
+button {
+  outline: 0;
 }
 
 button:focus {
@@ -270,7 +274,7 @@ button:focus {
 }
 
 .mainFont {
-  font-family: LondonMM;
+  font-family: LondonMM, sans-serif;
   font-size: 55px;
   color: $beige;
 }
@@ -283,7 +287,7 @@ button:focus {
   }
 }
 
-.pane {
+.bannerPane {
   background-color: $darkGrey;
   height: 50px;
   width: 190px;
@@ -370,8 +374,14 @@ button:focus {
 }
 
 .description {
-  font-family: LondonMM;
+  font-family: LondonMM, sans-serif;
   color: $beige;
+  a {
+    color: $beige;
+    &:hover {
+      color: $grey;
+    }
+  }
 }
 
 .descriptionBackground {
@@ -400,6 +410,47 @@ button:focus {
   bottom: 0;
   z-index: -2;
 }
+
+.projectPaneTitle {
+  background-color: $darkGrey;
+  height: 100%;
+  width: 370px;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 20px;
+  p {
+    font-size: 28px;
+    margin: 0;
+  }
+}
+
+.projectPane {
+  background-color: $darkGrey;
+  height: 100%;
+  width: 45%;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 20px;
+}
+
+
+.accordionButton {
+  background-color: $darkGrey;
+  font-family: LondonBetween, sans-serif;
+  border: 0;
+  color: $beige;
+  &:hover{
+    background: darken($lightNavy, 10%);
+    transition: all 600ms ease;
+    border-bottom-style: ridge;
+    border-width: 0.8px;
+    border-color: $goldish;
+  }
+}
+
+.accordionPanel {
+  display: none;
+}
+
+
 
           /*
             Slider -----------------------------------------------------------------------
@@ -530,7 +581,7 @@ ul#linksInUl li{
   Footer -----------------------------------------------------------------------
 */
 
-.footerFont{
+.footerFont {
   margin: 0;
   font-size: 15px;
   padding-top: 15px;

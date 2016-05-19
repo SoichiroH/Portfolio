@@ -38,6 +38,13 @@ $(document).ready(function(){
         window.location = 'download/Resume-Hirata Soichiro.pdf';
     });
 
+//Description Accordion
+    $('.accordion').on('click', '.accordionButton', function (e) {
+        e.preventDefault();
+        $('.accordionPanel').slideUp();
+        $(this).next('.accordionPanel').not(':animated').slideToggle();
+    });
+
 //Image sliders
 
     $("#playSlide").hide();
@@ -106,15 +113,15 @@ $(document).ready(function(){
 
         $("#pauseSlide").on('click', function(){
             clearTimeout(timeOut);
-            $(this).hide();
-            $("#playSlide").show();
+            $(this).hide('slow');
+            $("#playSlide").show('slow');
         });
 
         $("#playSlide").on('click', function(){
             move(currentIndex + 1);
             advance();
-            $(this).hide();
-            $("#pauseSlide").show();
+            $(this).hide('slow');
+            $("#pauseSlide").show('slow');
         });
 
     });
