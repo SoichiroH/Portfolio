@@ -3,7 +3,7 @@
  */
 $(document).ready(function(){
 
-    // Responsive nav bar
+// Responsive nav bar
     var visible = false;
 
     if(window.innerWidth < 1000) {
@@ -33,12 +33,15 @@ $(document).ready(function(){
         }
     });
 
-    //Download Resume
+//Download Resume
     $("#downloadResume").click(function () {
         window.location = 'download/Resume-Hirata Soichiro.pdf';
     });
 
-    //Image sliders
+//Image sliders
+
+    $("#playSlide").hide();
+
     $(".imageSlider").each(function(){
         var $this = $(this);
         var $sliderContainer = $this.find(".slideContainer");
@@ -100,6 +103,19 @@ $(document).ready(function(){
         });
 
         advance();
+
+        $("#pauseSlide").on('click', function(){
+            clearTimeout(timeOut);
+            $(this).hide();
+            $("#playSlide").show();
+        });
+
+        $("#playSlide").on('click', function(){
+            move(currentIndex + 1);
+            advance();
+            $(this).hide();
+            $("#pauseSlide").show();
+        });
 
     });
 });

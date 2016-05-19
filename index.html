@@ -95,13 +95,34 @@
                     <div class="center">
                         <ul>
                             <li>
-                                <p>Patient Form </p>
+                                <p>Web Application</p>
                             </li>
                             <li>
-                                <p>Details</p>
+                                <p>NWBHS Patient Form Tracker</p>
                             </li>
                             <li>
-                                <p>More Details</p>
+                                <p>This web application was created and deployed for our client North West Behavioral Health Service (NWBHS), a non-profit organization in Jacksonville Florida, who requested for more efficient, useful and organized method to keep track of their patients’ personal information including government required form due dates. This was a project of UNF’s most practical two-semester sequence programming course, Information Systems Senior Project I & II. http://www.unf.edu/~k.umapathy/sp/seniorproject.html </p>
+                            </li>
+                            <li>
+                                <p>NWBHS has over 300 active patients, with 20 – 30 new patients coming in every month. They are responsible for submitting 3 forms (each with different due dates) to the state for every patients. They were managing their clients with a Microsoft Excel sheet in which it was not shared over the network.</p>
+                            </li>
+                            <li>
+                                <p>Our solution was to build an online web application to let every employee in NWBHS to have access and view/edit the current status of each patients in a simple and organized way. We have used Microsoft Azure and its security to bypass the HIPAA compliant issue.</p>
+                            </li>
+                            <li>
+                                <p> •	Log in: User name and password are required for every user. We created hierarchical role such as manager, provider and user based on the actual organization structure.
+                                    •	Patient Information: Information for each of the patients is stored in Microsoft Azure cloud database and reflected in a table in the application for easy access for users.
+                                    •	Waiting List: Lists the names of patients who are waiting to be able to start treatment. Each patient’s case and basic information will be created from this page.
+                                    •	Case List: The case list page provides a place for users to view their patients, form due dates, and other details about their cases. When a patient is clicked, a modal with multiple tabs will pop up with the patient’s information and the user will be able to update its information.
+                                    •	Adding and Removal of Forms: Being that the requirements given by the state may change, we have provided a way for the manager role to add, remove, and edit form due dates as it is needed.
+                                    •	User List: A manager role has the privilege to add new users and specify the role that these users will have in the system.
+                                    •	Color Coded Sorting: The application provides a way for its users to color code the cases that they have, which can also be used as a parameter for searches.
+                                    •	Activity Logs: Records the user name, time and its action done to the system.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Our group won 4th place and the Honorable Mention in the UNF CCEC Symposium Spring 2016!
+                                    http://www.unf.edu/ccec/computing/Symposium/Spring_2016_UNF_Computing_Symposium.aspx </p>
                             </li>
                         </ul>
 
@@ -140,55 +161,8 @@
                                 </li>
                             </ul>
                         </div>
-
-
-                        <ul>
-                            <li>
-                                <p>Patient Form </p>
-                            </li>
-                            <li>
-                                <p>Details</p>
-                            </li>
-                            <li>
-                                <p>More Details</p>
-                            </li>
-                        </ul>
-
-                        <!-- nwbhs screen shot sliders -->
-                        <div class="imageSlider">
-                            <ul class="slideContainer">
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caselist.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/editcase.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caseinformation.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/addforms.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/formmanagement.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/waitinglist.JPG"> <!-- random image --> -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caselabels.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/manageusers.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/activitylogs.JPG"> <!-- random image -->
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caseinformation.JPG"> <!-- random image -->
-                                </li>
-                            </ul>
-                        </div>
+                        <img src="image/icons/glyphicons-175-pause.png" id="pauseSlide" class="pausePlay">
+                        <img src="image/icons/glyphicons-174-play.png" id="playSlide" class="pausePlay">
                         <div class="slideButtons"></div>
                     </div>
                 </div>
