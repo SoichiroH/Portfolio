@@ -431,7 +431,6 @@ button:focus {
   margin-bottom: 20px;
 }
 
-
 .accordionButton {
   background-color: $darkGrey;
   font-family: LondonBetween, sans-serif;
@@ -450,7 +449,12 @@ button:focus {
   display: none;
 }
 
-
+.activePanel{
+  background-color: darken($lightNavy, 10%);
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: $goldish;
+}
 
           /*
             Slider -----------------------------------------------------------------------

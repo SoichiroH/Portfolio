@@ -349,6 +349,12 @@ button:focus {
 .accordionPanel {
   display: none; }
 
+.activePanel {
+  background-color: #0a4058;
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: #a68750; }
+
 /*
   Slider -----------------------------------------------------------------------
 */

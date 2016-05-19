@@ -41,8 +41,10 @@ $(document).ready(function(){
 //Description Accordion
     $('.accordion').on('click', '.accordionButton', function (e) {
         e.preventDefault();
+        $('.accordionButton').removeClass('activePanel');
         $('.accordionPanel').slideUp();
         $(this).next('.accordionPanel').not(':animated').slideToggle();
+        $(this).addClass('activePanel');
     });
 
 //Image sliders
