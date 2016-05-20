@@ -62,11 +62,14 @@ $(document).ready(function(){
         var buttonArray = [];
         var currentIndex = 0;
         var timeOut;
+        var timeOutCleared = false;
 
         function move(newIndex){
             var animateLeft, slideLeft;
 
-            advance();
+            if (timeOutCleared == false){
+                advance();
+            }
 
             if ($sliderContainer.is(':animated') || currentIndex === newIndex){
                 return;
@@ -101,6 +104,7 @@ $(document).ready(function(){
                     move(0);
                 }
             }, 4000);
+            console.log(timeOut);
         }
 
         $.each($eachSlides, function (index) {
@@ -110,19 +114,25 @@ $(document).ready(function(){
             }
             $button.on('click', function(){
                 move(index);
+
             }).appendTo('.slideButtons');
             buttonArray.push($button);
         });
 
-        advance();
+        if(timeOutCleared == false) {
+            advance();
+        }
 
         $("#pauseSlide").on('click', function(){
             clearTimeout(timeOut);
+            timeOutCleared = true;
+            console.log(timeOut);
             $(this).hide('slow');
             $("#playSlide").show('slow');
         });
 
         $("#playSlide").on('click', function(){
+            timeOutCleared = false;
             move(currentIndex + 1);
             advance();
             $(this).hide('slow');
