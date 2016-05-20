@@ -526,6 +526,13 @@ ul#linksInUl li {
   color: white;
   text-shadow: none; }
 
+#ajaxLoader {
+  display: block;
+  z-index: 999;
+  position: fixed;
+  left: 50%;
+  top: 50%; }
+
 .box {
   position: absolute;
   width: 150px;

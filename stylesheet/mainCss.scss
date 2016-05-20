@@ -664,6 +664,15 @@ ul#linksInUl li{
 
 
 //Ajax Loader
+
+#ajaxLoader {
+  display: block;
+  z-index: 999;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+
 .box {
   position: absolute;
   width: 150px;
