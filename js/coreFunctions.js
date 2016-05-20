@@ -104,7 +104,6 @@ $(document).ready(function(){
                     move(0);
                 }
             }, 4000);
-            console.log(timeOut);
         }
 
         $.each($eachSlides, function (index) {
@@ -126,7 +125,6 @@ $(document).ready(function(){
         $("#pauseSlide").on('click', function(){
             clearTimeout(timeOut);
             timeOutCleared = true;
-            console.log(timeOut);
             $(this).hide('slow');
             $("#playSlide").show('slow');
         });
