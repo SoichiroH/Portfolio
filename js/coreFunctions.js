@@ -129,4 +129,86 @@ $(document).ready(function(){
             $("#pauseSlide").show('slow');
         });
     });
+
+//Slider container height
+
+    //Initial
+    if(window.innerWidth < 1550 && window.innerWidth > 1450){
+        $('.sliderHeight').css({
+            'height': '460px'
+        });
+    } else if(window.innerWidth <= 1450 && window.innerWidth > 1350){
+        $('.sliderHeight').css({
+            'height': '420px'
+        });
+    } else if((window.innerWidth <= 1350 && window.innerWidth > 1250) ||
+        (window.innerWidth <= 1000 && window.innerWidth > 900)){
+        $('.sliderHeight').css({
+            'height': '400px'
+        });
+    } else if((window.innerWidth <= 1250 && window.innerWidth > 1150) ||
+           (window.innerWidth <= 900 && window.innerWidth > 800)){
+        $('.sliderHeight').css({
+            'height': '370px'
+        });
+    } else if((window.innerWidth <= 1150 && window.innerWidth > 1000) ||
+              (window.innerWidth <= 800 && window.innerWidth > 700)){
+        $('.sliderHeight').css({
+            'height': '320px'
+        });
+    } else if(window.innerWidth <= 700 && window.innerWidth > 600) {
+        $('.sliderHeight').css({
+            'height': '270px'
+        });
+    } else if(window.innerWidth <= 600){
+        $('.sliderHeight').css({
+            'height': '240px'
+        });
+    } else {
+        $('.sliderHeight').css({
+            'height': '550px'
+        });
+    }
+
+    //Resize
+    $(window).resize(function(){
+        if(window.innerWidth < 1550 && window.innerWidth > 1450){
+            $('.sliderHeight').css({
+                'height': '460px'
+            });
+        } else if(window.innerWidth <= 1450 && window.innerWidth > 1350){
+            $('.sliderHeight').css({
+                'height': '420px'
+            });
+        } else if((window.innerWidth <= 1350 && window.innerWidth > 1250) ||
+                  (window.innerWidth <= 1000 && window.innerWidth > 900)){
+            $('.sliderHeight').css({
+                'height': '400px'
+            });
+        } else if((window.innerWidth <= 1250 && window.innerWidth > 1150) ||
+                  (window.innerWidth <= 900 && window.innerWidth > 800)){
+            $('.sliderHeight').css({
+                'height': '370px'
+            });
+        } else if((window.innerWidth <= 1150 && window.innerWidth > 1000) ||
+                  (window.innerWidth <= 800 && window.innerWidth > 700)){
+            $('.sliderHeight').css({
+                'height': '320px'
+            });
+        } else if(window.innerWidth <= 700 && window.innerWidth > 600) {
+            $('.sliderHeight').css({
+                'height': '270px'
+            });
+        }  else if(window.innerWidth <= 600){
+            $('.sliderHeight').css({
+                'height': '240px'
+            });
+        } else {
+            $('.sliderHeight').css({
+                'height': '550px'
+            });
+        }
+    });
+
+
 });

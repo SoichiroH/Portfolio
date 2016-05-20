@@ -86,7 +86,7 @@ button:focus {
 @media only screen and (min-width: 1000px) {
   .container {
     width: 70%; } }
-@media only screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   main, nav, footer {
     padding-left: 0; }
 
@@ -95,7 +95,7 @@ button:focus {
 
   main .imageSlider {
     height: 380px; } }
-@media only screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
   main .column1-2, main .column2-2 {
     width: 100%; }
 
@@ -414,7 +414,9 @@ button:focus {
 */
 .imageSlider {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; }
+
+.sliderHeight {
   height: 550px; }
 
 .slideContainer {
@@ -437,6 +439,9 @@ button:focus {
 .pausePlay {
   margin-top: 10px;
   cursor: pointer; }
+
+.slideButtons {
+  margin-bottom: 20px; }
 
 .slide-btn {
   cursor: pointer;
