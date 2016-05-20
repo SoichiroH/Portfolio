@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
+    <script>
+        // Sets 'js' on html element and removes 'no-js' if present (here to prevent flashing)
+        (function(){
+            document.documentElement.className = document.documentElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2') + (' js ');
+        })();
+    </script>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,13 +14,17 @@
         <link rel="shortcut icon" href="image/logoSmall.ico">
         <title>Soichiro Hirata</title>
         <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-        <script type="text/javascript" src="js/animations.js"></script>
+        <script>
+            $(window).on('load', function(){
+                $('#ajaxLoader').fadeOut(3000);
+                console.log('window load loader fades');
+            });
+        </script>
     </head>
     <body>
         <div class="box loading" id="ajaxLoader"></div>
         <header>
             <div id="topNav"></div>
-
             <!-- Vertical Nav bar -->
             <div class="side-nav" id="sideNav">
                 <ul>
@@ -311,8 +321,8 @@
                 <p class="footerFont">© 2016 Soichiro Hirata </p>
             </div>
         </footer>
-        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-        <script type="text/javascript" src="js/coreFunctions.js"></script>
+        <!--<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>-->
         <script type="text/javascript" src="js/animations.js"></script>
+        <script type="text/javascript" src="js/coreFunctions.js"></script>
     </body>
 </html>

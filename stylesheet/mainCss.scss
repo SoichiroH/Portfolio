@@ -57,6 +57,11 @@ html{
   background-size: auto;
 }
 
+header, main, footer{
+  visibility: hidden;
+}
+
+
 main {
   max-width: 100%;
   padding-left: 200px;
