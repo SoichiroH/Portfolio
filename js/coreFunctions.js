@@ -3,7 +3,8 @@
  */
 $(document).ready(function(){
 
-// Responsive nav bar
+//Nav Bar -------------------------------------------------------------------------------
+    // Responsive nav bar
     var visible = false;
 
     if(window.innerWidth < 1000) {
@@ -32,13 +33,17 @@ $(document).ready(function(){
             visible = false;
         }
     });
+//End Nav Bar -------------------------------------------------------------------------------
 
-//Download Resume
+//Banner -------------------------------------------------------------------------------
+    //Download Resume
     $("#downloadResume").on('click', function () {
         window.location = 'download/Resume-Hirata Soichiro.pdf';
     });
+//End Banner -------------------------------------------------------------------------------
 
-//Description Accordion
+//Projects -------------------------------------------------------------------------------
+    //Description Accordion
     $('.accordionButton').on('click', function (e) {
         e.preventDefault();
         if ($(this).hasClass('activeButton')){
@@ -52,7 +57,22 @@ $(document).ready(function(){
         }
     });
 
-//Image sliders
+    //Languages Accordion
+    $('.accordionButtonLangN').on('click', function (e) {
+        e.preventDefault();
+        if ($(this).hasClass('activeButtonLangN')){
+            $('.accordionButtonLangN').removeClass('activeButtonLangN');
+            $('.accordionPanelLangN').slideUp();
+        } else {
+            $('.accordionButtonLangN').removeClass('activeButtonLangN');
+            $('.accordionPanelLangN').slideUp();
+            $(this).next('.accordionPanelLangN').not(':animated').slideToggle();
+            $(this).addClass('activeButtonLangN');
+        }
+    });
+
+
+    //Image sliders
     $("#playSlide").hide();
 
     $(".imageSlider").each(function(){
@@ -138,7 +158,7 @@ $(document).ready(function(){
         });
     });
 
-//Slider container height
+    //Slider container height
 
     //Initial
     if(window.innerWidth < 1550 && window.innerWidth > 1450){
@@ -217,6 +237,6 @@ $(document).ready(function(){
             });
         }
     });
-
+//End Projects -------------------------------------------------------------------------------
 
 });

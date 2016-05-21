@@ -247,11 +247,12 @@ button:focus {
     height: 64px;
     line-height: 64px;
     padding: 0 30px;
+    border-bottom-style: ridge;
+    border-width: 0.8px;
+    border-color: transparent;
     &:hover{
       background: darken($lightNavy, 10%);
       transition: all 600ms ease;
-      border-bottom-style: ridge;
-      border-width: 0.8px;
       border-color: $goldish;
     }
   }
@@ -343,6 +344,9 @@ button:focus {
   margin: 0 0 0 auto;
   padding: 20px 20px 20px 20px;
   z-index: 0;
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: transparent;
   a {
     color: $beige;
     &:hover {
@@ -352,8 +356,6 @@ button:focus {
   &:hover{
     background: darken($lightNavy, 10%);
     transition: all 600ms ease;
-    border-bottom-style: ridge;
-    border-width: 0.8px;
     border-color: $goldish;
   }
 }
@@ -490,8 +492,43 @@ button:focus {
   overflow: hidden;
 }
 
+.openAllBackground {
+  width: 20px;
+  height: 20px;
+  margin-left: 90%;
+  padding: 5px 5px 5px 5px;
+  background-color: $beige;
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: transparent;
+  &:hover{
+    background: $goldish;
+    transition: all 600ms ease;
+    border-color: $beige;
+  }
+}
 
-.accordionButton {
+.openAll {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.rotateForward {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: all 300ms ease;
+}
+
+.rotateBack {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transition: all 300ms ease;
+}
+
+.accordionButton, .accordionButtonLangN{
   background-color: $grey;
   font-family: LondonBetween, sans-serif;
   border: 0;
@@ -499,16 +536,17 @@ button:focus {
   font-size: 15px;
   cursor: pointer;
   color: $beige;
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: transparent;
   &:hover{
     background: darken($lightNavy, 10%);
     transition: all 600ms ease;
-    border-bottom-style: ridge;
-    border-width: 0.8px;
     border-color: $goldish;
   }
 }
 
-.accordionPanel {
+.accordionPanel, .accordionPanelLangN{
   display: none;
   border-top: ridge;
   border-bottom: ridge;
@@ -516,12 +554,15 @@ button:focus {
   border-color: $beige;
 }
 
-.activeButton{
+.activeButton, .activeButtonLangN{
   background-color: darken($lightNavy, 10%);
   border-bottom-style: ridge;
   border-width: 0.8px;
   border-color: $goldish;
 }
+
+
+
 
 
           /*

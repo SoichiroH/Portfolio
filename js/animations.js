@@ -2,20 +2,13 @@
  * Created by Soichiro on 5/8/2016.
  */
 
-$('header, main, footer').css({'visibility': 'visible'}).fadeOut(0).delay(3000).fadeIn(0).promise().done(function(){bannerAnimation()});
+
 
 //Banner
+$('header, main, footer').css({'visibility': 'visible'}).fadeOut(0).delay(3000).fadeIn(0).promise().done(function(){bannerAnimation()});
 function bannerAnimation(){
-    console.log('start banner animation');
-
     $("#sideNav").hide().slideDown(1200);
-
-    $("#sideNav").animate({
-        'transform': 'translateX(-100%)'
-    },1000, function(){
-        console.log('call back');
-
-    });
+    $("#topNav").hide().slideDown(1200);
 
     $('.mainBackground').hide().fadeIn(2500);
 
@@ -27,13 +20,10 @@ function bannerAnimation(){
 }
 
 
-
 $(function(){
-
-//Sidebar
+//SideNav
     //Scroll to each section when sidebar a's are clicked
     function scrollToDiv(id){
-
         id = id.replace("link","");
 
         $('html,body').animate({
@@ -47,5 +37,49 @@ $(function(){
         e.preventDefault();
         scrollToDiv($(this).attr("id"));
     });
+
+    //Rotate Icon and show all accordions
+    function rotateIcon() {
+
+        //NWBHS
+        //Function
+        var $nFunc = '#nwbhsFunc';
+        var accordionPanel = $('.accordionPanel');
+        var activeFunc = 'activeButton';
+        //Languages
+        var $nLang = '#nwbhsLang';
+        var accordionPanelLangN = $('.accordionPanelLangN');
+        var activeLang = 'activeButtonLangN';
+
+        //Common
+        var clickedId, panelToOpen, activeButton;
+
+        $('.openAll').on('click', function (){
+            if ($(this).is($nFunc)){
+                clickedId = accordionPanel;
+                panelToOpen = accordionPanel;
+                activeButton = activeFunc;
+            }
+            if ($(this).is($nLang)){
+                clickedId = accordionPanelLangN;
+                panelToOpen = accordionPanelLangN;
+                activeButton = activeLang;
+            }
+
+            //Rotate
+            if($(this).hasClass('rotateBack')) {
+                $(this).removeClass('rotateBack').addClass('rotateForward');
+                panelToOpen.slideDown();
+            } else  if($(this).hasClass('rotateForward')){
+                $(this).removeClass('rotateForward').addClass('rotateBack');
+                $(':button').removeClass(activeButton);
+                panelToOpen.slideUp();
+            } else {
+                $(this).addClass('rotateForward');
+                panelToOpen.slideDown();
+            }
+        });
+    }
+    rotateIcon();
 });
 

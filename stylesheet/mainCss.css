@@ -187,12 +187,13 @@ button:focus {
     font-size: 1rem;
     height: 64px;
     line-height: 64px;
-    padding: 0 30px; }
+    padding: 0 30px;
+    border-bottom-style: ridge;
+    border-width: 0.8px;
+    border-color: transparent; }
     .side-nav a:hover {
       background: #0a4058;
       transition: all 600ms ease;
-      border-bottom-style: ridge;
-      border-width: 0.8px;
       border-color: #a68750; }
 
 .logo {
@@ -264,7 +265,10 @@ button:focus {
   width: 190px;
   margin: 0 0 0 auto;
   padding: 20px 20px 20px 20px;
-  z-index: 0; }
+  z-index: 0;
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: transparent; }
   .bannerPane a {
     color: #f5dfbf; }
     .bannerPane a:hover {
@@ -272,8 +276,6 @@ button:focus {
   .bannerPane:hover {
     background: #0a4058;
     transition: all 600ms ease;
-    border-bottom-style: ridge;
-    border-width: 0.8px;
     border-color: #a68750; }
 
 .paneBackground {
@@ -383,29 +385,61 @@ button:focus {
 .paneAlignmentProject {
   overflow: hidden; }
 
-.accordionButton {
+.openAllBackground {
+  width: 20px;
+  height: 20px;
+  margin-left: 90%;
+  padding: 5px 5px 5px 5px;
+  background-color: #f5dfbf;
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: transparent; }
+  .openAllBackground:hover {
+    background: #a68750;
+    transition: all 600ms ease;
+    border-color: #f5dfbf; }
+
+.openAll {
+  width: 20px;
+  height: 20px;
+  cursor: pointer; }
+
+.rotateForward {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: all 300ms ease; }
+
+.rotateBack {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transition: all 300ms ease; }
+
+.accordionButton, .accordionButtonLangN {
   background-color: #2c2c2c;
   font-family: LondonBetween, sans-serif;
   border: 0;
   margin-bottom: 5px;
   font-size: 15px;
   cursor: pointer;
-  color: #f5dfbf; }
-  .accordionButton:hover {
+  color: #f5dfbf;
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: transparent; }
+  .accordionButton:hover, .accordionButtonLangN:hover {
     background: #0a4058;
     transition: all 600ms ease;
-    border-bottom-style: ridge;
-    border-width: 0.8px;
     border-color: #a68750; }
 
-.accordionPanel {
+.accordionPanel, .accordionPanelLangN {
   display: none;
   border-top: ridge;
   border-bottom: ridge;
   border-width: 0.8px;
   border-color: #f5dfbf; }
 
-.activeButton {
+.activeButton, .activeButtonLangN {
   background-color: #0a4058;
   border-bottom-style: ridge;
   border-width: 0.8px;
