@@ -7,20 +7,38 @@
 //Banner
 $('header, main, footer').css({'visibility': 'visible'}).fadeOut(0).delay(3000).fadeIn(0).promise().done(function(){bannerAnimation()});
 function bannerAnimation(){
-    $("#sideNav").hide().slideDown(1200);
-    $("#topNav").hide().slideDown(1200);
+    //$("#sideNav").hide().slideDown(1200);
+    if (window.innerWidth > 1000){
+        $("#sideNav").hide().fadeIn(0).addClass('comingLeft');
+    }
 
-    $('.mainBackground').hide().fadeIn(2500);
+    //$("#topNav").hide().slideDown(1200);
+    $("#topNav").hide().delay(600).fadeIn(100).addClass('comingDown');
 
-    $('#newName').hide().fadeIn(2700);
-    $('#roleTitle').hide().fadeIn(2700);
+    $('.mainBackground').hide().delay(700).fadeIn(2300);
 
-    $("#bannerPaneResume").hide().animate({ height: 'toggle', opacity: 'toggle' }, 2700);
-    $("#bannerPaneContact").hide().animate({ height: 'toggle', opacity: 'toggle' }, 2700);
+    $('#newName').hide().delay(1200).fadeIn(200).addClass('comingDown');
+    $('#roleTitle').hide().delay(1200).fadeIn(200).addClass('comingDown');
+
+    $("#bannerPaneResume").hide().delay(1400).fadeIn(200).addClass('comingDown');
+    $("#bannerPaneContact").hide().delay(1400).fadeIn(200).addClass('comingDown');
 }
 
 
 $(function(){
+
+//Banner
+    $('.bannerPane').on({mouseenter: function(){
+            $(this).removeClass('comingDown');
+            $(this).addClass('comingUp');
+            console.log('mouse enter on bannerpane');
+        },mouseleave: function(){
+            $(this).addClass('comingDown');
+            $(this).removeClass('comingUp');
+        }
+    });
+
+
 //SideNav
     //Scroll to each section when sidebar a's are clicked
     function scrollToDiv(id){
@@ -38,6 +56,7 @@ $(function(){
         scrollToDiv($(this).attr("id"));
     });
 
+//Projects
     //Rotate Icon and show all accordions
     function rotateIcon() {
 
@@ -81,5 +100,9 @@ $(function(){
         });
     }
     rotateIcon();
+
+
+
+
 });
 
