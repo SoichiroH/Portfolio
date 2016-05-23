@@ -16,9 +16,11 @@ $(document).ready(function(){
 //Nav Bar -------------------------------------------------------------------------------
     // Responsive nav bar
     var visible = false;
+    var $allSectionContainers = $('#banner').add($('#about')).add($('#projects')).add($('#otherSites'));
 
     if(window.innerWidth < 1000) {
         $("#sideNav").css({'transform': 'translateX(-200%)', 'box-shadow': 'none'});
+        $allSectionContainers.css({'padding-left': '0'});
         if (!visible){
             $("#topNav").append("<nav id='newNav' class='nav'><div class='navContainer center'><a class='name'>Soichiro Hirata</a></div></nav>");
             $("#newName").remove();
@@ -29,13 +31,15 @@ $(document).ready(function(){
     $(window).resize(function(){
         if(window.innerWidth < 1000) {
             $("#sideNav").css({'transform': 'translateX(-200%)', 'box-shadow': 'none'});
+            $allSectionContainers.css({'padding-left': '0'});
             if (!visible){
                 $("#topNav").append("<nav id='newNav' class='nav'><div class='navContainer center'><a class='name'>Soichiro Hirata</a></div></nav>");
                 $("#newName").remove();
                 visible = true;
             }
         }else {
-            $("#sideNav").css({'transform': 'translateX(0)', 'box-shadow': '5px 8px 16px 0 rgba(166, 135, 80, 0.2),0 6px 20px 0 rgba(166, 135, 80, 0.19'});
+            $("#sideNav").css({'transform': 'translateX(0)'});
+            $allSectionContainers.css({'padding-left': '200px'});
             $("#newNav").remove();
             if (visible){
                 $("#bannerName").append("<h1 id='newName' class='mainFont'>Soichiro Hirata</h1>");
