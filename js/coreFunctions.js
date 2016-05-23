@@ -18,7 +18,7 @@ $(document).ready(function(){
     var visible = false;
 
     if(window.innerWidth < 1000) {
-        $("#sideNav").css({'transform': 'translateX(-100%)', 'box-shadow': 'none'});
+        $("#sideNav").css({'transform': 'translateX(-200%)', 'box-shadow': 'none'});
         if (!visible){
             $("#topNav").append("<nav id='newNav' class='nav'><div class='navContainer center'><a class='name'>Soichiro Hirata</a></div></nav>");
             $("#newName").remove();
@@ -28,7 +28,7 @@ $(document).ready(function(){
 
     $(window).resize(function(){
         if(window.innerWidth < 1000) {
-            $("#sideNav").css({'transform': 'translateX(-100%)', 'box-shadow': 'none'});
+            $("#sideNav").css({'transform': 'translateX(-200%)', 'box-shadow': 'none'});
             if (!visible){
                 $("#topNav").append("<nav id='newNav' class='nav'><div class='navContainer center'><a class='name'>Soichiro Hirata</a></div></nav>");
                 $("#newName").remove();

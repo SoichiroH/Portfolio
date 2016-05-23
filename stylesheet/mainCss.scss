@@ -74,7 +74,7 @@ header, main, footer{
 
 main {
   max-width: 100%;
-  padding-left: 200px;
+  //padding-left: 200px;
   width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -239,20 +239,20 @@ button:focus {
 .side-nav {
   position: fixed;
   width: 200px;
-  left: 0;
-  top: 0;
+  height: 90%;
+  left: 20px;
+  top: 20px;
+  bottom: 20px;
   margin: 0;
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  height: calc(100% + 60px);
-  height: -moz-calc(100% - 60px);
   padding-bottom: 60px;
   background-color: $navy;
   z-index: 999;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   overflow-y: auto;
-  box-shadow: 5px 8px 16px 0 rgba(166, 135, 80, 0.2),0 6px 20px 0 rgba(166, 135, 80, 0.19);
+  //box-shadow: 5px 8px 16px 0 rgba(166, 135, 80, 0.2),0 6px 20px 0 rgba(166, 135, 80, 0.19);
   a {
     color: $beige;
     display: block;
@@ -260,6 +260,7 @@ button:focus {
     height: 64px;
     line-height: 64px;
     padding: 0 30px;
+    text-align: center;
     border-bottom-style: ridge;
     border-width: 0.8px;
     border-color: transparent;
@@ -296,6 +297,7 @@ button:focus {
   overflow: hidden;
   height: 900px;
   margin-bottom: 60px;
+  padding-left: 200px;
 }
 
 .mainBackground {
@@ -415,6 +417,7 @@ button:focus {
   position: relative;
   overflow: hidden;
   margin-bottom: 60px;
+  padding-left: 200px;
 }
 
 .aboutBackground {
@@ -487,6 +490,7 @@ button:focus {
   position: relative;
   overflow: hidden;
   margin-bottom: 60px;
+  padding-left: 200px;
 }
 
 .projectsBackground {
@@ -667,6 +671,7 @@ button:focus {
   position: relative;
   overflow: hidden;
   height: 300px;
+  padding-left: 200px;
 }
 
 .linksBackground {
