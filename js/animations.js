@@ -29,12 +29,9 @@ $(function(){
 
 //Banner
     $('.bannerPane').on({mouseenter: function(){
-            $(this).removeClass('comingDown');
-            $(this).addClass('comingUp');
-            console.log('mouse enter on bannerpane');
+            $(this).removeClass('comingDown').addClass('comingUp');
         },mouseleave: function(){
-            $(this).addClass('comingDown');
-            $(this).removeClass('comingUp');
+            $(this).addClass('comingDown').removeClass('comingUp');
         }
     });
 
@@ -44,19 +41,37 @@ $(function(){
     function scrollToDiv(id){
         id = id.replace("link","");
 
-        $('html,body').animate({
-                scrollTop: $("#"+id).offset().top},
-            'slow');
+        $('html,body').animate({scrollTop: $("#"+id).offset().top}, 'slow');
     }
-
-    var sideNav = document.getElementsByName("sideNav");
 
     $("#sideNav li a").click(function (e) {
         e.preventDefault();
         scrollToDiv($(this).attr("id"));
     });
 
+
+//About
+
 //Projects
+
+    /*$('.descriptionBackground').on({mouseenter: function(){
+            //$(this).removeClass('comingDown');
+            $(this).addClass('runningBorderLeftToRight');
+        },mouseleave: function(){
+            //$(this).addClass('comingDown');
+            //$(this).removeClass('runningBorder');
+        }
+    });*/
+
+
+    console.log('Initial Height: '+$('#nwbhsSynopsisPane').innerHeight());
+
+
+
+    var $window = $(window);
+
+    $window.trigger('scroll');
+
     //Rotate Icon and show all accordions
     function rotateIcon() {
 
@@ -73,6 +88,37 @@ $(function(){
         //Common
         var clickedId, panelToOpen, activeButton;
 
+        //Match container height on rotate action
+        var $openAllButton = $('#nwbhsFunc').add($('#nwbhsLang'));
+
+        $window.on('scroll', function(){
+           // console.log('Scroll at animations '+$('#nwbhsSynopsisPane').innerHeight());
+            var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
+
+             console.log('Rotate Back:'+$openAllButton.hasClass('rotateBack')+'  Rotate Forward: '+$openAllButton.hasClass('rotateForward'));
+
+            if ($openAllButton.hasClass('rotateBack')) {
+                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
+                console.log('has class rotateBack');
+            }
+            if ($openAllButton.hasClass('rotateForward')){
+                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+                console.log('has class rotateForward');
+            }
+            if ($openAllButton.hasClass('rotateForward') && $openAllButton.hasClass('rotateBack')) {
+                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+                console.log('has class rotateForward and Back');
+                //console.log('Scroll at animations inside else '+$('#nwbhsSynopsisPane').innerHeight());
+            }
+            if ($openAllButton.hasClass('rotateForward' || 'rotateBack') == false){
+                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
+                console.log('has class rotateForward or Back is false');
+            }
+            if ($('.accordionButtonLangN').hasClass('activeButtonLangN')){
+                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+            }
+        });//scroll
+
         $('.openAll').on('click', function (){
             if ($(this).is($nFunc)){
                 clickedId = accordionPanel;
@@ -88,21 +134,29 @@ $(function(){
             //Rotate
             if($(this).hasClass('rotateBack')) {
                 $(this).removeClass('rotateBack').addClass('rotateForward');
-                panelToOpen.slideDown();
+                panelToOpen.fadeIn();
+                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
             } else  if($(this).hasClass('rotateForward')){
+                //Open
                 $(this).removeClass('rotateForward').addClass('rotateBack');
                 $(':button').removeClass(activeButton);
-                panelToOpen.slideUp();
+                panelToOpen.fadeOut('fast');
+                //
+                var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
+                console.log('If this has rotateBack: '+ containerHeight);
+                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
             } else {
                 $(this).addClass('rotateForward');
-                panelToOpen.slideDown();
+                panelToOpen.fadeIn();
+
+                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
             }
         });
     }
     rotateIcon();
 
+    function checkInView() {
 
-
-
+    }
 });
 

@@ -6,6 +6,12 @@
 @font-face {
   font-family: LondonMM;
   src: url(../fonts/LondonMM.ttf); }
+@font-face {
+  font-family: CodeProLight;
+  src: url(../fonts/Code_Pro_Light_Demo.otf); }
+@font-face {
+  font-family: Geometria;
+  src: url(../fonts/Geometria-Light.otf); }
 a {
   color: #2c2c2c;
   text-decoration: none;
@@ -27,7 +33,7 @@ img.center {
 */
 html {
   background: url("../image/background/darkgrey.jpg");
-  max-width: 100%;
+  max-width: 2121px;
   font-family: LondonBetween, LondonMM, Helvetica, sans-serif;
   -webkit-background-size: auto;
   -moz-background-size: auto;
@@ -255,6 +261,16 @@ button:focus {
   font-size: 55px;
   color: #f5dfbf; }
 
+.roleFont {
+  font-family: Geometria, sans-serif;
+  font-size: 40px;
+  color: #f5dfbf; }
+
+.titleFont {
+  font-family: Geometria, sans-serif;
+  font-size: 55px;
+  color: #f5dfbf; }
+
 .paneAlignment {
   display: inline;
   float: right; }
@@ -348,7 +364,10 @@ button:focus {
 .descriptionBackground {
   background-color: rgba(1, 1, 1, 0.86);
   padding: 30px 30px 30px 30px;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: transparent; }
 
 /*
   Projects -----------------------------------------------------------------------
@@ -665,6 +684,63 @@ ul#linksInUl li {
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0); } }
+/*.runningBorderLeftToRight {
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: $beige;
+  -webkit-animation: runningBorder 10s;
+  -o-animation: runningBorder 10s;
+  animation: runningBorder 10s;
+  -webkit-transform: translate(-100%,0);
+  -moz-transform: translate(-100%,0);
+  -ms-transform: translate(-100%,0);
+  -o-transform: translate(-100%,0);
+  transform: translate(-100%,0);
+}
+
+@keyframes runningBorder {
+  0%{
+    -webkit-transform: translate(-100%,0);
+    -moz-transform: translate(-100%,0);
+    -ms-transform: translate(-100%,0);
+    -o-transform: translate(-100%,0);
+    transform: translate(-100%,0);
+  }
+  50% {
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+  100%{
+    -webkit-transform: translate(-100%,0);
+    -moz-transform: translate(-100%,0);
+    -ms-transform: translate(-100%,0);
+    -o-transform: translate(-100%,0);
+    transform: translate(-100%,0);
+  }
+}*/
+.runningBorderLeftToRight {
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: #f5dfbf;
+  -webkit-animation: runningBorder 10s;
+  -o-animation: runningBorder 10s;
+  animation: runningBorder 10s;
+  -webkit-transition: border-width 1s;
+  -moz-transition: border-width 1s;
+  -ms-transition: border-width 1s;
+  -o-transition: border-width 1s;
+  transition: border-width 1s; }
+
+@keyframes runningBorder {
+  0% {
+    border-width: 10px; }
+  50% {
+    border-width: 15px; }
+  100% {
+    border-width: 20px; } }
 /*
   Ajax Loader -----------------------------------------------------------------------
 */

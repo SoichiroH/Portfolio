@@ -1,6 +1,16 @@
 /**
  * Created by Soichiro on 5/9/2016.
  */
+
+
+$(window).on('load',function(){
+    var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
+    //$('#nwbhsFuncPane').css({'height': containerHeight});
+    console.log('Loaded: Container Height - 40: '+containerHeight);
+    console.log('Loaded: Column heights'+$('#column22Nwbhs').height()+'Loaded: Container heights'+$('#nwbhsPane').height());
+});
+
+
 $(document).ready(function(){
 
 //Nav Bar -------------------------------------------------------------------------------
@@ -15,6 +25,7 @@ $(document).ready(function(){
             visible = true;
         }
     }
+
     $(window).resize(function(){
         if(window.innerWidth < 1000) {
             $("#sideNav").css({'transform': 'translateX(-100%)', 'box-shadow': 'none'});
@@ -31,6 +42,8 @@ $(document).ready(function(){
             }
             visible = false;
         }
+        var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
+        $('#nwbhsFuncPane').css({'height': containerHeight});
     });
 //End Nav Bar -------------------------------------------------------------------------------
 
@@ -42,6 +55,8 @@ $(document).ready(function(){
 //End Banner -------------------------------------------------------------------------------
 
 //Projects -------------------------------------------------------------------------------
+    //Open All Button
+    var $openAllButton = $('#nwbhsFunc').add($('#nwbhsLang'));
     //Description Accordion
     $('.accordionButton').on('click', function (e) {
         e.preventDefault();
@@ -54,23 +69,63 @@ $(document).ready(function(){
             $(this).next('.accordionPanel').not(':animated').slideToggle();
             $(this).addClass('activeButton');
         }
+        removeActiveMoveTopFunc();
     });
 
     //Languages Accordion
     $('.accordionButtonLangN').on('click', function (e) {
+        var synopsisContainerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
+        var currentLangHeight = $('#column22Nwbhs').innerHeight();
+
         e.preventDefault();
         if ($(this).hasClass('activeButtonLangN')){
             $('.accordionButtonLangN').removeClass('activeButtonLangN');
             $('.accordionPanelLangN').slideUp();
+            $('#column22Nwbhs').css({'height': synopsisContainerHeight});
         } else {
             $('.accordionButtonLangN').removeClass('activeButtonLangN');
             $('.accordionPanelLangN').slideUp();
-            $(this).next('.accordionPanelLangN').not(':animated').slideToggle();
+                if ($(this).is($('#backendNwbhs'))){
+                    //backEnd pane went over when the screen width was below 1300
+                    if ($(window).innerWidth() < 1300){
+                        $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+                    } else{
+                        $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': synopsisContainerHeight});
+                    }
+                }else{
+                    $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+                }
+            console.log('SynopsisContainer: '+synopsisContainerHeight+'FuncContainer: '+currentLangHeight);
+            $(this).next('.accordionPanelLangN').not(':animated').slideToggle('fast');
             $(this).addClass('activeButtonLangN');
         }
+        removeActiveMoveTopLang();
     });
 
+    //Accordion bug fix - active button/viewport stays
+    function removeActiveMoveTopFunc(){
+        if ($('#nwbhsFunc').hasClass('rotateForward')){
+            $('.accordionButton').removeClass('activeButton');
+            $('#nwbhsFunc').removeClass('rotateForward');
+            $('html,body').animate({scrollTop: $('#nwbhsFuncPane').offset().top}, 'slow');
+        }
+    }
+    function removeActiveMoveTopLang(){
+        if ($('#nwbhsLang').hasClass('rotateForward')){
+            $('.accordionButtonLangN').removeClass('activeButtonLangN');
+            $('#nwbhsLang').removeClass('rotateForward');
+        }
+    }
 
+    //Match container size
+   /* var $window = $(window);
+    $window.trigger('scroll');
+    $window.on('scroll', function(){
+        var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
+        console.log('Scroll at coreFunctions '+$('#nwbhsSynopsisPane').innerHeight());
+        $('#nwbhsFuncPane').css({'height': containerHeight});
+    });
+*/
     //Image sliders
     $("#playSlide").hide();
 
@@ -237,5 +292,10 @@ $(document).ready(function(){
         }
     });
 //End Projects -------------------------------------------------------------------------------
+
+});
+
+
+$(window).load(function () {
 
 });

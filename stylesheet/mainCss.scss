@@ -21,6 +21,16 @@ $grey: #2c2c2c;
   src: url(../fonts/LondonMM.ttf);
 }
 
+@font-face {
+  font-family: CodeProLight;
+  src: url(../fonts/Code_Pro_Light_Demo.otf);
+}
+
+@font-face {
+  font-family: Geometria;
+  src: url(../fonts/Geometria-Light.otf);
+}
+
 a {
   color: $grey;
   text-decoration: none;
@@ -49,7 +59,7 @@ img.center {
 
 html{
   background: url("../image/background/darkgrey.jpg");
-  max-width: 100%;
+  max-width: 2121px;
   font-family: LondonBetween, LondonMM, Helvetica, sans-serif;
   -webkit-background-size: auto;
   -moz-background-size: auto;
@@ -172,6 +182,9 @@ button:focus {
   width: 45%;
   float: left;
 }
+
+
+
 
 .column1 {
   float: none;
@@ -331,6 +344,19 @@ button:focus {
   color: $beige;
 }
 
+.roleFont {
+  font-family: Geometria, sans-serif;
+  font-size: 40px;
+  color: $beige;
+}
+
+.titleFont {
+  font-family: Geometria, sans-serif;
+  font-size: 55px;
+  color: $beige;
+}
+
+
 .paneAlignment {
 
     display: inline;
@@ -448,6 +474,9 @@ button:focus {
   background-color: $darkGrey;
   padding: 30px 30px 30px 30px;
   margin-bottom: 25px;
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: transparent;
 }
 
     /*
@@ -488,6 +517,7 @@ button:focus {
   padding: 20px 20px 20px 20px;
   margin-bottom: 20px;
 }
+
 
 .paneAlignmentProject {
   overflow: hidden;
@@ -836,7 +866,70 @@ ul#linksInUl li{
   }
 }
 
+/*.runningBorderLeftToRight {
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: $beige;
+  -webkit-animation: runningBorder 10s;
+  -o-animation: runningBorder 10s;
+  animation: runningBorder 10s;
+  -webkit-transform: translate(-100%,0);
+  -moz-transform: translate(-100%,0);
+  -ms-transform: translate(-100%,0);
+  -o-transform: translate(-100%,0);
+  transform: translate(-100%,0);
+}
 
+@keyframes runningBorder {
+  0%{
+    -webkit-transform: translate(-100%,0);
+    -moz-transform: translate(-100%,0);
+    -ms-transform: translate(-100%,0);
+    -o-transform: translate(-100%,0);
+    transform: translate(-100%,0);
+  }
+  50% {
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+  100%{
+    -webkit-transform: translate(-100%,0);
+    -moz-transform: translate(-100%,0);
+    -ms-transform: translate(-100%,0);
+    -o-transform: translate(-100%,0);
+    transform: translate(-100%,0);
+  }
+}*/
+.runningBorderLeftToRight {
+  border-bottom-style: ridge;
+  border-width: 0.8px;
+  border-color: $beige;
+  -webkit-animation: runningBorder 10s;
+  -o-animation: runningBorder 10s;
+  animation: runningBorder 10s;
+  -webkit-transition: border-width 1s;
+  -moz-transition:  border-width 1s;
+  -ms-transition:  border-width 1s;
+  -o-transition:  border-width 1s;
+  transition:  border-width 1s;
+}
+
+@keyframes runningBorder {
+  0%{
+    border-width: 10px;
+  }
+  50% {
+    border-width: 15px;
+
+  }
+  100%{
+    border-width: 20px;
+
+  }
+}
 
 
 /*
