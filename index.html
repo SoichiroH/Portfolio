@@ -78,35 +78,39 @@
         </div>-->
 
         <main>
-            <div class="mainBackgroundContainer" id="banner">
-                <div class="container">
-                    <br><br><br><br>
-                    <div  id="bannerName">
-                        <h1 id='newName' class='mainFont'> Soichiro Hirata</h1>
+            <div style="position: fixed; width: 100%;">
+
+                <div class="mainBackgroundContainer" id="banner">
+                    <div class="container">
+                        <br><br><br><br>
+                        <div  id="bannerName">
+                            <h1 id='newName' class='mainFont'> Soichiro Hirata</h1>
+                        </div>
+                        <h1 class="roleFont" id="roleTitle"> Web Developer</h1>
                     </div>
-                    <h1 class="roleFont" id="roleTitle"> Web Developer</h1>
+                    <div class="container" style="padding-top: 200px;">
+                        <ul>
+                            <li class="bannerPane align-right paneAlignment" id="bannerPaneContact" style="margin-left: 20px;">
+                                <p class="description no-margin">Contact</p>
+                                <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">soichiro.h21@gmail.com</p>
+                                <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">904-401-2740</p>
+                            </li>
+                            <li class="bannerPane align-right paneAlignment" id="bannerPaneResume">
+                                <p class="description no-margin">Resume</p>
+                                <a href="#" id="downloadResume">Download ></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mainBackground">
+                        <div class="greyerShade"></div>
+                    </div>
+                    <div class="shadowFade"></div>
                 </div>
-                <div class="container" style="padding-top: 200px;">
-                    <ul>
-                        <li class="bannerPane align-right paneAlignment" id="bannerPaneContact" style="margin-left: 20px;">
-                            <p class="description no-margin">Contact</p>
-                            <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">soichiro.h21@gmail.com</p>
-                            <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">904-401-2740</p>
-                        </li>
-                        <li class="bannerPane align-right paneAlignment" id="bannerPaneResume">
-                            <p class="description no-margin">Resume</p>
-                            <a href="#" id="downloadResume">Download ></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mainBackground">
-                    <div class="greyerShade"></div>
-                </div>
-                <div class="shadowFade"></div>
+
             </div>
 
             <!-- About -->
-            <div class="aboutBackgroundContainer" id="about"> <!--style="z-index: 1001; top: 1000px;"-->
+            <div class="aboutBackgroundContainer" id="about" style="z-index: 10; top: 1010px;"> <!--style="z-index: 1001; top: 1000px;"-->
                 <div class="container">
                     <h1 class="mainFont"> About</h1>
                         <ul class="paneAlignmentAbout">
@@ -189,7 +193,7 @@
             </div>
 
             <!-- Projects -->
-            <div class="projectsBackgroundContainer" id="projects">
+            <div class="projectsBackgroundContainer" id="projects" style="z-index: 10;">
 <!--                <div class="projectPaneTitleHeaderContainer" id="projectsTitle">
                     <div class="projectPaneTitleHeader">
                         <h1 class="mainFont">Projects</h1>
@@ -438,7 +442,7 @@
                 </div>
             </div> <!-- End: Project background container -->
 
-            <div class="linksBackgroundContainer" id="otherSites">
+            <div class="linksBackgroundContainer" id="otherSites" style="z-index: 10;">
                 <div class="container">
                     <h1 class="mainFont"> Links</h1>
                     <div class="container center" >
@@ -465,7 +469,7 @@
             </div>
         </main>
         <footer>
-            <div class="navContainer" id="footer">
+            <div class="navContainer" id="footer" style="z-index: 10;">
                 <p class="footerFont" >© 2016 Soichiro Hirata </p>
             </div>
         </footer>

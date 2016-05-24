@@ -44,7 +44,8 @@ header, main, footer {
   visibility: hidden; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  min-height: 700px; }
 
 main {
   max-width: 100%;
@@ -363,7 +364,7 @@ button:focus {
 .aboutBackgroundContainer {
   position: relative;
   overflow: hidden;
-  min-height: 900px;
+  min-height: 1000px;
   margin-bottom: 60px;
   padding-left: 150px; }
 
@@ -421,6 +422,7 @@ button:focus {
 .projectsBackgroundContainer {
   position: relative;
   overflow: hidden;
+  min-height: 1800px;
   margin-bottom: 60px;
   padding-left: 150px; }
 

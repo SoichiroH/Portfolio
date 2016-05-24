@@ -19,6 +19,8 @@ $(document).ready(function(){
     var $allSectionContainers = $('#banner').add($('#about')).add($('#projects')).add($('#otherSites'));
 
     if(window.innerWidth < 1000) {
+        var windowHeight = $(window).height();
+        $('#banner').css({'height':windowHeight});
         $("#sideNav").css({'transform': 'translateX(-200%)', 'box-shadow': 'none'});
         $allSectionContainers.css({'padding-left': '0'});
         if (!visible){
@@ -30,6 +32,8 @@ $(document).ready(function(){
 
     $(window).resize(function(){
         if(window.innerWidth < 1000) {
+            var windowHeight = $(window).height();
+            $('#banner').css({'height':windowHeight});
             $("#sideNav").css({'transform': 'translateX(-200%)', 'box-shadow': 'none'});
             $allSectionContainers.css({'padding-left': '0'});
             if (!visible){
@@ -38,6 +42,8 @@ $(document).ready(function(){
                 visible = true;
             }
         }else {
+            var windowHeight = $(window).height();
+            $('#banner').css({'height':windowHeight});
             $("#sideNav").css({'transform': 'translateX(0)'});
             $allSectionContainers.css({'padding-left': '150px'});
             $("#newNav").remove();

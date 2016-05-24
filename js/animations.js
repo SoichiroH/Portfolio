@@ -7,6 +7,8 @@
 //Banner
 $('header, main, footer').css({'visibility': 'visible'}).fadeOut(0).delay(3000).fadeIn(0).promise().done(function(){bannerAnimation()});
 function bannerAnimation(){
+    var windowHeight = $(window).height();
+    $('#banner').css({'height':windowHeight});
 
     $('.mainBackground').hide().fadeIn(2300);
 
@@ -55,10 +57,6 @@ $(function(){
     $(window).on('scroll', function(){
 
         var $heightFromTop = $(window).scrollTop();
-        var aboutOffsetTop =  $('#about').offset().top ;
-        var projectsOffsetTop =  $('#projects').offset().top ;
-        var linksOffsetTop =  $('#otherSites').offset().top ;
-        var footerOffsetTop =  $('#footer').offset().top ;
 
 
 
@@ -70,6 +68,42 @@ $(function(){
         }
 
         var $endOfProjectsSection = $heightFromTop - $('#projects').outerHeight();
+
+        var aboutOffsetTop =  $('#about').offset().top ;
+        var projectsOffsetTop =  $('#projects').offset().top ;
+        var linksOffsetTop =  $('#otherSites').offset().top ;
+        var footerOffsetTop =  $('#footer').offset().top ;
+
+
+
+        console.log('Offsets------------------------------------------------------');
+        console.log('Window height'+$(window).height());
+        console.log('height from top: '+$heightFromTop);
+        console.log('about offset top: '+aboutOffsetTop);
+        console.log('project offset top: '+projectsOffsetTop);
+        console.log('links offset top: '+linksOffsetTop);
+        console.log('footer offset top: '+footerOffsetTop);
+        console.log('Heights------------------------------------------------------');
+        console.log('Banner Container Height: '+$('#banner').outerHeight());
+        console.log('About Container Height: '+$('#about').outerHeight());
+        console.log('Projects Container Height: '+$('#projects').outerHeight());
+        console.log('Links Container Height: '+$('#otherSites').outerHeight());
+        console.log('endOfProjectsSection: '+$endOfProjectsSection);
+        console.log('------------------------------------------------------');
+
+        if ($heightFromTop >= $('#projects').outerHeight()){
+            console.log('bottom and past projects');
+        }
+
+
+        var windowHeight = $(window).height();
+        $('#about').css({'top':windowHeight});
+
+        var aboutSectionHeight = $('#about').outerHeight();
+        $('#projects').css({'top':aboutSectionHeight});
+
+        var projectsSectionHeight = $('#projects').outerHeight();
+        $('#otherSites').css({'top':projectsSectionHeight});
 
         /*if ($heightFromTop > 1000){
             $('#about').css({
@@ -102,13 +136,7 @@ $(function(){
 
         */
 
-        console.log('Window height'+$(window).height());
-        console.log('height from top: '+$heightFromTop);
-        console.log('about offset top: '+aboutOffsetTop);//About; 1000 Projects 1964
-        console.log('project offset top: '+projectsOffsetTop);
-        console.log('links offset top: '+linksOffsetTop);
-        console.log('footer offset top: '+footerOffsetTop);
-        console.log('endOfProjectsSection: '+$endOfProjectsSection);
+
 
         /*if ($heightFromTop > 3000){
             $('#otherSites').css({
