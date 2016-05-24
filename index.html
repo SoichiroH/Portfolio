@@ -25,7 +25,7 @@
         <header>
             <div id="topNav"></div>
             <!-- Vertical Nav bar -->
-            <div class="side-nav" id="sideNav">
+            <div class="side-nav" id="sideNav" style="z-index: 1100;">
                 <ul>
                     <li class="logoContainer">
                         <a href="#" style="padding: 0;" id="bannerlink">
@@ -45,8 +45,39 @@
             </div>
         </header>
 
+ <!--
+        <!-- Banner
+        <div style="position: fixed; width: 100%;">
+            &lt;!&ndash; Banner &ndash;&gt;
+            <div class="mainBackgroundContainer" id="banner">
+                <div class="container">
+                    <br><br><br><br>
+                    <div  id="bannerName">
+                        <h1 id='newName' class='mainFont'> Soichiro Hirata</h1>
+                    </div>
+                    <h1 class="roleFont" id="roleTitle"> Web Developer</h1>
+                </div>
+                <div class="container" style="padding-top: 200px;">
+                    <ul>
+                        <li class="bannerPane align-right paneAlignment" id="bannerPaneContact" style="margin-left: 20px;">
+                            <p class="description no-margin">Contact</p>
+                            <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">soichiro.h21@gmail.com</p>
+                            <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">904-401-2740</p>
+                        </li>
+                        <li class="bannerPane align-right paneAlignment" id="bannerPaneResume">
+                            <p class="description no-margin">Resume</p>
+                            <a href="#" id="downloadResume">Download ></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mainBackground">
+                    <div class="greyerShade"></div>
+                </div>
+                <div class="shadowFade"></div>
+            </div>
+        </div>-->
+
         <main>
-            <!-- Banner -->
             <div class="mainBackgroundContainer" id="banner">
                 <div class="container">
                     <br><br><br><br>
@@ -75,23 +106,81 @@
             </div>
 
             <!-- About -->
-            <div class="aboutBackgroundContainer" id="about">
+            <div class="aboutBackgroundContainer" id="about"> <!--style="z-index: 1001; top: 1000px;"-->
                 <div class="container">
                     <h1 class="mainFont"> About</h1>
-                    <div class="container">
-                        <ul class="paneAlignmentAbout runningBorderLeftToRight">
-                            <li class="descriptionBackground">
-                                <img src="image/profile.jpg" class="profile" style="float: left; margin: 24px 5px 5px 5px;">
-                            <!--</li>
-                            <li class="descriptionBackground" style="text-align: left;">-->
-                                <p class="description align-left">Hello! I'm Soichiro Hirata, I have graduated from University of North Florida
-                                    with a BS in Computer Information Science on 4/29/16.<br>
-                                    I am currently seeking for a web developer position around the Bay Area.<br>
-                                    Thank you for visiting my portfolio site and feel free to contact me by email or phone!
-                                </p>
+                        <ul class="paneAlignmentAbout">
+                            <li>
+                                <div class="column1-3">
+                                    <div class="projectPane" id="profilePane">
+                                        <div class="center" id="profilePic">
+                                            <img src="image/profile.jpg" class="profile" style="margin: 24px 5px 5px 5px;">
+                                        </div>
+                                        <p class="description align-left">Hello, I'm Soichiro Hirata! I graduated from University of North Florida
+                                            with a BS in Computer Information Science on 4/29/16.<br>
+                                            I am currently seeking for a web developer position around the Bay Area.<br>
+                                            Thank you for visiting my portfolio site and feel free to contact me by email or phone!
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="column2-3" >
+                                    <div class="projectPane" id="whyPane">
+                                        <p class="description align-left">Why</p>
+                                        <p class="description align-left">Websites are the fastest, most efficient, and a very entertaining medium to express your passion to people around the globe. Passionate people with great ideas and contents are everywhere. I want to help these people distribute their passion in the most effective way, because looks matter. <br>
+                                            I want to become a professional at developing websites because I know that this skill can contribute to my favorite countries by expressing great contents in an awesome way to the world.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="column3-3" >
+                                    <div class="projectPane" id="langAboutPane">
+                                        <p class="description align-left">
+                                            Languages
+                                        <div class="openAllBackground">
+                                            <img src="image/icons/glyphicons-10-magic.png" class="openAll">
+                                        </div>
+                                        </p>
+                                        <ul class="accordionLangN">
+                                            <li style="display: inline;">
+                                                <button class="accordionButtonLangN">Front End</button>
+                                                <div class="accordionPanelLangN">
+                                                    <ul>
+                                                        <li style="display: inline;">
+                                                            <img src="image/languages/nwbhs/HTML5_Logo_256.png" style="height: 100px; width: auto;">
+                                                        </li>
+                                                        <li style="display: inline;">
+                                                            <img src="image/languages/nwbhs/bootstrap-solid.svg" style="height: 100px; width: auto;">
+                                                        </li>
+                                                        <li style="display: inline;">
+                                                            <img src="image/languages/nwbhs/CoffeeScript-logo.png" style="height: 100px; width: 200px;">
+                                                        </li>
+                                                        <li style="display: inline;">
+                                                            <img src="image/languages/nwbhs/knockoutjs.PNG" style="height: 80px; width: 200px;">
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li style="display: inline;">
+                                                <button class="accordionButtonLangN">Back End</button>
+                                                <div class="accordionPanelLangN">
+                                                    <ul>
+                                                        <li style="display: inline;">
+                                                            <img src="image/languages/nwbhs/mvc.jpg" style="height: 100px; width: auto;">
+                                                        </li>
+                                                        <li style="display: inline;">
+                                                            <img src="image/languages/nwbhs/azure-logo.jpg" style="height: 100px; width: auto;">
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
-                    </div>
                 </div>
                 <div class="aboutBackground">
                     <div class="greyerShade"></div>
@@ -101,18 +190,32 @@
 
             <!-- Projects -->
             <div class="projectsBackgroundContainer" id="projects">
-                <div class="container">
-                    <h1 class="mainFont">Projects</h1>
-                        <div class="projectPaneTitle">
-                            <ul>
-                                <li>
-                                    <p>NWBHS Patient Form Tracker</p>
-                                </li>
-                                <li>
-                                    <p style="font-size: 18px;">Web Application</p>
-                                </li>
-                            </ul>
+<!--                <div class="projectPaneTitleHeaderContainer" id="projectsTitle">
+                    <div class="projectPaneTitleHeader">
+                        <h1 class="mainFont">Projects</h1>
+                        <div class="projectsBackground" >
+                            <div class="greyerShade"></div>
                         </div>
+                    </div>
+                </div>-->
+
+                 <div class="container" >
+                    <h1 class="mainFont">Projects</h1>
+                    <div class="projectsBackground" >
+                        <div class="greyerShade"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="projectPaneTitle">
+                        <ul>
+                            <li>
+                                <p>NWBHS Patient Form Tracker</p>
+                            </li>
+                            <li>
+                                <p style="font-size: 18px;">Web Application</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="container" id="nwbhsPane">
@@ -330,7 +433,8 @@
                 </div>
                 <!-- End: nwbhs screen shot sliders -->
 
-                <div class="projectsBackground" >                    <div class="greyerShade"></div>
+                <div class="projectsBackground" >
+                    <div class="greyerShade"></div>
                 </div>
             </div> <!-- End: Project background container -->
 
@@ -361,8 +465,8 @@
             </div>
         </main>
         <footer>
-            <div class="navContainer">
-                <p class="footerFont">© 2016 Soichiro Hirata </p>
+            <div class="navContainer" id="footer">
+                <p class="footerFont" >© 2016 Soichiro Hirata </p>
             </div>
         </footer>
         <!--<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>-->

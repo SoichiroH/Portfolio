@@ -7,21 +7,18 @@
 //Banner
 $('header, main, footer').css({'visibility': 'visible'}).fadeOut(0).delay(3000).fadeIn(0).promise().done(function(){bannerAnimation()});
 function bannerAnimation(){
-    //$("#sideNav").hide().slideDown(1200);
+
+    $('.mainBackground').hide().fadeIn(2300);
+
     if (window.innerWidth > 1000){
-        $("#sideNav").hide().fadeIn(0).addClass('comingLeft');
+        $("#sideNav").delay(700).addClass('comingLeft');
     }
 
-    //$("#topNav").hide().slideDown(1200);
-    $("#topNav").hide().delay(600).fadeIn(100).addClass('comingDown');
+    $('#newName').hide().delay(1400).fadeIn(300).addClass('comingDown');
+    $('#roleTitle').hide().delay(1400).fadeIn(300).addClass('comingDown');
 
-    $('.mainBackground').hide().delay(700).fadeIn(2300);
-
-    $('#newName').hide().delay(1200).fadeIn(200).addClass('comingDown');
-    $('#roleTitle').hide().delay(1200).fadeIn(200).addClass('comingDown');
-
-    $("#bannerPaneResume").hide().delay(1400).fadeIn(200).addClass('comingDown');
-    $("#bannerPaneContact").hide().delay(1400).fadeIn(200).addClass('comingDown');
+    $("#bannerPaneResume").hide().delay(1600).fadeIn(300).addClass('comingDown');
+    $("#bannerPaneContact").hide().delay(1600).fadeIn(300).addClass('comingDown');
 }
 
 
@@ -41,7 +38,10 @@ $(function(){
     function scrollToDiv(id){
         id = id.replace("link","");
 
-        $('html,body').animate({scrollTop: $("#"+id).offset().top}, 'slow');
+        $('html,body').animate({scrollTop: $("#"+id).offset().top}, 'fast');
+        if ($('#profilePane').hasClass('comingDown')){
+            $('#profilePane').removeClass('comingDown');
+        }
     }
 
     $("#sideNav li a").click(function (e) {
@@ -52,21 +52,75 @@ $(function(){
 
 //About
 
-//Projects
+    $(window).on('scroll', function(){
 
-    /*$('.descriptionBackground').on({mouseenter: function(){
-            //$(this).removeClass('comingDown');
-            $(this).addClass('runningBorderLeftToRight');
-        },mouseleave: function(){
-            //$(this).addClass('comingDown');
-            //$(this).removeClass('runningBorder');
+        var $heightFromTop = $(window).scrollTop();
+        var aboutOffsetTop =  $('#about').offset().top ;
+        var projectsOffsetTop =  $('#projects').offset().top ;
+        var linksOffsetTop =  $('#otherSites').offset().top ;
+        var footerOffsetTop =  $('#footer').offset().top ;
+
+
+
+        if (($heightFromTop > 500) && ($('#profilePane').hasClass('comingDown')==false)){
+            $('.paneAlignmentAbout').css({'visibility': 'visible'});
+            $('#profilePane').hide().fadeIn(300).addClass('comingDown');
+            $('#whyPane').hide().delay(300).fadeIn(300).addClass('comingDown');
+            $('#langAboutPane').hide().delay(600).fadeIn(300).addClass('comingDown');
         }
-    });*/
+
+        var $endOfProjectsSection = $heightFromTop - $('#projects').outerHeight();
+
+        /*if ($heightFromTop > 1000){
+            $('#about').css({
+                'position': 'fixed','top': 0
+            });
+            $('#projects').css({
+                'top': 2000
+            });
+        }
+        if ($heightFromTop > 2000){
+            $('#projects').css({
+                'top': 2000
+            });
+        }
+
+        if ($heightFromTop < 1000){
+            $('#about').css({
+                'position': 'relative','top': 1000
+            });
+            $('#projects').css({
+                'top': 2000
+            });
+        }
+        if ($heightFromTop > 2000){
+            $('#projectsTitle').css({
+                'display': 'block'
+            });
+
+        }
+
+        */
+
+        console.log('Window height'+$(window).height());
+        console.log('height from top: '+$heightFromTop);
+        console.log('about offset top: '+aboutOffsetTop);//About; 1000 Projects 1964
+        console.log('project offset top: '+projectsOffsetTop);
+        console.log('links offset top: '+linksOffsetTop);
+        console.log('footer offset top: '+footerOffsetTop);
+        console.log('endOfProjectsSection: '+$endOfProjectsSection);
+
+        /*if ($heightFromTop > 3000){
+            $('#otherSites').css({
+                'position': 'fixed','top': 0
+            })
+        }*/
 
 
-    console.log('Initial Height: '+$('#nwbhsSynopsisPane').innerHeight());
+    });
 
 
+//Projects
 
     var $window = $(window);
 
@@ -92,27 +146,19 @@ $(function(){
         var $openAllButton = $('#nwbhsFunc').add($('#nwbhsLang'));
 
         $window.on('scroll', function(){
-           // console.log('Scroll at animations '+$('#nwbhsSynopsisPane').innerHeight());
             var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
-
-             console.log('Rotate Back:'+$openAllButton.hasClass('rotateBack')+'  Rotate Forward: '+$openAllButton.hasClass('rotateForward'));
 
             if ($openAllButton.hasClass('rotateBack')) {
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
-                console.log('has class rotateBack');
             }
             if ($openAllButton.hasClass('rotateForward')){
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
-                console.log('has class rotateForward');
             }
             if ($openAllButton.hasClass('rotateForward') && $openAllButton.hasClass('rotateBack')) {
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
-                console.log('has class rotateForward and Back');
-                //console.log('Scroll at animations inside else '+$('#nwbhsSynopsisPane').innerHeight());
             }
             if ($openAllButton.hasClass('rotateForward' || 'rotateBack') == false){
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
-                console.log('has class rotateForward or Back is false');
             }
             if ($('.accordionButtonLangN').hasClass('activeButtonLangN')){
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
@@ -143,7 +189,6 @@ $(function(){
                 panelToOpen.fadeOut('fast');
                 //
                 var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
-                console.log('If this has rotateBack: '+ containerHeight);
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
             } else {
                 $(this).addClass('rotateForward');

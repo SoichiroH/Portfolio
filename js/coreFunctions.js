@@ -39,7 +39,7 @@ $(document).ready(function(){
             }
         }else {
             $("#sideNav").css({'transform': 'translateX(0)'});
-            $allSectionContainers.css({'padding-left': '200px'});
+            $allSectionContainers.css({'padding-left': '150px'});
             $("#newNav").remove();
             if (visible){
                 $("#bannerName").append("<h1 id='newName' class='mainFont'>Soichiro Hirata</h1>");
@@ -99,7 +99,6 @@ $(document).ready(function(){
                 }else{
                     $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
                 }
-            console.log('SynopsisContainer: '+synopsisContainerHeight+'FuncContainer: '+currentLangHeight);
             $(this).next('.accordionPanelLangN').not(':animated').slideToggle('fast');
             $(this).addClass('activeButtonLangN');
         }
@@ -121,15 +120,6 @@ $(document).ready(function(){
         }
     }
 
-    //Match container size
-   /* var $window = $(window);
-    $window.trigger('scroll');
-    $window.on('scroll', function(){
-        var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
-        console.log('Scroll at coreFunctions '+$('#nwbhsSynopsisPane').innerHeight());
-        $('#nwbhsFuncPane').css({'height': containerHeight});
-    });
-*/
     //Image sliders
     $("#playSlide").hide();
 
