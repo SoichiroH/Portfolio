@@ -91,7 +91,12 @@ $(document).ready(function(){
         if ($(this).hasClass('activeButtonLangN')){
             $('.accordionButtonLangN').removeClass('activeButtonLangN');
             $('.accordionPanelLangN').slideUp();
-            $('#column22Nwbhs').css({'height': synopsisContainerHeight});
+            //if rotateForward, height of the box is ''
+            if ($('#nwbhsFunc').hasClass('rotateForward')){
+                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+            }else {
+                $('#column22Nwbhs').css({'height': synopsisContainerHeight});
+            }
         } else {
             $('.accordionButtonLangN').removeClass('activeButtonLangN');
             $('.accordionPanelLangN').slideUp();
@@ -101,6 +106,12 @@ $(document).ready(function(){
                         $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
                     } else{
                         $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': synopsisContainerHeight});
+                    }
+                    //if rotateForward, height of the box is ''
+                    if ($('#nwbhsFunc').hasClass('rotateForward')){
+                        $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+                    }else {
+                        $('#column22Nwbhs').css({'height': synopsisContainerHeight});
                     }
                 }else{
                     $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
@@ -116,7 +127,8 @@ $(document).ready(function(){
         if ($('#nwbhsFunc').hasClass('rotateForward')){
             $('.accordionButton').removeClass('activeButton');
             $('#nwbhsFunc').removeClass('rotateForward');
-            $('html,body').animate({scrollTop: $('#nwbhsFuncPane').offset().top}, 'slow');
+            $('html,body').animate({scrollTop: $('#nwbhsFuncPane').offset().top}, 'fast');
+            console.log('clicked');
         }
     }
     function removeActiveMoveTopLang(){
@@ -292,10 +304,5 @@ $(document).ready(function(){
         }
     });
 //End Projects -------------------------------------------------------------------------------
-
-});
-
-
-$(window).load(function () {
 
 });

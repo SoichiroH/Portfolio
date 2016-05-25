@@ -69,7 +69,17 @@ $(function(){
         var windowHeight = $(window).height();
         var aboutSectionHeight = $('#about').outerHeight();
         var projectsSectionHeight = $('#projects').outerHeight();
+        var linkSectionHeight = $('#otherSites').outerHeight();
         var windowAndAboutHeight = windowHeight+aboutSectionHeight;
+/*
+
+        console.log($heightFromTop);
+        console.log('lnks offset top'+$('#otherSites').offset().top);
+        $('footer').css({'position':'fixed','top': 600});
+
+        console.log('footer offset top'+$('#footer').offset().top);
+
+*/
 
         $('#about').css({'top':windowHeight});
         $('.linksBackgroundContainer').css({'top':(windowAndAboutHeight+projectsSectionHeight)});
@@ -97,6 +107,7 @@ $(function(){
                 'z-index': 10
             });
             $('.linksBackgroundContainer').css({'transform': 'translateY('+(aboutSectionHeight + projectsSectionHeight)+')'});
+
             scrolledAllTheWayDown = true;
         } else if (aboutSectionHeight != 0 && ($heightFromTop < (projectsSectionHeight+aboutSectionHeight) && scrolledAllTheWayDown == true)){
             $('#projects').css({
@@ -134,17 +145,17 @@ $(function(){
 
         //Match container height on rotate action
         var $openAllButton = $('#nwbhsFunc').add($('#nwbhsLang'));
-
         $window.on('scroll', function(){
             var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
 
             if ($openAllButton.hasClass('rotateBack')) {
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
+                console.log('has rotate back');
             }
             if ($openAllButton.hasClass('rotateForward')){
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
             }
-            if ($openAllButton.hasClass('rotateForward') && $openAllButton.hasClass('rotateBack')) {
+            if ($openAllButton.hasClass('rotateForward' && 'rotateBack')) {
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
             }
             if ($openAllButton.hasClass('rotateForward' || 'rotateBack') == false){
@@ -153,8 +164,9 @@ $(function(){
             if ($('.accordionButtonLangN').hasClass('activeButtonLangN')){
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
             }
-        });//scroll
+        });
 
+        //Open All
         $('.openAll').on('click', function (){
             if ($(this).is($nFunc)){
                 clickedId = accordionPanel;
@@ -178,17 +190,38 @@ $(function(){
                 $(':button').removeClass(activeButton);
                 panelToOpen.fadeOut('fast');
                 //
-                var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
-                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
+                if ($(this).is($('#nwbhsFunc'))){
+                    var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
+                    $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
+                }else {
+                    $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+                }
+
+/*                if ($(this).is($('#nwbhsLang'))){
+                    var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
+                    $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
+                }else {
+                    $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+                }*/
             } else {
                 $(this).addClass('rotateForward');
                 panelToOpen.fadeIn();
-
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
             }
         });
     }
     rotateIcon();
+
+    $('#githubIcon').on({mouseenter: function(){
+        $(this).removeClass('comingDown').addClass('comingUp');
+    },mouseleave: function(){
+        $(this).addClass('comingDown').removeClass('comingUp');
+    }});
+    $('#facebookIcon').on({mouseenter: function(){
+        $(this).removeClass('comingDown').addClass('comingUp');
+    },mouseleave: function(){
+        $(this).addClass('comingDown').removeClass('comingUp');
+    }});
 
 });
 

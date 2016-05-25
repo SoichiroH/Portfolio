@@ -60,12 +60,12 @@ img.center {
 
 html{
   background: url("../image/background/darkgrey.jpg");
-  max-width: 2121px;
+  max-width: 2100px;
   font-family: LondonBetween, LondonMM, Helvetica, sans-serif;
-  -webkit-background-size: auto;
+/*  -webkit-background-size: auto;
   -moz-background-size: auto;
   -o-background-size: auto;
-  background-size: auto;
+  background-size: auto;*/
 }
 
 header, main, footer{
@@ -73,12 +73,14 @@ header, main, footer{
 }
 
 body {
+  max-width: 2100px;
   margin: 0;
+  overflow-x: hidden;
   min-height: 700px;
 }
 
 main {
-  max-width: 100%;
+  max-width: 1920px;
   width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -161,10 +163,6 @@ button:focus {
   }
   main .profile {
     float: left;
-  }
-
-  main #profilePic {
-
   }
 
   main .imageSlider {
@@ -351,8 +349,10 @@ button:focus {
     */
 
 .mainBackgroundContainer {
-  position: relative;
+  position: fixed;
   overflow: hidden;
+  max-width: 1770px;
+  width: 100%;
   height: 950px;
   margin-bottom: 60px;
   padding-left: 150px;
@@ -474,12 +474,14 @@ button:focus {
 .aboutBackgroundContainer {
   position: relative;
   overflow: hidden;
+  max-width: 1770px;
+  width: 100%;
   min-height: 1000px;
   padding-left: 150px;
 }
 
 .aboutBackground {
-  background: url("../image/background/seacity.jpg");
+  background: url("../image/background/cityStreet.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -544,6 +546,7 @@ button:focus {
 .projectsBackgroundContainer {
   position: relative;
   overflow: hidden;
+  max-width: 1770px;
   min-height: 1800px;
   padding-left: 150px;
   -webkit-transform: translateY(0);
@@ -554,7 +557,7 @@ button:focus {
 }
 
 .projectsBackground {
-  background: url("../image/background/footer_lodyas.png");
+  background: url("../image/background/room.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -757,7 +760,7 @@ button:focus {
 }
 
 .linksBackground {
-  background: url("../image/background/stars.jpg");
+  background: url("../image/background/darkgrey.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -766,63 +769,35 @@ button:focus {
   z-index: -2;
 }
 
+.linksList{
+  padding-top: 15px
+}
+
 .links-font{
   font-size: 20px;
-  color: #FFFFFF;
+  color: $beige;
 }
 
-ul#linksInUl li{
-  display: inline;
+#githubTitle {
+  visibility: hidden;
 }
 
-.links-list li{
-  display: inline;
-}
-
-.myDraggable {
-  background-color: $blue;
-  width: 150px;
-  height: 150px;
-  padding: 0.5em;
-  box-shadow: 5px 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.myDraggable.ui-draggable-dragging { background: rgba(255, 0, 0, 0.71); }
-
-    /*
-      Button -----------------------------------------------------------------------
-    */
-
-.buttonWithShadow{
-  display: inline-block;
-  font:inherit;
-  border: 0;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  background-color: $blue;
-  &:hover{
-    background: darken($blue, 10%);
-    transition: all 300ms ease;
+.mega-octicon {
+  color: $beige;
+  &:hover {
+    background: darken($lightNavy, 10%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    transition: all 600ms ease;
   }
 }
-
-.buttonCircle {
-  width: 80px;
-  height: 80px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-
-/*
-  Footer -----------------------------------------------------------------------
-*/
 
 .footerFont {
   margin: 0;
   font-size: 15px;
   padding-top: 15px;
-  color: white;
+  color: $beige;
   text-shadow: none;
 }
 
