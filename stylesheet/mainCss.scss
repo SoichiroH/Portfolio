@@ -223,7 +223,6 @@ button:focus {
 
 .column1 {
   float: none;
-  margin-bottom: 100px;
 }
 
 /*
@@ -476,7 +475,6 @@ button:focus {
   position: relative;
   overflow: hidden;
   min-height: 1000px;
-  margin-bottom: 60px;
   padding-left: 150px;
 }
 
@@ -547,8 +545,12 @@ button:focus {
   position: relative;
   overflow: hidden;
   min-height: 1800px;
-  margin-bottom: 60px;
   padding-left: 150px;
+  -webkit-transform: translateY(0);
+  -moz-transform:translateY(0);
+  -ms-transform:translateY(0);
+  -o-transform:translateY(0);
+  transform:translateY(0);
 }
 
 .projectsBackground {
@@ -737,6 +739,7 @@ button:focus {
   background-color: $goldish;
 }
 
+
     /*
       Links -----------------------------------------------------------------------
     */
@@ -746,6 +749,11 @@ button:focus {
   overflow: hidden;
   height: 300px;
   padding-left: 150px;
+  -webkit-transform: translateY(0);
+  -moz-transform:translateY(0);
+  -ms-transform:translateY(0);
+  -o-transform:translateY(0);
+  transform:translateY(0);
 }
 
 .linksBackground {

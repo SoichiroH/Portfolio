@@ -158,8 +158,7 @@ button:focus {
   float: left; }
 
 .column1 {
-  float: none;
-  margin-bottom: 100px; }
+  float: none; }
 
 /*
 .container .row {
@@ -365,7 +364,6 @@ button:focus {
   position: relative;
   overflow: hidden;
   min-height: 1000px;
-  margin-bottom: 60px;
   padding-left: 150px; }
 
 .aboutBackground {
@@ -423,8 +421,12 @@ button:focus {
   position: relative;
   overflow: hidden;
   min-height: 1800px;
-  margin-bottom: 60px;
-  padding-left: 150px; }
+  padding-left: 150px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0); }
 
 .projectsBackground {
   background: url("../image/background/footer_lodyas.png");
@@ -584,7 +586,12 @@ button:focus {
   position: relative;
   overflow: hidden;
   height: 300px;
-  padding-left: 150px; }
+  padding-left: 150px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0); }
 
 .linksBackground {
   background: url("../image/background/stars.jpg");
