@@ -104,38 +104,19 @@ button:focus {
   main .column1-2, main .column2-2 {
     width: 100%; }
 
-  main .imageSlider {
-    height: 380px; } }
-@media screen and (max-width: 1120px) {
   main .column1-3, main .column2-3, main .column3-3 {
     width: 100%;
     margin-left: 0;
     margin-right: 0; }
 
-  main .profile {
-    float: left; }
-
   main .imageSlider {
-    height: 420px; } }
+    height: 380px; } }
 @media screen and (max-width: 1300px) {
   main .column1-2, main .column2-2 {
     width: 100%; }
 
   main .imageSlider {
     height: 420px; } }
-/*
-@media only screen and (max-width: 1500px) {
-  main .imageSlider {
-    height: 470px;
-  }
-}
-
-@media only screen and (max-width: 1600px) {
-  main .imageSlider {
-    height: 500px;
-  }
-}
-*/
 .column1-2 {
   width: 45%;
   float: left;
@@ -174,8 +155,8 @@ button:focus {
   margin: 0 auto 0 0; }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   background-color: rgba(1, 1, 1, 0.86); }
 
 ::-webkit-scrollbar-thumb {
@@ -420,6 +401,12 @@ button:focus {
   border-width: 0.8px;
   border-color: transparent; }
 
+.mask {
+  background-color: rgba(1, 1, 1, 0.86);
+  width: auto;
+  height: auto;
+  visibility: hidden; }
+
 /*
   Projects -----------------------------------------------------------------------
 */
@@ -506,7 +493,7 @@ button:focus {
   transform: rotate(0deg);
   transition: all 300ms ease; }
 
-.accordionButton, .accordionButtonLangN {
+.accordionButton, .accordionButtonLangN, .accordionButtonLangA {
   background-color: #2c2c2c;
   font-family: LondonBetween, sans-serif;
   border: 0;
@@ -517,19 +504,19 @@ button:focus {
   border-bottom-style: ridge;
   border-width: 0.8px;
   border-color: transparent; }
-  .accordionButton:hover, .accordionButtonLangN:hover {
+  .accordionButton:hover, .accordionButtonLangN:hover, .accordionButtonLangA:hover {
     background: #0a4058;
     transition: all 600ms ease;
     border-color: #a68750; }
 
-.accordionPanel, .accordionPanelLangN {
+.accordionPanel, .accordionPanelLangN, .accordionPanelLangA {
   display: none;
   border-top: ridge;
   border-bottom: ridge;
   border-width: 0.8px;
   border-color: #f5dfbf; }
 
-.activeButton, .activeButtonLangN {
+.activeButton, .activeButtonLangN, .activeButtonLangA {
   background-color: #0a4058;
   border-bottom-style: ridge;
   border-width: 0.8px;

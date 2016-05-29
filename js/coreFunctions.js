@@ -2,15 +2,6 @@
  * Created by Soichiro on 5/9/2016.
  */
 
-
-$(window).on('load',function(){
-    var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
-    //$('#nwbhsFuncPane').css({'height': containerHeight});
-    console.log('Loaded: Container Height - 40: '+containerHeight);
-    console.log('Loaded: Column heights'+$('#column22Nwbhs').height()+'Loaded: Container heights'+$('#nwbhsPane').height());
-});
-
-
 $(document).ready(function(){
 
 //Nav Bar -------------------------------------------------------------------------------
@@ -30,7 +21,10 @@ $(document).ready(function(){
         }
     }
 
+    var scrolledAllTheWayDown = false;
+
     $(window).resize(function(){
+        //Side Nav
         if(window.innerWidth < 1000) {
             var windowHeight = $(window).height();
             $('#banner').css({'height':windowHeight});
@@ -52,9 +46,66 @@ $(document).ready(function(){
             }
             visible = false;
         }
+
+        //Project pane height
         var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
         $('#nwbhsFuncPane').css({'height': containerHeight});
-    });
+
+        //Scrolling
+        var $heightFromTop = $(window).scrollTop();
+
+        if (($heightFromTop > 500) && ($('#profilePane').hasClass('comingDown')==false)){
+            $('.paneAlignmentAbout').css({'visibility': 'visible'});
+            $('#profilePane').hide().fadeIn(300).addClass('comingDown');
+            $('#whyPane').hide().delay(300).fadeIn(300).addClass('comingDown');
+            $('#langAboutPane').hide().delay(600).fadeIn(300).addClass('comingDown');
+        }
+
+        var windowHeight = $(window).height();
+        var aboutSectionHeight = $('#about').outerHeight();
+        var projectsSectionHeight = $('#projects').outerHeight();
+        var linkSectionHeight = $('#otherSites').outerHeight();
+        var windowAndAboutHeight = windowHeight+aboutSectionHeight;
+
+        $('#about').css({'top':windowHeight});
+        $('.linksBackgroundContainer').css({'top':(windowAndAboutHeight+projectsSectionHeight)});
+
+
+        if (aboutSectionHeight != 0 && ($heightFromTop >= aboutSectionHeight)){
+            $('#about').css({
+                'position': 'fixed',
+                'top':(windowHeight-aboutSectionHeight)
+            });
+            $('.projectsBackgroundContainer').css({'transform': 'translateY('+windowAndAboutHeight+')'});
+        }
+        if (aboutSectionHeight != 0 && ($heightFromTop < aboutSectionHeight)){
+            $('#about').css({
+                'position': 'relative'
+                //,'top':(windowHeight-aboutSectionHeight)
+            });
+            $('#projects').css({'top':windowHeight+aboutSectionHeight});
+        }
+
+        if (projectsSectionHeight != 0 && ($heightFromTop >= (projectsSectionHeight+aboutSectionHeight)) && scrolledAllTheWayDown == false){
+            $('.projectsBackgroundContainer').css({
+                'position': 'fixed',
+                'top':(windowHeight-projectsSectionHeight),
+                'z-index': 10
+            });
+            $('.linksBackgroundContainer').css({'transform': 'translateY('+(aboutSectionHeight + projectsSectionHeight)+')'});
+
+            scrolledAllTheWayDown = true;
+        } else if (aboutSectionHeight != 0 && ($heightFromTop < (projectsSectionHeight+aboutSectionHeight) && scrolledAllTheWayDown == true)){
+            $('#projects').css({
+                'position': 'relative',
+                'z-index': 11,
+                'top':(windowAndAboutHeight)
+            });
+            $('.projectsBackgroundContainer').css({'transform': 'translateY('+windowAndAboutHeight+projectsSectionHeight+')'});
+            scrolledAllTheWayDown = false;
+        }
+
+    });//End Window Resize
 //End Nav Bar -------------------------------------------------------------------------------
 
 //Banner -------------------------------------------------------------------------------
@@ -63,6 +114,58 @@ $(document).ready(function(){
         window.location = 'download/Resume-Hirata Soichiro.pdf';
     });
 //End Banner -------------------------------------------------------------------------------
+
+//About -------------------------------------------------------------------------------
+    //Languages Accordion
+    $('.accordionButtonLangA').on('click', function (e) {
+        var container2Height = $('#whyPane').innerHeight()-40;
+        var currentLangHeight = $('#column22Nwbhs').innerHeight();
+
+        e.preventDefault();
+        if ($(this).hasClass('activeButtonLangA')){
+            $('.accordionButtonLangA').removeClass('activeButtonLangA');
+            $('.accordionPanelLangA').slideUp();
+            //if rotateForward, height of the box is ''
+            if ($('#aboutLangA').hasClass('rotateForward')){
+                $('.column3-3').add($('#aboutLangA')).css({'height': ''});
+            }else {
+                $('.column3-3').css({'height': container2Height});
+            }
+        } else {
+            $('.accordionButtonLangA').removeClass('activeButtonLangA');
+            $('.accordionPanelLangA').slideUp();
+            
+            $(this).next('.accordionPanelLangA').not(':animated').slideToggle('fast');
+            $(this).addClass('activeButtonLangA');
+            $('.column3-3').add($('#langAboutPane')).css({'height': ''});
+        }
+    });
+
+    //About pane height
+    $(window).resize(function(){
+
+        var column1Height = $('.column1-3').outerHeight();
+        var column2Height =  $('.column2-3').outerHeight();
+        var container1Height = $('#profilePane').innerHeight()-40;
+        var container2Height = $('#whyPane').innerHeight()-40;
+
+           console.log('column1 '+column1Height+' container1 '+container1Height+
+         'column2 '+column2Height+' container2 '+container2Height);
+
+        if (window.innerWidth < 1000){
+            $('#profilePane').add($('#whyPane')).add($('#langAboutPane')).css({
+                'height': ''
+            });
+        }else {
+            $('#whyPane').css({
+                'height': ''/*,
+                 'min-height': container1Height*/
+            });
+            $('#profilePane').add($('#langAboutPane')).css({
+                'height': container2Height
+            });
+        }
+    });
 
 //Projects -------------------------------------------------------------------------------
     //Open All Button

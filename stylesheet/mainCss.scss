@@ -150,25 +150,16 @@ button:focus {
   main .column1-2, main .column2-2{
     width: 100%;
   }
-  main .imageSlider {
-    height: 380px;
-  }
-}
-
-@media screen and (max-width: 1120px) {
   main .column1-3, main .column2-3, main .column3-3{
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
-  main .profile {
-    float: left;
-  }
-
   main .imageSlider {
-    height: 420px;
+    height: 380px;
   }
 }
+
 
 @media screen and (max-width: 1300px) {
   main .column1-2, main .column2-2{
@@ -178,19 +169,7 @@ button:focus {
     height: 420px;
   }
 }
-/*
-@media only screen and (max-width: 1500px) {
-  main .imageSlider {
-    height: 470px;
-  }
-}
 
-@media only screen and (max-width: 1600px) {
-  main .imageSlider {
-    height: 500px;
-  }
-}
-*/
 .column1-2 {
   width: 45%;
   float: left;
@@ -241,8 +220,8 @@ button:focus {
 @include containerModifier(0, wide);
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   background-color: $darkGrey;
 }
 ::-webkit-scrollbar-thumb{
@@ -539,6 +518,13 @@ button:focus {
   border-color: transparent;
 }
 
+.mask {
+  background-color: $darkGrey;
+  width: auto;
+  height: auto;
+  visibility: hidden;
+}
+
     /*
       Projects -----------------------------------------------------------------------
     */
@@ -642,7 +628,7 @@ button:focus {
   transition: all 300ms ease;
 }
 
-.accordionButton, .accordionButtonLangN{
+.accordionButton, .accordionButtonLangN, .accordionButtonLangA{
   background-color: $grey;
   font-family: LondonBetween, sans-serif;
   border: 0;
@@ -660,7 +646,7 @@ button:focus {
   }
 }
 
-.accordionPanel, .accordionPanelLangN{
+.accordionPanel, .accordionPanelLangN, .accordionPanelLangA {
   display: none;
   border-top: ridge;
   border-bottom: ridge;
@@ -668,7 +654,7 @@ button:focus {
   border-color: $beige;
 }
 
-.activeButton, .activeButtonLangN{
+.activeButton, .activeButtonLangN, .activeButtonLangA{
   background-color: darken($lightNavy, 10%);
   border-bottom-style: ridge;
   border-width: 0.8px;
