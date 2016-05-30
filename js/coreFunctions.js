@@ -134,7 +134,7 @@ $(document).ready(function(){
         } else {
             $('.accordionButtonLangA').removeClass('activeButtonLangA');
             $('.accordionPanelLangA').slideUp();
-            
+
             $(this).next('.accordionPanelLangA').not(':animated').slideToggle('fast');
             $(this).addClass('activeButtonLangA');
             $('.column3-3').add($('#langAboutPane')).css({'height': ''});

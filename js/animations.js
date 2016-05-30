@@ -55,14 +55,6 @@ $(function(){
 
 //About
 
-    $('.mask').on({mouseenter: function(){
-        $(this).css({'visibility':'hidden'});
-        console.log('entered');
-    },mouseleave: function(){
-        $(this).addClass('comingDown').removeClass('comingUp');
-    }
-    });
-
     var scrolledAllTheWayDown = false;
 
     $(window).on('scroll', function(){
@@ -125,9 +117,6 @@ $(function(){
         var container1Height = $('#profilePane').innerHeight()-40;
         var container2Height = $('.column2-3').innerHeight()-40;
 
-     /*   console.log('column1 '+column1Height+' container1 '+container1Height+
-                    'column2 '+column2Height+' container2 '+container2Height);*/
-
         if (column1Height > column2Height){
             $('#whyPane').add($('#langAboutPane')).css({
                 'height': container1Height
@@ -146,6 +135,21 @@ $(function(){
     });
 
 //Projects
+
+    //Panes coming down
+
+    $(window).scroll(function(){
+
+        var heightFromTop = $(window).scrollTop();
+
+        if ((heightFromTop > 1500) && ($('#nwbhsSynopsisPane').hasClass('comingDown')==false)){
+            $('.paneAlignmentProject').add($('.projectPaneTitle')).css({'visibility': 'visible'});
+            $('.projectPaneTitle').hide().fadeIn(300).addClass('comingDown');
+            $('#nwbhsSynopsisPane').hide().delay(300).fadeIn(300).addClass('comingDown');
+            $('#nwbhsFuncPane').hide().delay(600).fadeIn(300).addClass('comingDown');
+        }
+    });
+
 
     var $window = $(window);
 
@@ -240,5 +244,22 @@ $(function(){
         $(this).addClass('comingDown').removeClass('comingUp');
     }});
 
+
+//Links
+    $(window).scroll( function(){
+            var linksTop = $('#otherSites').position().top;
+            var bottomOfWindow = $(window).scrollTop() + $(window).height();
+
+            console.log('linkstop: '+linksTop+' bottomOfWindow: '+bottomOfWindow);
+
+            if( bottomOfWindow >= linksTop ){
+                console.log('bottomOfwindow > linkstop');
+                $('#about').add($('#banner')).removeClass('projectMask1').addClass('projectMask00');
+                $('#projects').removeClass('projectMask1').addClass('projectMask03');
+            } else if (bottomOfWindow < linksTop){
+                $('#about').add($('#banner')).removeClass('projectMask00').addClass('projectMask1');;
+                $('#projects').removeClass('projectMask03').addClass('projectMask1');
+            }
+    });
 });
 
