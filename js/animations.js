@@ -252,7 +252,7 @@ $(function(){
 
             console.log('linkstop: '+linksTop+' bottomOfWindow: '+bottomOfWindow);
 
-            if( bottomOfWindow >= linksTop ){
+            if( (linksTop != 0)&&(bottomOfWindow >= linksTop) ){
                 console.log('bottomOfwindow > linkstop');
                 $('#about').add($('#banner')).removeClass('projectMask1').addClass('projectMask00');
                 $('#projects').removeClass('projectMask1').addClass('projectMask03');

@@ -17,6 +17,7 @@ $(document).ready(function(){
         if (!visible){
             $("#topNav").append("<nav id='newNav' class='nav'><div class='navContainer center'><a class='name'>Soichiro Hirata</a></div></nav>");
             $("#newName").remove();
+            $('#banner').css({'top':'70px'});
             visible = true;
         }
     }
@@ -33,6 +34,7 @@ $(document).ready(function(){
             if (!visible){
                 $("#topNav").append("<nav id='newNav' class='nav'><div class='navContainer center'><a class='name'>Soichiro Hirata</a></div></nav>");
                 $("#newName").remove();
+                $('#banner').css({'top':'70px'});
                 visible = true;
             }
         }else {
@@ -41,6 +43,7 @@ $(document).ready(function(){
             $("#sideNav").css({'transform': 'translateX(0)'});
             $allSectionContainers.css({'padding-left': '150px'});
             $("#newNav").remove();
+            $('#banner').css({'top':'0px'});
             if (visible){
                 $("#bannerName").append("<h1 id='newName' class='mainFont'>Soichiro Hirata</h1>");
             }
