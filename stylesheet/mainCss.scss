@@ -260,7 +260,6 @@ button:focus {
 .navContainer {
   margin: 0 39px;
   max-width: 1280px;
-  width: 90%;
   height: 100%;
 }
 
@@ -380,7 +379,7 @@ button:focus {
 
 .mainFont {
   font-family: LondonMM, sans-serif;
-  font-size: 55px;
+  font-size: 50px;
   color: $beige;
 }
 
@@ -396,9 +395,11 @@ button:focus {
   color: $beige;
 }
 
+.bannerPaneContainer {
+  padding-top: 180px;
+}
 
 .paneAlignment {
-
     display: inline;
     float: right;
 }
@@ -407,7 +408,7 @@ button:focus {
   background-color: $darkGrey;
   height: 50px;
   width: 190px;
-  margin: 0 0 0 auto;
+  margin: 0 0 10px auto;
   padding: 20px 20px 20px 20px;
   z-index: 0;
   border-bottom-style: ridge;
@@ -711,14 +712,18 @@ button:focus {
   display: block;
 }
 
+.buttonContainer{
+  margin-bottom: 100px;
+}
+
 .pausePlay {
   margin-top: 10px;
   cursor: pointer;
 }
 
-.slideButtons {
-  margin-bottom: 20px;
-}
+/*.slideButtons {
+  margin-bottom: 60px;
+}*/
 
 .slide-btn {
   cursor: pointer;

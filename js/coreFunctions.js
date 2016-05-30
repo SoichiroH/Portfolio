@@ -152,17 +152,13 @@ $(document).ready(function(){
         var container1Height = $('#profilePane').innerHeight()-40;
         var container2Height = $('#whyPane').innerHeight()-40;
 
-           console.log('column1 '+column1Height+' container1 '+container1Height+
-         'column2 '+column2Height+' container2 '+container2Height);
-
         if (window.innerWidth < 1000){
             $('#profilePane').add($('#whyPane')).add($('#langAboutPane')).css({
                 'height': ''
             });
         }else {
             $('#whyPane').css({
-                'height': ''/*,
-                 'min-height': container1Height*/
+                'height': ''
             });
             $('#profilePane').add($('#langAboutPane')).css({
                 'height': container2Height
