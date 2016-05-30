@@ -444,8 +444,7 @@ button:focus {
   height: 100%;
   max-width: 370px;
   padding: 20px 20px 20px 20px;
-  margin-bottom: 20px;
-  visibility: hidden; }
+  margin-bottom: 20px; }
   .projectPaneTitle p {
     font-size: 28px;
     margin: 0; }

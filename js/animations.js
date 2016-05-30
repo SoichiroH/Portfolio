@@ -143,10 +143,9 @@ $(function(){
         var heightFromTop = $(window).scrollTop();
 
         if ((heightFromTop > 1500) && ($('#nwbhsSynopsisPane').hasClass('comingDown')==false)){
-            $('.paneAlignmentProject').add($('.projectPaneTitle')).css({'visibility': 'visible'});
-            $('.projectPaneTitle').hide().fadeIn(300).addClass('comingDown');
-            $('#nwbhsSynopsisPane').hide().delay(300).fadeIn(300).addClass('comingDown');
-            $('#nwbhsFuncPane').hide().delay(600).fadeIn(300).addClass('comingDown');
+            $('.paneAlignmentProject').css({'visibility': 'visible'});
+            $('#nwbhsSynopsisPane').hide().fadeIn(300).addClass('comingDown');
+            $('#nwbhsFuncPane').hide().delay(300).fadeIn(300).addClass('comingDown');
         }
     });
 
@@ -249,8 +248,6 @@ $(function(){
     $(window).scroll( function(){
             var linksTop = $('#otherSites').position().top;
             var bottomOfWindow = $(window).scrollTop() + $(window).height();
-
-            console.log('linkstop: '+linksTop+' bottomOfWindow: '+bottomOfWindow);
 
             if( (linksTop != 0)&&(bottomOfWindow >= linksTop) ){
                 console.log('bottomOfwindow > linkstop');
