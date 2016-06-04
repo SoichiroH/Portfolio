@@ -13,7 +13,7 @@ $(document).ready(function(){
         $('#roleTitle').addClass('center');
         $('.bannerPaneContainer').css({'padding-top':'60px'});
         $('.description').css({'font-size':'18px'});
-        $('.mainFont').css({'font-size':'40px'});
+        $('.mainFont').css({'font-size':'30px'});
         $('#maskProfilePane').add($('#maskWhyPane')).add($('#maskSynopsisPane')).removeClass('mask');
     }
 
