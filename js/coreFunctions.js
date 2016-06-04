@@ -52,7 +52,14 @@ $(document).ready(function(){
 
         //Project pane height
         var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
-        $('#nwbhsFuncPane').css({'height': containerHeight});
+
+
+        if (window.innerWidth < 1300){
+            $('#nwbhsFuncPane').add($('#column22Nwbhs')).css({'height': ''});
+        }else {
+            $('#nwbhsFuncPane').css({'height': containerHeight});
+        }
+
 
         //Scrolling
         var $heightFromTop = $(window).scrollTop();
@@ -167,6 +174,14 @@ $(document).ready(function(){
     });
 
 //Projects -------------------------------------------------------------------------------
+    //Project pane height
+    var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
+    if (window.innerWidth < 1300){
+        $('#nwbhsFuncPane').add($('#column22Nwbhs')).css({'height': ''});
+    }else {
+        $('#nwbhsFuncPane').css({'height': containerHeight});
+    }
+
     //Open All Button
     var $openAllButton = $('#nwbhsFunc').add($('#nwbhsLang'));
     //Description Accordion

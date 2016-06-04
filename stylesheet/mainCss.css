@@ -411,11 +411,6 @@ button:focus {
   -moz-transition: opacity .25s ease-in-out;
   -webkit-transition: opacity .25s ease-in-out; }
 
-/*.mask:focus {
-  opacity: 1; }
-
-.mask:hover {
-  opacity: 1; }*/
 
 /*
   Projects -----------------------------------------------------------------------

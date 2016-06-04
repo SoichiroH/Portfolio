@@ -193,8 +193,10 @@ $(function(){
             if ($openAllButton.hasClass('rotateForward' && 'rotateBack')) {
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
             }
-            if ($openAllButton.hasClass('rotateForward' || 'rotateBack') == false){
-                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
+            if (window.innerWidth > 1300) {
+                if ($openAllButton.hasClass('rotateForward' || 'rotateBack') == false) {
+                    $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
+                }
             }
             if ($('.accordionButtonLangN').hasClass('activeButtonLangN')){
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
