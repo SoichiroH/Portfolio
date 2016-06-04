@@ -4,6 +4,31 @@
 
 $(document).ready(function(){
 
+//Mobile size
+    if(window.innerWidth < 600) {
+        $('.mainBackground').css("background-image", "url(../Portfolio/image/background/grunge_wall.png)");
+        $('.aboutBackground').css("background-image", "url(../Portfolio/image/background/grey_wash_wall.png)");
+        $('.projectsBackground').css("background-image", "url(../Portfolio/image/background/brickwall.png)");
+
+        $('#roleTitle').addClass('center');
+        $('.bannerPaneContainer').css({'padding-top':'60px'});
+        $('.description').css({'font-size':'18px'});
+    }
+
+    $(window).resize(function(){
+        if(window.innerWidth > 600) {
+            $('.mainBackground').css("background-image", "url(../Portfolio/image/background/cityBW.jpeg)");
+            $('.aboutBackground').css("background-image", "url(../Portfolio/image/background/cityStreet.jpg)");
+            $('.projectsBackground').css("background-image", "url(../Portfolio/image/background/room.jpg)");
+
+            $('#roleTitle').removeClass('center');
+            $('.bannerPaneContainer').css({'padding-top':'180px'});
+            $('.description').css({'font-size':'20px'});
+        }
+    });
+
+
+
 //Nav Bar -------------------------------------------------------------------------------
     // Responsive nav bar
     var visible = false;
