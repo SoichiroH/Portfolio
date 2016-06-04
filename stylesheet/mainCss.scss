@@ -60,12 +60,12 @@ img.center {
 
 html{
   background: url("../image/background/darkgrey.jpg");
-  max-width: 2121px;
+  max-width: 2100px;
   font-family: LondonBetween, LondonMM, Helvetica, sans-serif;
-  -webkit-background-size: auto;
+/*  -webkit-background-size: auto;
   -moz-background-size: auto;
   -o-background-size: auto;
-  background-size: auto;
+  background-size: auto;*/
 }
 
 header, main, footer{
@@ -73,11 +73,14 @@ header, main, footer{
 }
 
 body {
+  max-width: 2100px;
   margin: 0;
+  overflow-x: hidden;
+  min-height: 700px;
 }
 
 main {
-  max-width: 100%;
+  max-width: 1920px;
   width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -147,29 +150,16 @@ button:focus {
   main .column1-2, main .column2-2{
     width: 100%;
   }
-  main .imageSlider {
-    height: 380px;
-  }
-}
-
-@media screen and (max-width: 1120px) {
   main .column1-3, main .column2-3, main .column3-3{
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
-  main .profile {
-    float: left;
-  }
-
-  main #profilePic {
-
-  }
-
   main .imageSlider {
-    height: 420px;
+    height: 380px;
   }
 }
+
 
 @media screen and (max-width: 1300px) {
   main .column1-2, main .column2-2{
@@ -179,19 +169,7 @@ button:focus {
     height: 420px;
   }
 }
-/*
-@media only screen and (max-width: 1500px) {
-  main .imageSlider {
-    height: 470px;
-  }
-}
 
-@media only screen and (max-width: 1600px) {
-  main .imageSlider {
-    height: 500px;
-  }
-}
-*/
 .column1-2 {
   width: 45%;
   float: left;
@@ -222,7 +200,6 @@ button:focus {
 
 .column1 {
   float: none;
-  margin-bottom: 100px;
 }
 
 /*
@@ -243,8 +220,8 @@ button:focus {
 @include containerModifier(0, wide);
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   background-color: $darkGrey;
 }
 ::-webkit-scrollbar-thumb{
@@ -274,14 +251,15 @@ button:focus {
 
 .nav {
   background-color: $darkGrey;
+  position: fixed;
   width: 100%;
   height: 70px;
+
 }
 
 .navContainer {
   margin: 0 39px;
   max-width: 1280px;
-  width: 90%;
   height: 100%;
 }
 
@@ -304,7 +282,6 @@ button:focus {
   margin: 0;
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  padding-bottom: 60px;
   background-color: $navy;
   z-index: 999;
   -webkit-backface-visibility: hidden;
@@ -351,8 +328,10 @@ button:focus {
     */
 
 .mainBackgroundContainer {
-  position: relative;
+  position: fixed;
   overflow: hidden;
+  max-width: 1770px;
+  width: 100%;
   height: 950px;
   margin-bottom: 60px;
   padding-left: 150px;
@@ -400,7 +379,7 @@ button:focus {
 
 .mainFont {
   font-family: LondonMM, sans-serif;
-  font-size: 55px;
+  font-size: 50px;
   color: $beige;
 }
 
@@ -416,9 +395,11 @@ button:focus {
   color: $beige;
 }
 
+.bannerPaneContainer {
+  padding-top: 180px;
+}
 
 .paneAlignment {
-
     display: inline;
     float: right;
 }
@@ -427,7 +408,7 @@ button:focus {
   background-color: $darkGrey;
   height: 50px;
   width: 190px;
-  margin: 0 0 0 auto;
+  margin: 0 0 10px auto;
   padding: 20px 20px 20px 20px;
   z-index: 0;
   border-bottom-style: ridge;
@@ -474,13 +455,14 @@ button:focus {
 .aboutBackgroundContainer {
   position: relative;
   overflow: hidden;
-  min-height: 900px;
-  margin-bottom: 60px;
+  max-width: 1770px;
+  width: 100%;
+  min-height: 1000px;
   padding-left: 150px;
 }
 
 .aboutBackground {
-  background: url("../image/background/seacity.jpg");
+  background: url("../image/background/cityStreet.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -538,6 +520,23 @@ button:focus {
   border-color: transparent;
 }
 
+.mask {
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.mask:focus{
+  opacity: 1;
+}
+
+.mask:hover {
+  opacity: 1;
+}
+
     /*
       Projects -----------------------------------------------------------------------
     */
@@ -545,12 +544,18 @@ button:focus {
 .projectsBackgroundContainer {
   position: relative;
   overflow: hidden;
-  margin-bottom: 60px;
+  max-width: 1770px;
+  min-height: 1800px;
   padding-left: 150px;
+  -webkit-transform: translateY(0);
+  -moz-transform:translateY(0);
+  -ms-transform:translateY(0);
+  -o-transform:translateY(0);
+  transform:translateY(0);
 }
 
 .projectsBackground {
-  background: url("../image/background/footer_lodyas.png");
+  background: url("../image/background/room.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -596,6 +601,7 @@ button:focus {
 
 
 .paneAlignmentProject {
+  visibility: hidden;
   overflow: hidden;
 }
 
@@ -635,7 +641,7 @@ button:focus {
   transition: all 300ms ease;
 }
 
-.accordionButton, .accordionButtonLangN{
+.accordionButton, .accordionButtonLangN, .accordionButtonLangA{
   background-color: $grey;
   font-family: LondonBetween, sans-serif;
   border: 0;
@@ -653,7 +659,7 @@ button:focus {
   }
 }
 
-.accordionPanel, .accordionPanelLangN{
+.accordionPanel, .accordionPanelLangN, .accordionPanelLangA {
   display: none;
   border-top: ridge;
   border-bottom: ridge;
@@ -661,7 +667,7 @@ button:focus {
   border-color: $beige;
 }
 
-.activeButton, .activeButtonLangN{
+.activeButton, .activeButtonLangN, .activeButtonLangA{
   background-color: darken($lightNavy, 10%);
   border-bottom-style: ridge;
   border-width: 0.8px;
@@ -706,14 +712,18 @@ button:focus {
   display: block;
 }
 
+.buttonContainer{
+  margin-bottom: 100px;
+}
+
 .pausePlay {
   margin-top: 10px;
   cursor: pointer;
 }
 
-.slideButtons {
-  margin-bottom: 20px;
-}
+/*.slideButtons {
+  margin-bottom: 60px;
+}*/
 
 .slide-btn {
   cursor: pointer;
@@ -735,6 +745,24 @@ button:focus {
   background-color: $goldish;
 }
 
+.projectMask1 {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.projectMask03 {
+  opacity: 0.3;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.projectMask00 {
+  opacity: 0;
+}
+
     /*
       Links -----------------------------------------------------------------------
     */
@@ -744,10 +772,15 @@ button:focus {
   overflow: hidden;
   height: 300px;
   padding-left: 150px;
+  -webkit-transform: translateY(0);
+  -moz-transform:translateY(0);
+  -ms-transform:translateY(0);
+  -o-transform:translateY(0);
+  transform:translateY(0);
 }
 
 .linksBackground {
-  background: url("../image/background/stars.jpg");
+  background: url("../image/background/darkgrey.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -756,63 +789,35 @@ button:focus {
   z-index: -2;
 }
 
+.linksList{
+  padding-top: 15px
+}
+
 .links-font{
   font-size: 20px;
-  color: #FFFFFF;
+  color: $beige;
 }
 
-ul#linksInUl li{
-  display: inline;
+#githubTitle {
+  visibility: hidden;
 }
 
-.links-list li{
-  display: inline;
-}
-
-.myDraggable {
-  background-color: $blue;
-  width: 150px;
-  height: 150px;
-  padding: 0.5em;
-  box-shadow: 5px 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.myDraggable.ui-draggable-dragging { background: rgba(255, 0, 0, 0.71); }
-
-    /*
-      Button -----------------------------------------------------------------------
-    */
-
-.buttonWithShadow{
-  display: inline-block;
-  font:inherit;
-  border: 0;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  background-color: $blue;
-  &:hover{
-    background: darken($blue, 10%);
-    transition: all 300ms ease;
+.mega-octicon {
+  color: $beige;
+  &:hover {
+    background: darken($lightNavy, 10%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    transition: all 600ms ease;
   }
 }
-
-.buttonCircle {
-  width: 80px;
-  height: 80px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-
-/*
-  Footer -----------------------------------------------------------------------
-*/
 
 .footerFont {
   margin: 0;
   font-size: 15px;
   padding-top: 15px;
-  color: white;
+  color: $beige;
   text-shadow: none;
 }
 

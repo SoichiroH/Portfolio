@@ -45,40 +45,8 @@
             </div>
         </header>
 
- <!--
-        <!-- Banner
-        <div style="position: fixed; width: 100%;">
-            &lt;!&ndash; Banner &ndash;&gt;
-            <div class="mainBackgroundContainer" id="banner">
-                <div class="container">
-                    <br><br><br><br>
-                    <div  id="bannerName">
-                        <h1 id='newName' class='mainFont'> Soichiro Hirata</h1>
-                    </div>
-                    <h1 class="roleFont" id="roleTitle"> Web Developer</h1>
-                </div>
-                <div class="container" style="padding-top: 200px;">
-                    <ul>
-                        <li class="bannerPane align-right paneAlignment" id="bannerPaneContact" style="margin-left: 20px;">
-                            <p class="description no-margin">Contact</p>
-                            <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">soichiro.h21@gmail.com</p>
-                            <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">904-401-2740</p>
-                        </li>
-                        <li class="bannerPane align-right paneAlignment" id="bannerPaneResume">
-                            <p class="description no-margin">Resume</p>
-                            <a href="#" id="downloadResume">Download ></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mainBackground">
-                    <div class="greyerShade"></div>
-                </div>
-                <div class="shadowFade"></div>
-            </div>
-        </div>-->
-
         <main>
-            <div class="mainBackgroundContainer" id="banner">
+            <div class="mainBackgroundContainer" id="banner" style="z-index: 10;">
                 <div class="container">
                     <br><br><br><br>
                     <div  id="bannerName">
@@ -86,7 +54,7 @@
                     </div>
                     <h1 class="roleFont" id="roleTitle"> Web Developer</h1>
                 </div>
-                <div class="container" style="padding-top: 200px;">
+                <div class="container bannerPaneContainer">
                     <ul>
                         <li class="bannerPane align-right paneAlignment" id="bannerPaneContact" style="margin-left: 20px;">
                             <p class="description no-margin">Contact</p>
@@ -106,31 +74,36 @@
             </div>
 
             <!-- About -->
-            <div class="aboutBackgroundContainer" id="about"> <!--style="z-index: 1001; top: 1000px;"-->
+            <div class="aboutBackgroundContainer" id="about" style="z-index: 10; top: 1010px;"> <!--style="z-index: 1001; top: 1000px;"-->
                 <div class="container">
                     <h1 class="mainFont"> About</h1>
                         <ul class="paneAlignmentAbout">
                             <li>
                                 <div class="column1-3">
                                     <div class="projectPane" id="profilePane">
+                                        <p class="description align-left">Profile</p>
+                                        <div class="mask">
                                         <div class="center" id="profilePic">
-                                            <img src="image/profile.jpg" class="profile" style="margin: 24px 5px 5px 5px;">
+                                            <img src="image/profile.jpg" class="profile" style="margin: 0px 5px 5px 5px;">
                                         </div>
                                         <p class="description align-left">Hello, I'm Soichiro Hirata! I graduated from University of North Florida
                                             with a BS in Computer Information Science on 4/29/16.<br>
                                             I am currently seeking for a web developer position around the Bay Area.<br>
                                             Thank you for visiting my portfolio site and feel free to contact me by email or phone!
                                         </p>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="column2-3" >
                                     <div class="projectPane" id="whyPane">
-                                        <p class="description align-left">Why</p>
-                                        <p class="description align-left">Websites are the fastest, most efficient, and a very entertaining medium to express your passion to people around the globe. Passionate people with great ideas and contents are everywhere. I want to help these people distribute their passion in the most effective way, because looks matter. <br>
-                                            I want to become a professional at developing websites because I know that this skill can contribute to my favorite countries by expressing great contents in an awesome way to the world.
-                                        </p>
+                                        <p class="description align-left">Why Web Developer</p>
+                                        <div class="mask">
+                                            <p class="description align-left">Websites are the fastest, most efficient, and a very entertaining medium to express your passion to people around the globe. Passionate people with great ideas and contents are everywhere. I want to help these people distribute their passion in the most effective way, because looks matter. <br>
+                                                I want to become a professional at developing websites because I know that this skill can contribute to my favorite countries by expressing great contents in an awesome way to the world.
+                                            </p>1
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -138,21 +111,21 @@
                                 <div class="column3-3" >
                                     <div class="projectPane" id="langAboutPane">
                                         <p class="description align-left">
-                                            Languages
-                                        <div class="openAllBackground">
-                                            <img src="image/icons/glyphicons-10-magic.png" class="openAll">
-                                        </div>
+                                            Familiar Languages
                                         </p>
-                                        <ul class="accordionLangN">
+                                        <ul class="accordionLangA">
                                             <li style="display: inline;">
-                                                <button class="accordionButtonLangN">Front End</button>
-                                                <div class="accordionPanelLangN">
+                                                <button class="accordionButtonLangA">Front End</button>
+                                                <div class="accordionPanelLangA">
                                                     <ul>
                                                         <li style="display: inline;">
                                                             <img src="image/languages/nwbhs/HTML5_Logo_256.png" style="height: 100px; width: auto;">
                                                         </li>
                                                         <li style="display: inline;">
-                                                            <img src="image/languages/nwbhs/bootstrap-solid.svg" style="height: 100px; width: auto;">
+                                                            <img src="image/languages/sass.png" style="height: 100px; width: auto;">
+                                                        </li>
+                                                        <li style="display: inline;">
+                                                            <img src="image/languages/jQuery-Logo.png" style="height: 100px; width: 200px;">
                                                         </li>
                                                         <li style="display: inline;">
                                                             <img src="image/languages/nwbhs/CoffeeScript-logo.png" style="height: 100px; width: 200px;">
@@ -160,18 +133,27 @@
                                                         <li style="display: inline;">
                                                             <img src="image/languages/nwbhs/knockoutjs.PNG" style="height: 80px; width: 200px;">
                                                         </li>
+                                                        <li style="display: inline;">
+                                                            <img src="image/languages/AngularJS-Shield-medium.png" style="height: 80px; width: 200px;">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </li>
                                             <li style="display: inline;">
-                                                <button class="accordionButtonLangN">Back End</button>
-                                                <div class="accordionPanelLangN">
+                                                <button class="accordionButtonLangA">Back End</button>
+                                                <div class="accordionPanelLangA">
                                                     <ul>
                                                         <li style="display: inline;">
                                                             <img src="image/languages/nwbhs/mvc.jpg" style="height: 100px; width: auto;">
                                                         </li>
                                                         <li style="display: inline;">
                                                             <img src="image/languages/nwbhs/azure-logo.jpg" style="height: 100px; width: auto;">
+                                                        </li>
+                                                        <li style="display: inline;">
+                                                            <img src="image/languages/php-med-trans.png" style="height: 100px; width: auto;">
+                                                        </li>
+                                                        <li style="display: inline;">
+                                                            <img src="image/languages/lamp-stack.png" style="height: 100px; width: auto;">
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -189,16 +171,7 @@
             </div>
 
             <!-- Projects -->
-            <div class="projectsBackgroundContainer" id="projects">
-<!--                <div class="projectPaneTitleHeaderContainer" id="projectsTitle">
-                    <div class="projectPaneTitleHeader">
-                        <h1 class="mainFont">Projects</h1>
-                        <div class="projectsBackground" >
-                            <div class="greyerShade"></div>
-                        </div>
-                    </div>
-                </div>-->
-
+            <div class="projectsBackgroundContainer" id="projects" style="z-index: 10;">
                  <div class="container" >
                     <h1 class="mainFont">Projects</h1>
                     <div class="projectsBackground" >
@@ -223,12 +196,10 @@
                         <li>
                             <div class="column1-2">
                                 <div class="projectPane" id="nwbhsSynopsisPane">
-                                    <ul>
-                                        <li class="description align-left">
-                                            <p>
-                                                Synopsis
-                                            </p>
-                                        </li>
+                                    <p class="description align-left">
+                                        Synopsis
+                                    </p>
+                                    <ul class="mask">
                                         <li class="description align-left">
                                             <p>This web application was created and deployed for our client North West Behavioral Health Service (NWBHS),
                                                 a non-profit organization focused on infant mental health care in Jacksonville Florida, who requested for more efficient, useful and organized
@@ -263,6 +234,7 @@
                                             <img src="image/icons/glyphicons-10-magic.png" class="openAll" id="nwbhsFunc">
                                         </div>
                                     </p>
+
                                     <ul class="accordion">
                                         <li class="description align-left" style="display: inline;">
                                             <button class="accordionButton">Log in</button>
@@ -378,7 +350,7 @@
                                     <p class="description align-left">
                                         Award
                                     </p>
-                                    <p class="description align-left"><img src="image/icons/award.png" style="height: 70px; width: 70px; float: left;">This application won 4th place out of 48 groups and the Honorable Mention in the
+                                    <p class="description align-left mask"><img src="image/icons/award.png" style="height: 70px; width: 70px; float: left;">This application won 4th place out of 48 groups and the Honorable Mention in the
                                         <a href="http://www.unf.edu/ccec/computing/Symposium/Spring_2016_UNF_Computing_Symposium.aspx" target="_blank" style="text-decoration: underline;">UNF CCEC Symposium Spring 2016! ></a>
                                     </p>
                                 </div>
@@ -424,7 +396,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="center">
+                        <div class="center buttonContainer">
                             <img src="image/icons/glyphicons-175-pause.png" id="pauseSlide" class="pausePlay">
                             <img src="image/icons/glyphicons-174-play.png" id="playSlide" class="pausePlay">
                             <div class="slideButtons"></div>
@@ -438,23 +410,23 @@
                 </div>
             </div> <!-- End: Project background container -->
 
-            <div class="linksBackgroundContainer" id="otherSites">
+            <div class="linksBackgroundContainer" id="otherSites" style="z-index: 10;">
                 <div class="container">
                     <h1 class="mainFont"> Links</h1>
                     <div class="container center" >
-                        <br><br>
-                        <ul id="linksInUl">
-                            <li>
-                                <a href="https://github.com/SoichiroH" target="_blank" class="links-font">
-                                    <span class="mega-octicon octicon-mark-github"></span>
-                                    Github
+                        <ul>
+                            <li class="linksList">
+                                <a href="https://github.com/SoichiroH" target="_blank" class="links-font" >
+                                    <span class="mega-octicon octicon-mark-github" id="githubIcon"></span>
+                                </a>
+                            </li>
+                            <li class="linksList">
+                                <a  href="https://www.facebook.com/soichiro.hirata.7" target="_blank" class="links-font">
+                                    <span class="mega-octicon octicon-thumbsup" id="facebookIcon"></span>
                                 </a>
                             </li>
                             <li>
-                                <p>Details</p>
-                            </li>
-                            <li>
-                                <p>More Details</p>
+                                <p class="footerFont" >© 2016 Soichiro Hirata </p>
                             </li>
                         </ul>
                     </div>
@@ -464,12 +436,7 @@
                 </div>
             </div>
         </main>
-        <footer>
-            <div class="navContainer" id="footer">
-                <p class="footerFont" >© 2016 Soichiro Hirata </p>
-            </div>
-        </footer>
-        <!--<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>-->
+
         <script type="text/javascript" src="js/animations.js"></script>
         <script type="text/javascript" src="js/coreFunctions.js"></script>
     </body>

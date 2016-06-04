@@ -2,15 +2,6 @@
  * Created by Soichiro on 5/9/2016.
  */
 
-
-$(window).on('load',function(){
-    var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
-    //$('#nwbhsFuncPane').css({'height': containerHeight});
-    console.log('Loaded: Container Height - 40: '+containerHeight);
-    console.log('Loaded: Column heights'+$('#column22Nwbhs').height()+'Loaded: Container heights'+$('#nwbhsPane').height());
-});
-
-
 $(document).ready(function(){
 
 //Nav Bar -------------------------------------------------------------------------------
@@ -19,36 +10,105 @@ $(document).ready(function(){
     var $allSectionContainers = $('#banner').add($('#about')).add($('#projects')).add($('#otherSites'));
 
     if(window.innerWidth < 1000) {
+        var windowHeight = $(window).height();
+        $('#banner').css({'height':windowHeight});
         $("#sideNav").css({'transform': 'translateX(-200%)', 'box-shadow': 'none'});
         $allSectionContainers.css({'padding-left': '0'});
         if (!visible){
             $("#topNav").append("<nav id='newNav' class='nav'><div class='navContainer center'><a class='name'>Soichiro Hirata</a></div></nav>");
             $("#newName").remove();
+            $('#banner').css({'top':'70px'});
             visible = true;
         }
     }
 
+    var scrolledAllTheWayDown = false;
+
     $(window).resize(function(){
+        //Side Nav
         if(window.innerWidth < 1000) {
+            var windowHeight = $(window).height();
+            $('#banner').css({'height':windowHeight});
             $("#sideNav").css({'transform': 'translateX(-200%)', 'box-shadow': 'none'});
             $allSectionContainers.css({'padding-left': '0'});
             if (!visible){
                 $("#topNav").append("<nav id='newNav' class='nav'><div class='navContainer center'><a class='name'>Soichiro Hirata</a></div></nav>");
                 $("#newName").remove();
+                $('#banner').css({'top':'70px'});
                 visible = true;
             }
         }else {
+            var windowHeight = $(window).height();
+            $('#banner').css({'height':windowHeight});
             $("#sideNav").css({'transform': 'translateX(0)'});
             $allSectionContainers.css({'padding-left': '150px'});
             $("#newNav").remove();
+            $('#banner').css({'top':'0px'});
             if (visible){
                 $("#bannerName").append("<h1 id='newName' class='mainFont'>Soichiro Hirata</h1>");
             }
             visible = false;
         }
+
+        //Project pane height
         var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
         $('#nwbhsFuncPane').css({'height': containerHeight});
-    });
+
+        //Scrolling
+        var $heightFromTop = $(window).scrollTop();
+
+        if (($heightFromTop > 500) && ($('#profilePane').hasClass('comingDown')==false)){
+            $('.paneAlignmentAbout').css({'visibility': 'visible'});
+            $('#profilePane').hide().fadeIn(300).addClass('comingDown');
+            $('#whyPane').hide().delay(300).fadeIn(300).addClass('comingDown');
+            $('#langAboutPane').hide().delay(600).fadeIn(300).addClass('comingDown');
+        }
+
+        var windowHeight = $(window).height();
+        var aboutSectionHeight = $('#about').outerHeight();
+        var projectsSectionHeight = $('#projects').outerHeight();
+        var linkSectionHeight = $('#otherSites').outerHeight();
+        var windowAndAboutHeight = windowHeight+aboutSectionHeight;
+
+        $('#about').css({'top':windowHeight});
+        $('.linksBackgroundContainer').css({'top':(windowAndAboutHeight+projectsSectionHeight)});
+
+
+        if (aboutSectionHeight != 0 && ($heightFromTop >= aboutSectionHeight)){
+            $('#about').css({
+                'position': 'fixed',
+                'top':(windowHeight-aboutSectionHeight)
+            });
+            $('.projectsBackgroundContainer').css({'transform': 'translateY('+windowAndAboutHeight+')'});
+        }
+        if (aboutSectionHeight != 0 && ($heightFromTop < aboutSectionHeight)){
+            $('#about').css({
+                'position': 'relative'
+                //,'top':(windowHeight-aboutSectionHeight)
+            });
+            $('#projects').css({'top':windowHeight+aboutSectionHeight});
+        }
+
+        if (projectsSectionHeight != 0 && ($heightFromTop >= (projectsSectionHeight+aboutSectionHeight)) && scrolledAllTheWayDown == false){
+            $('.projectsBackgroundContainer').css({
+                'position': 'fixed',
+                'top':(windowHeight-projectsSectionHeight),
+                'z-index': 10
+            });
+            $('.linksBackgroundContainer').css({'transform': 'translateY('+(aboutSectionHeight + projectsSectionHeight)+')'});
+
+            scrolledAllTheWayDown = true;
+        } else if (aboutSectionHeight != 0 && ($heightFromTop < (projectsSectionHeight+aboutSectionHeight) && scrolledAllTheWayDown == true)){
+            $('#projects').css({
+                'position': 'relative',
+                'z-index': 11,
+                'top':(windowAndAboutHeight)
+            });
+            $('.projectsBackgroundContainer').css({'transform': 'translateY('+windowAndAboutHeight+projectsSectionHeight+')'});
+            scrolledAllTheWayDown = false;
+        }
+
+    });//End Window Resize
 //End Nav Bar -------------------------------------------------------------------------------
 
 //Banner -------------------------------------------------------------------------------
@@ -57,6 +117,54 @@ $(document).ready(function(){
         window.location = 'download/Resume-Hirata Soichiro.pdf';
     });
 //End Banner -------------------------------------------------------------------------------
+
+//About -------------------------------------------------------------------------------
+    //Languages Accordion
+    $('.accordionButtonLangA').on('click', function (e) {
+        var container2Height = $('#whyPane').innerHeight()-40;
+        var currentLangHeight = $('#column22Nwbhs').innerHeight();
+
+        e.preventDefault();
+        if ($(this).hasClass('activeButtonLangA')){
+            $('.accordionButtonLangA').removeClass('activeButtonLangA');
+            $('.accordionPanelLangA').slideUp();
+            //if rotateForward, height of the box is ''
+            if ($('#aboutLangA').hasClass('rotateForward')){
+                $('.column3-3').add($('#aboutLangA')).css({'height': ''});
+            }else {
+                $('.column3-3').css({'height': container2Height});
+            }
+        } else {
+            $('.accordionButtonLangA').removeClass('activeButtonLangA');
+            $('.accordionPanelLangA').slideUp();
+
+            $(this).next('.accordionPanelLangA').not(':animated').slideToggle('fast');
+            $(this).addClass('activeButtonLangA');
+            $('.column3-3').add($('#langAboutPane')).css({'height': ''});
+        }
+    });
+
+    //About pane height
+    $(window).resize(function(){
+
+        var column1Height = $('.column1-3').outerHeight();
+        var column2Height =  $('.column2-3').outerHeight();
+        var container1Height = $('#profilePane').innerHeight()-40;
+        var container2Height = $('#whyPane').innerHeight()-40;
+
+        if (window.innerWidth < 1000){
+            $('#profilePane').add($('#whyPane')).add($('#langAboutPane')).css({
+                'height': ''
+            });
+        }else {
+            $('#whyPane').css({
+                'height': ''
+            });
+            $('#profilePane').add($('#langAboutPane')).css({
+                'height': container2Height
+            });
+        }
+    });
 
 //Projects -------------------------------------------------------------------------------
     //Open All Button
@@ -85,7 +193,12 @@ $(document).ready(function(){
         if ($(this).hasClass('activeButtonLangN')){
             $('.accordionButtonLangN').removeClass('activeButtonLangN');
             $('.accordionPanelLangN').slideUp();
-            $('#column22Nwbhs').css({'height': synopsisContainerHeight});
+            //if rotateForward, height of the box is ''
+            if ($('#nwbhsFunc').hasClass('rotateForward')){
+                $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+            }else {
+                $('#column22Nwbhs').css({'height': synopsisContainerHeight});
+            }
         } else {
             $('.accordionButtonLangN').removeClass('activeButtonLangN');
             $('.accordionPanelLangN').slideUp();
@@ -95,6 +208,12 @@ $(document).ready(function(){
                         $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
                     } else{
                         $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': synopsisContainerHeight});
+                    }
+                    //if rotateForward, height of the box is ''
+                    if ($('#nwbhsFunc').hasClass('rotateForward')){
+                        $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+                    }else {
+                        $('#column22Nwbhs').css({'height': synopsisContainerHeight});
                     }
                 }else{
                     $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
@@ -110,7 +229,8 @@ $(document).ready(function(){
         if ($('#nwbhsFunc').hasClass('rotateForward')){
             $('.accordionButton').removeClass('activeButton');
             $('#nwbhsFunc').removeClass('rotateForward');
-            $('html,body').animate({scrollTop: $('#nwbhsFuncPane').offset().top}, 'slow');
+            $('html,body').animate({scrollTop: $('#nwbhsFuncPane').offset().top}, 'fast');
+            console.log('clicked');
         }
     }
     function removeActiveMoveTopLang(){
@@ -286,10 +406,5 @@ $(document).ready(function(){
         }
     });
 //End Projects -------------------------------------------------------------------------------
-
-});
-
-
-$(window).load(function () {
 
 });
