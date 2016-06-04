@@ -13,6 +13,8 @@ $(document).ready(function(){
         $('#roleTitle').addClass('center');
         $('.bannerPaneContainer').css({'padding-top':'60px'});
         $('.description').css({'font-size':'18px'});
+        $('.mainFont').css({'font-size':'40px'});
+        $('#maskProfilePane').add($('#maskWhyPane')).add($('#maskSynopsisPane')).removeClass('mask');
     }
 
     $(window).resize(function(){
@@ -146,7 +148,7 @@ $(document).ready(function(){
 //Banner -------------------------------------------------------------------------------
     //Download Resume
     $("#downloadResume").on('click', function () {
-        window.location = 'download/Resume-Hirata Soichiro.pdf';
+        window.location = '../download/Resume-Hirata Soichiro.pdf';
     });
 //End Banner -------------------------------------------------------------------------------
 

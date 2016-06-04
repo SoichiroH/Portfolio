@@ -55,10 +55,10 @@ $(function(){
 
 //Mask
     $('.mask').on({mouseenter: function(){
-        $(this).css({'opacity':'1'});
-    },mouseleave: function(){
-        $(this).css({'opacity':'0.1'});
-    }
+            $(this).css({'opacity':'1'});
+        },mouseleave: function(){
+            $(this).css({'opacity':'0.1'});
+        }
     });
 
 //About
@@ -253,9 +253,6 @@ $(function(){
         $(this).addClass('comingDown').removeClass('comingUp');
     }});
 
-    var linksTop = $('#otherSites').position().top;
-    var bottomOfWindow = $(window).scrollTop() + $(window).height();
-    console.log(linksTop);
 //Links
     $(window).scroll( function(){
             var linksTop = $('#otherSites').position().top;
