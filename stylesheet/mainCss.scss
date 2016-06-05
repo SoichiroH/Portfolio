@@ -53,10 +53,6 @@ html{
   background: url("../image/background/darkgrey.jpg");
   max-width: 2100px;
   font-family: LondonBetween, LondonMM, Helvetica, sans-serif;
-/*  -webkit-background-size: auto;
-  -moz-background-size: auto;
-  -o-background-size: auto;
-  background-size: auto;*/
 }
 
 header, main, footer{
@@ -77,8 +73,6 @@ main {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-
 
 nav {
   padding-left: 200px;
@@ -193,11 +187,6 @@ button:focus {
   float: none;
 }
 
-/*
-.container .row {
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-}*/
 
 @mixin containerModifier($marginAmount, $class) {
   .container--#{$class}
@@ -278,7 +267,6 @@ button:focus {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   overflow-y: auto;
-  //box-shadow: 5px 8px 16px 0 rgba(166, 135, 80, 0.2),0 6px 20px 0 rgba(166, 135, 80, 0.19);
   a {
     color: $beige;
     display: block;
@@ -329,7 +317,7 @@ button:focus {
 }
 
 .mainBackground {
-  background: url("../image/background/cityBW.jpeg");
+  background: url("../image/background/cityBW1770.jpeg");
   position: absolute;
   top: 0;
   left: 0;
@@ -355,7 +343,7 @@ button:focus {
 }
 
 .greyerShade {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   z-index: -1;
   min-width: 100%;
@@ -375,14 +363,8 @@ button:focus {
 }
 
 .roleFont {
-  font-family: Geometria, sans-serif;
-  font-size: 40px;
-  color: $beige;
-}
-
-.titleFont {
-  font-family: Geometria, sans-serif;
-  font-size: 55px;
+  font-family: LondonMM, sans-serif;
+  font-size: 35px;
   color: $beige;
 }
 
@@ -439,6 +421,19 @@ button:focus {
 .align-right {
   text-align: right;
 }
+
+#scrollDownIcon {
+  text-align: center;
+  cursor: pointer;
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  top: 80%;
+  margin-left: -25px;
+  left: 50%;
+}
+
     /*
       About -----------------------------------------------------------------------
     */
@@ -481,7 +476,6 @@ button:focus {
   height: 150px;
   position: relative;
   overflow: hidden;
-  //border-radius: 50%;
 }
 
 .profile img{
@@ -514,18 +508,14 @@ button:focus {
 .mask {
   width: 100%;
   height: 100%;
-  opacity: 0.1;
+  opacity: 0.2;
   transition: opacity .25s ease-in-out;
   -moz-transition: opacity .25s ease-in-out;
   -webkit-transition: opacity .25s ease-in-out;
 }
 
-.mask:focus{
-  opacity: 1;
-}
-
-.mask:hover {
-  opacity: 1;
+#langAboutPane {
+  margin-bottom: 350px;
 }
 
     /*
@@ -580,8 +570,6 @@ button:focus {
   overflow: hidden;
   width: 90%;
 }
-
-
 
 .projectPane {
   background-color: $darkGrey;
@@ -666,6 +654,9 @@ button:focus {
 }
 
 
+#sliderAndButtonContainer {
+  margin-bottom: 350px;
+}
 
 
 
@@ -712,9 +703,6 @@ button:focus {
   cursor: pointer;
 }
 
-/*.slideButtons {
-  margin-bottom: 60px;
-}*/
 
 .slide-btn {
   cursor: pointer;
@@ -736,23 +724,6 @@ button:focus {
   background-color: $goldish;
 }
 
-.projectMask1 {
-  opacity: 1;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out;
-}
-
-.projectMask03 {
-  opacity: 0.3;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out;
-}
-
-.projectMask00 {
-  opacity: 0;
-}
 
     /*
       Links -----------------------------------------------------------------------
@@ -778,6 +749,10 @@ button:focus {
   right: 0;
   bottom: 0;
   z-index: -2;
+}
+
+#socialContainer {
+  padding-top: 80px;
 }
 
 .linksList{
@@ -811,6 +786,9 @@ button:focus {
   color: $beige;
   text-shadow: none;
 }
+/*
+  Icons
+*/
 
 
 /*
@@ -867,11 +845,11 @@ button:focus {
     transform: translate(0,0);
   }
   100% {
-    -webkit-transform: translate(0, -10px);
-    -moz-transform: translate(0, -10px);
-    -ms-transform: translate(0, -10px);
-    -o-transform: translate(0, -10px);
-    transform: translate(0, -10px);
+    -webkit-transform: translate(0, -5px);
+    -moz-transform: translate(0, -5px);
+    -ms-transform: translate(0, -5px);
+    -o-transform: translate(0, -5px);
+    transform: translate(0, -5px);
   }
 }
 
@@ -889,11 +867,11 @@ button:focus {
 
 @keyframes comingDown {
   0% {
-    -webkit-transform: translate(0, -10px);
-    -moz-transform: translate(0, -10px);
-    -ms-transform: translate(0, -10px);
-    -o-transform: translate(0, -10px);
-    transform: translate(0, -10px);
+    -webkit-transform: translate(0, -5px);
+    -moz-transform: translate(0, -5px);
+    -ms-transform: translate(0, -5px);
+    -o-transform: translate(0, -5px);
+    transform: translate(0, -5px);
   }
   100% {
     -webkit-transform: translate(0,0);
@@ -904,10 +882,10 @@ button:focus {
   }
 }
 
-.upAndDown{
-  -webkit-animation: upDown 2s;
-  -o-animation: upDown 2s;
-  animation: upDown 2s;
+.comingDownLoop {
+  -webkit-animation: comingDown 1s infinite;
+  -o-animation: comingDown 1s infinite;
+  animation: comingDown 1s infinite;
   -webkit-transform: translate(0);
   -moz-transform: translate(0);
   -ms-transform: translate(0);
@@ -915,27 +893,20 @@ button:focus {
   transform: translate(0);
 }
 
-@keyframes upDown {
-  0%{
-    -webkit-transform: translate(0,0);
-    -moz-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    -o-transform: translate(0,0);
-    transform: translate(0,0);
-  }
-  50%{
-    -webkit-transform: translate(0, -10px);
-    -moz-transform: translate(0, -10px);
-    -ms-transform: translate(0, -10px);
-    -o-transform: translate(0, -10px);
-    transform: translate(0, -10px);
+@keyframes comingDownLoop {
+  0% {
+    -webkit-transform: translate(0, -15px);
+    -moz-transform: translate(0, -15px);
+    -ms-transform: translate(0, -15px);
+    -o-transform: translate(0, -15px);
+    transform: translate(0, -15px);
   }
   100% {
-    -webkit-transform: translate(0,0);
-    -moz-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    -o-transform: translate(0,0);
-    transform: translate(0,0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
   }
 }
 
