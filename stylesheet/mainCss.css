@@ -236,7 +236,7 @@ button:focus {
   padding-left: 150px; }
 
 .mainBackground {
-  background: url("../image/background/cityBW1770.jpeg");
+  background: url("../image/background/cityBW.jpeg");
   position: absolute;
   top: 0;
   left: 0;
@@ -404,6 +404,70 @@ button:focus {
 
 #langAboutPane {
   margin-bottom: 350px; }
+
+.langIcons8mvc, .langIcons10azure, .langIcons4jquery, .langIcons5coffeescript, .langIcons6knockoutjs,
+.langIcons11lamp, .langIcons9php, .langIcons3sass, .langIcons1html5, .langIcons2bootstrap,
+.langIcons7angularjs {
+  display: inline-block;
+  background: url("../image/languages/langIcons.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left; }
+
+.langIcons8mvc {
+  background-position: -0px -0px;
+  width: 211px;
+  height: 100px; }
+
+.langIcons10azure {
+  background-position: -0px -100px;
+  width: 200px;
+  height: 100px; }
+
+.langIcons4jquery {
+  background-position: -0px -200px;
+  width: 200px;
+  height: 100px; }
+
+.langIcons5coffeescript {
+  background-position: -0px -300px;
+  width: 200px;
+  height: 100px; }
+
+.langIcons6knockoutjs {
+  background-position: -0px -400px;
+  width: 200px;
+  height: 100px; }
+
+.langIcons11lamp {
+  background-position: -0px -500px;
+  width: 199px;
+  height: 100px; }
+
+.langIcons9php {
+  background-position: -0px -600px;
+  width: 186px;
+  height: 100px; }
+
+.langIcons3sass {
+  background-position: -0px -700px;
+  width: 133px;
+  height: 100px; }
+
+.langIcons1html5 {
+  background-position: -0px -800px;
+  width: 100px;
+  height: 100px; }
+
+.langIcons2bootstrap {
+  background-position: -100px -800px;
+  width: 100px;
+  height: 100px; }
+
+.langIcons7angularjs {
+  background-position: -0px -900px;
+  width: 95px;
+  height: 100px; }
 
 /*
   Projects -----------------------------------------------------------------------
