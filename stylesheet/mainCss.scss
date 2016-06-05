@@ -21,15 +21,6 @@ $grey: #2c2c2c;
   src: url(../fonts/LondonMM.ttf);
 }
 
-@font-face {
-  font-family: CodeProLight;
-  src: url(../fonts/Code_Pro_Light_Demo.otf);
-}
-
-@font-face {
-  font-family: Geometria;
-  src: url(../fonts/Geometria-Light.otf);
-}
 
 a {
   color: $grey;
@@ -462,7 +453,7 @@ button:focus {
 }
 
 .aboutBackground {
-  background: url("../image/background/cityStreet.jpg");
+  background: url("../image/background/grunge_wall.png");
   position: absolute;
   top: 0;
   left: 0;

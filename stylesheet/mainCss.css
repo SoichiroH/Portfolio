@@ -5,13 +5,8 @@
   src: url(../fonts/LondonBetween.ttf); }
 @font-face {
   font-family: LondonMM;
-  src: url(../fonts/LondonMM.ttf); }
-@font-face {
-  font-family: CodeProLight;
-  src: url(../fonts/Code_Pro_Light_Demo.otf); }
-@font-face {
-  font-family: Geometria;
-  src: url(../fonts/Geometria-Light.otf); }
+  src: url(../fonts/LondonMM.ttf);
+}
 a {
   color: #2c2c2c;
   text-decoration: none;
@@ -327,11 +322,6 @@ button:focus {
 .roleFont {
   font-family: LondonMM, sans-serif;
   font-size: 35px;
-  color: #f5dfbf; }
-
-.titleFont {
-  font-family: Geometria, sans-serif;
-  font-size: 55px;
   color: #f5dfbf; }
 
 .bannerPaneContainer {
@@ -662,7 +652,7 @@ button:focus {
   z-index: -2; }
 
 #socialContainer {
-  padding-top: 120px;
+  padding-top: 80px;
 }
 
 .linksList {

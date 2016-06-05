@@ -34,7 +34,7 @@ $(document).ready(function(){
     $(window).resize(function(){
         if(window.innerWidth > 700) {
             $('.mainBackground').css("background-image", "url(../image/background/cityBW.jpeg)");
-            $('.aboutBackground').css("background-image", "url(../image/background/cityStreet.jpg)");
+            $('.aboutBackground').css("background-image", "url(../image/background/grunge_wall.png)");
             $('.projectsBackground').css("background-image", "url(../image/background/room.jpg)");
 
             $('#roleTitle').removeClass('center');
