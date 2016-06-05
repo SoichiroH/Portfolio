@@ -21,6 +21,7 @@ function bannerAnimation(){
 
     $("#bannerPaneResume").hide().delay(1600).fadeIn(300).addClass('comingDown');
     $("#bannerPaneContact").hide().delay(1600).fadeIn(300).addClass('comingDown');
+
 }
 
 
@@ -32,6 +33,11 @@ $(function(){
         },mouseleave: function(){
             $(this).addClass('comingDown').removeClass('comingUp');
         }
+    });
+
+    $('#scrollDownIcon').on('click', function(){
+        var windowHeight = $(window).height();
+        $('body').not(':animated').animate({scrollTop: windowHeight}, 'slow');
     });
 
 //SideNav

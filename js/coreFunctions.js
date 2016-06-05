@@ -4,21 +4,35 @@
 
 $(document).ready(function(){
 
-//Mobile size
-    if(window.innerWidth < 600) {
+//Mobile Optimization
+    if(window.innerWidth < 700) {
         $('.mainBackground').css("background-image", "url(../image/background/grunge_wall.png)");
         $('.aboutBackground').css("background-image", "url(../image/background/grey_wash_wall.png)");
         $('.projectsBackground').css("background-image", "url(../image/background/brickwall.png)");
-
+        //Font
         $('#roleTitle').addClass('center');
         $('.bannerPaneContainer').css({'padding-top':'60px'});
         $('.description').css({'font-size':'18px'});
         $('.mainFont').css({'font-size':'30px'});
+        $('.projectPaneTitle p').css({'font-size':'22px'});
+        //Mask
         $('#maskProfilePane').add($('#maskWhyPane')).add($('#maskSynopsisPane')).removeClass('mask');
+        //About
+        $(window).on('scroll', function() {
+
+            var $heightFromTop = $(window).scrollTop();
+
+            if (($heightFromTop > 250) && ($('#profilePane').hasClass('comingDown') == false)) {
+                $('.paneAlignmentAbout').css({'visibility': 'visible'});
+                $('#profilePane').hide().fadeIn(300).addClass('comingDown');
+                $('#whyPane').hide().delay(300).fadeIn(300).addClass('comingDown');
+                $('#langAboutPane').hide().delay(600).fadeIn(300).addClass('comingDown');
+            }
+        });
     }
 
     $(window).resize(function(){
-        if(window.innerWidth > 600) {
+        if(window.innerWidth > 700) {
             $('.mainBackground').css("background-image", "url(../image/background/cityBW.jpeg)");
             $('.aboutBackground').css("background-image", "url(../image/background/cityStreet.jpg)");
             $('.projectsBackground').css("background-image", "url(../image/background/room.jpg)");
