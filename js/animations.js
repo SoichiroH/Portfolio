@@ -22,6 +22,7 @@ function bannerAnimation(){
     $("#bannerPaneResume").hide().delay(1600).fadeIn(300).addClass('comingDown');
     $("#bannerPaneContact").hide().delay(1600).fadeIn(300).addClass('comingDown');
 
+    $('#scrollDownIcon').hide().delay(1000).fadeIn(3000);
 }
 
 
@@ -259,18 +260,5 @@ $(function(){
         $(this).addClass('comingDown').removeClass('comingUp');
     }});
 
-//Links
-    $(window).scroll( function(){
-            var linksTop = $('#otherSites').position().top;
-            var bottomOfWindow = $(window).scrollTop() + $(window).height();
-
-            if( (linksTop > 100)&&(bottomOfWindow >= linksTop) ){
-                $('#about').removeClass('projectMask1').addClass('projectMask00');
-                $('#banner').add($('#projects')).removeClass('projectMask1').addClass('projectMask03');
-            } else if (bottomOfWindow < linksTop){
-                $('#about').removeClass('projectMask00').addClass('projectMask1');;
-                $('#banner').add($('#projects')).removeClass('projectMask03').addClass('projectMask1');
-            }
-    });
 });
 

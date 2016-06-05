@@ -403,7 +403,7 @@ button:focus {
   padding-left: 150px; }
 
 .aboutBackground {
-  background: url("../image/background/cityStreet.jpg");
+  background: url("../image/background/grunge_wall.png");
   position: absolute;
   top: 0;
   left: 0;
@@ -457,6 +457,10 @@ button:focus {
   transition: opacity .25s ease-in-out;
   -moz-transition: opacity .25s ease-in-out;
   -webkit-transition: opacity .25s ease-in-out; }
+
+#langAboutPane {
+  margin-bottom: 350px;
+}
 
 
 /*
@@ -575,6 +579,11 @@ button:focus {
   border-width: 0.8px;
   border-color: #a68750; }
 
+
+#sliderAndButtonContainer {
+  margin-bottom: 350px;
+}
+
 /*
   Slider -----------------------------------------------------------------------
 */
@@ -629,21 +638,6 @@ button:focus {
 .active {
   background-color: #a68750; }
 
-.projectMask1 {
-  opacity: 1;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out; }
-
-.projectMask03 {
-  opacity: 0.3;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out; }
-
-.projectMask00 {
-  opacity: 0; }
-
 /*
   Links -----------------------------------------------------------------------
 */
@@ -666,6 +660,10 @@ button:focus {
   right: 0;
   bottom: 0;
   z-index: -2; }
+
+#socialContainer {
+  padding-top: 120px;
+}
 
 .linksList {
   padding-top: 15px; }
