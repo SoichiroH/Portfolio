@@ -6,15 +6,17 @@ $(document).ready(function(){
 
 //Mobile Optimization
     if(window.innerWidth < 700) {
-        $('.mainBackground').css("background-image", "url(../image/background/grunge_wall.png)");
-        $('.aboutBackground').css("background-image", "url(../image/background/grey_wash_wall.png)");
-        $('.projectsBackground').css("background-image", "url(../image/background/brickwall.png)");
+        $('.mainBackground').css("background-image", "url(../image/background/darkgrey.jpg)");
+        $('.aboutBackground').css("background-image", "url(../image/background/grunge_wall.png)");
+        $('.projectsBackground').css("background-image", "url(../image/background/grunge_wall.png)");
+        $('.greyerShade').css({'background-color': 'rgba(0, 0, 0, 0)'});
         //Font
         $('#roleTitle').addClass('center');
         $('.bannerPaneContainer').css({'padding-top':'60px'});
         $('.description').css({'font-size':'18px'});
         $('.mainFont').css({'font-size':'30px'});
         $('.projectPaneTitle p').css({'font-size':'22px'});
+        $('#aboutTitle').add("#projectTitle").css({"color": "#0f6186"});
         //Mask
         $('#maskProfilePane').add($('#maskWhyPane')).add($('#maskSynopsisPane')).removeClass('mask');
         //About
@@ -32,6 +34,32 @@ $(document).ready(function(){
     }
 
     $(window).resize(function(){
+        if(window.innerWidth < 700) {
+            $('.mainBackground').css("background-image", "url(../image/background/darkgrey.jpg)");
+            $('.aboutBackground').css("background-image", "url(../image/background/grunge_wall.png)");
+            $('.projectsBackground').css("background-image", "url(../image/background/grunge_wall.png)");
+            //Font
+            $('#roleTitle').addClass('center');
+            $('.bannerPaneContainer').css({'padding-top':'60px'});
+            $('.description').css({'font-size':'18px'});
+            $('.mainFont').css({'font-size':'30px'});
+            $('.projectPaneTitle p').css({'font-size':'22px'});
+            $('#aboutTitle').add("#projectTitle").css({"color": "#0f6186"});
+            //Mask
+            $('#maskProfilePane').add($('#maskWhyPane')).add($('#maskSynopsisPane')).removeClass('mask');
+            //About
+            $(window).on('scroll', function() {
+
+                var $heightFromTop = $(window).scrollTop();
+
+                if (($heightFromTop > 250) && ($('#profilePane').hasClass('comingDown') == false)) {
+                    $('.paneAlignmentAbout').css({'visibility': 'visible'});
+                    $('#profilePane').hide().fadeIn(300).addClass('comingDown');
+                    $('#whyPane').hide().delay(300).fadeIn(300).addClass('comingDown');
+                    $('#langAboutPane').hide().delay(600).fadeIn(300).addClass('comingDown');
+                }
+            });
+        }
         if(window.innerWidth > 700) {
             $('.mainBackground').css("background-image", "url(../image/background/cityBW.jpeg)");
             $('.aboutBackground').css("background-image", "url(../image/background/grunge_wall.png)");
@@ -94,7 +122,6 @@ $(document).ready(function(){
         //Project pane height
         var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
 
-
         if (window.innerWidth < 1300){
             $('#nwbhsFuncPane').add($('#column22Nwbhs')).css({'height': ''});
         }else {
@@ -102,7 +129,7 @@ $(document).ready(function(){
         }
 
 
-        //Scrolling
+        //Should go to animations.js
         var $heightFromTop = $(window).scrollTop();
 
         if (($heightFromTop > 500) && ($('#profilePane').hasClass('comingDown')==false)){
@@ -112,57 +139,60 @@ $(document).ready(function(){
             $('#langAboutPane').hide().delay(600).fadeIn(300).addClass('comingDown');
         }
 
-        var windowHeight = $(window).height();
-        var aboutSectionHeight = $('#about').outerHeight();
-        var projectsSectionHeight = $('#projects').outerHeight();
-        var linkSectionHeight = $('#otherSites').outerHeight();
-        var windowAndAboutHeight = windowHeight+aboutSectionHeight;
+    //Fixed Scroll applies only for windows wider than 700px
+        if(window.innerWidth > 700) {
 
-        $('#about').css({'top':windowHeight});
-        $('.linksBackgroundContainer').css({'top':(windowAndAboutHeight+projectsSectionHeight)});
+            var windowHeight = $(window).height();
+            var aboutSectionHeight = $('#about').outerHeight();
+            var projectsSectionHeight = $('#projects').outerHeight();
+            var linkSectionHeight = $('#otherSites').outerHeight();
+            var windowAndAboutHeight = windowHeight + aboutSectionHeight;
+
+            $('#about').css({'top': windowHeight});
+            $('.linksBackgroundContainer').css({'top': (windowAndAboutHeight + projectsSectionHeight)});
 
 
-        if (aboutSectionHeight != 0 && ($heightFromTop >= aboutSectionHeight)){
-            $('#about').css({
-                'position': 'fixed',
-                'top':(windowHeight-aboutSectionHeight)
-            });
-            $('.projectsBackgroundContainer').css({'transform': 'translateY('+windowAndAboutHeight+')'});
+            if (aboutSectionHeight != 0 && ($heightFromTop >= aboutSectionHeight)) {
+                $('#about').css({
+                    'position': 'fixed',
+                    'top': (windowHeight - aboutSectionHeight)
+                });
+                $('.projectsBackgroundContainer').css({'transform': 'translateY(' + windowAndAboutHeight + ')'});
+            }
+            if (aboutSectionHeight != 0 && ($heightFromTop < aboutSectionHeight)) {
+                $('#about').css({
+                    'position': 'relative'
+                    //,'top':(windowHeight-aboutSectionHeight)
+                });
+                $('#projects').css({'top': windowHeight + aboutSectionHeight});
+            }
+
+            if (projectsSectionHeight != 0 && ($heightFromTop >= (projectsSectionHeight + aboutSectionHeight)) && scrolledAllTheWayDown == false) {
+                $('.projectsBackgroundContainer').css({
+                    'position': 'fixed',
+                    'top': (windowHeight - projectsSectionHeight),
+                    'z-index': 10
+                });
+                $('.linksBackgroundContainer').css({'transform': 'translateY(' + (aboutSectionHeight + projectsSectionHeight) + ')'});
+
+                scrolledAllTheWayDown = true;
+            } else if (aboutSectionHeight != 0 && ($heightFromTop < (projectsSectionHeight + aboutSectionHeight) && scrolledAllTheWayDown == true)) {
+                $('#projects').css({
+                    'position': 'relative',
+                    'z-index': 11,
+                    'top': (windowAndAboutHeight)
+                });
+                $('.projectsBackgroundContainer').css({'transform': 'translateY(' + windowAndAboutHeight + projectsSectionHeight + ')'});
+                scrolledAllTheWayDown = false;
+            }
         }
-        if (aboutSectionHeight != 0 && ($heightFromTop < aboutSectionHeight)){
-            $('#about').css({
-                'position': 'relative'
-                //,'top':(windowHeight-aboutSectionHeight)
-            });
-            $('#projects').css({'top':windowHeight+aboutSectionHeight});
-        }
-
-        if (projectsSectionHeight != 0 && ($heightFromTop >= (projectsSectionHeight+aboutSectionHeight)) && scrolledAllTheWayDown == false){
-            $('.projectsBackgroundContainer').css({
-                'position': 'fixed',
-                'top':(windowHeight-projectsSectionHeight),
-                'z-index': 10
-            });
-            $('.linksBackgroundContainer').css({'transform': 'translateY('+(aboutSectionHeight + projectsSectionHeight)+')'});
-
-            scrolledAllTheWayDown = true;
-        } else if (aboutSectionHeight != 0 && ($heightFromTop < (projectsSectionHeight+aboutSectionHeight) && scrolledAllTheWayDown == true)){
-            $('#projects').css({
-                'position': 'relative',
-                'z-index': 11,
-                'top':(windowAndAboutHeight)
-            });
-            $('.projectsBackgroundContainer').css({'transform': 'translateY('+windowAndAboutHeight+projectsSectionHeight+')'});
-            scrolledAllTheWayDown = false;
-        }
-
     });//End Window Resize
 //End Nav Bar -------------------------------------------------------------------------------
 
 //Banner -------------------------------------------------------------------------------
     //Download Resume
     $("#downloadResume").on('click', function () {
-        window.location = '../download/Resume-Hirata Soichiro.pdf';
+        window.location = 'http://soichirohirata.com/download/Resume-Hirata Soichiro.pdf';
     });
 //End Banner -------------------------------------------------------------------------------
 

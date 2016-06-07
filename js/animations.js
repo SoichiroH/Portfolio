@@ -5,7 +5,7 @@
 
 
 //Banner
-$('header, main, footer').css({'visibility': 'visible'}).fadeOut(0).delay(3000).fadeIn(0).promise().done(function(){bannerAnimation()});
+$('header, main, footer').css({'visibility': 'visible'}).fadeOut(0).delay(1000).fadeIn(0).promise().done(function(){bannerAnimation()});
 function bannerAnimation(){
     var windowHeight = $(window).height();
     $('#banner').css({'height':windowHeight});
@@ -83,47 +83,60 @@ $(function(){
             $('#langAboutPane').hide().delay(600).fadeIn(300).addClass('comingDown');
         }
 
-        var windowHeight = $(window).height();
-        var aboutSectionHeight = $('#about').outerHeight();
-        var projectsSectionHeight = $('#projects').outerHeight();
-        var linkSectionHeight = $('#otherSites').outerHeight();
-        var windowAndAboutHeight = windowHeight+aboutSectionHeight;
+        //When mobile, don't apply fixed scroll
+        if(window.innerWidth < 700) {
+            var windowHeight = $(window).height();
 
-        $('#about').css({'top':windowHeight});
-        $('.linksBackgroundContainer').css({'top':(windowAndAboutHeight+projectsSectionHeight)});
-
-
-        if (aboutSectionHeight != 0 && ($heightFromTop >= aboutSectionHeight)){
-            $('#about').css({
-                'position': 'fixed',
-                'top':(windowHeight-aboutSectionHeight)
-            });
-            $('.projectsBackgroundContainer').css({'transform': 'translateY('+windowAndAboutHeight+')'});
-        }
-        if (aboutSectionHeight != 0 && ($heightFromTop < aboutSectionHeight)){
-            $('#about').css({
-                'position': 'relative'
-                //,'top':(windowHeight-aboutSectionHeight)
-            });
-            $('#projects').css({'top':windowHeight+aboutSectionHeight});
+            $('#about').css({'top': windowHeight});
+            $('#projects').css({'top': windowHeight});
+            $('.linksBackgroundContainer').css({'top': windowHeight});
         }
 
-        if (projectsSectionHeight != 0 && ($heightFromTop >= (projectsSectionHeight+aboutSectionHeight)) && scrolledAllTheWayDown == false){
-            $('.projectsBackgroundContainer').css({
-                'position': 'fixed',
-                'top':(windowHeight-projectsSectionHeight),
 
-            });
-            $('.linksBackgroundContainer').css({'transform': 'translateY('+(aboutSectionHeight + projectsSectionHeight)+')'});
+        //Fixed Scroll applies only for windows wider than 700px
+        if(window.innerWidth > 700) {
 
-            scrolledAllTheWayDown = true;
-        } else if (aboutSectionHeight != 0 && ($heightFromTop < (projectsSectionHeight+aboutSectionHeight) && scrolledAllTheWayDown == true)){
-            $('#projects').css({
-                'position': 'relative',
-                'top':(windowAndAboutHeight)
-            });
-            $('.projectsBackgroundContainer').css({'transform': 'translateY('+windowAndAboutHeight+projectsSectionHeight+')'});
-            scrolledAllTheWayDown = false;
+            var windowHeight = $(window).height();
+            var aboutSectionHeight = $('#about').outerHeight();
+            var projectsSectionHeight = $('#projects').outerHeight();
+            var linkSectionHeight = $('#otherSites').outerHeight();
+            var windowAndAboutHeight = windowHeight + aboutSectionHeight;
+
+            $('#about').css({'top': windowHeight});
+            $('.linksBackgroundContainer').css({'top': (windowAndAboutHeight + projectsSectionHeight)});
+
+
+            if (aboutSectionHeight != 0 && ($heightFromTop >= aboutSectionHeight)) {
+                $('#about').css({
+                    'position': 'fixed',
+                    'top': (windowHeight - aboutSectionHeight)
+                });
+                $('.projectsBackgroundContainer').css({'transform': 'translateY(' + windowAndAboutHeight + ')'});
+            }
+            if (aboutSectionHeight != 0 && ($heightFromTop < aboutSectionHeight)) {
+                $('#about').css({
+                    'position': 'relative'
+                    //,'top':(windowHeight-aboutSectionHeight)
+                });
+                $('#projects').css({'top': windowHeight + aboutSectionHeight});
+            }
+
+            if (projectsSectionHeight != 0 && ($heightFromTop >= (projectsSectionHeight + aboutSectionHeight)) && scrolledAllTheWayDown == false) {
+                $('.projectsBackgroundContainer').css({
+                    'position': 'fixed',
+                    'top': (windowHeight - projectsSectionHeight)
+                });
+                $('.linksBackgroundContainer').css({'transform': 'translateY(' + (aboutSectionHeight + projectsSectionHeight) + ')'});
+
+                scrolledAllTheWayDown = true;
+            } else if (aboutSectionHeight != 0 && ($heightFromTop < (projectsSectionHeight + aboutSectionHeight) && scrolledAllTheWayDown == true)) {
+                $('#projects').css({
+                    'position': 'relative',
+                    'top': (windowAndAboutHeight)
+                });
+                $('.projectsBackgroundContainer').css({'transform': 'translateY(' + windowAndAboutHeight + projectsSectionHeight + ')'});
+                scrolledAllTheWayDown = false;
+            }
         }
 
         //Match pane height

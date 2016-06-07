@@ -678,7 +678,7 @@ button:focus {
   position: relative;
   overflow: hidden;
   height: 300px;
-  padding-left: 150px;
+  //padding-left: 150px;
   width: 100%;
   -webkit-transform: translateY(0);
   -moz-transform:translateY(0);
@@ -737,6 +737,34 @@ button:focus {
   Animation -----------------------------------------------------------------------
 */
 
+
+.comingLeft {
+  -webkit-animation: comingLeft 1.5s;
+  -o-animation: comingLeft 1.5s;
+  animation: comingLeft 1.5s;
+  -webkit-transform: translate(0,0);
+  -moz-transform: translate(0,0);
+  -ms-transform: translate(0,0);
+  -o-transform: translate(0,0);
+  transform: translate(0,0);
+}
+@keyframes comingLeft {
+  0% {
+    -webkit-transform: translate(-100%,0);
+    -moz-transform: translate(-100%,0);
+    -ms-transform: translate(-100%,0);
+    -o-transform: translate(-100%,0);
+    transform: translate(-100%,0);
+  }
+
+  100%{
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
 
 
 .comingUp{

@@ -9,20 +9,44 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="stylesheet/mainCss.css">
-        <link rel="stylesheet" href="octicons/octicons.css">
-        <link rel="shortcut icon" href="image/logoIco.ico">
         <title>Soichiro Hirata</title>
-        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+        <style type="text/css">
+            html.js .nojs {
+                display: none;
+            }
+            html {
+                background: url("http://soichirohirata.com/image/background/darkgrey.jpg");
+            }
+        </style>
         <script>
-            $(window).on('load', function(){
-                $('#ajaxLoader').fadeOut(3000);
-            });
+            document.documentElement.className += ' js';
+
+            window.onload = function(){
+                fadeOut("ajaxLoader", 9);
+            }
+
+            function fadeOut(id,val){
+                if(isNaN(val)){
+                    val = 9;
+                }
+                document.getElementById(id).style.opacity='0.'+val;
+
+                //For IE
+                document.getElementById(id).style.filter='alpha(opacity='+val+'0)';
+
+                if(val>0){
+                    val--;
+                    setTimeout('fadeOut("'+id+'",'+val+')',200);
+                }else{
+                    return;
+                }
+            }
         </script>
+        <link rel="shortcut icon" type="image/png" href="http://soichirohirata.com/image/logoIco.png">
     </head>
     <body>
         <div class="box loading" id="ajaxLoader"></div>
-        <header>
+        <header class="nojs">
             <div id="topNav"></div>
             <!-- Vertical Nav bar -->
             <div class="side-nav" id="sideNav" style="z-index: 1100;">
@@ -45,7 +69,7 @@
             </div>
         </header>
 
-        <main>
+        <main class="nojs">
             <div class="mainBackgroundContainer" id="banner" style="z-index: 10;">
                 <div class="container">
                     <br>
@@ -58,11 +82,11 @@
                     <ul>
                         <li class="bannerPane align-right paneAlignment" id="bannerPaneContact" style="margin-left: 20px;">
                             <p class="description no-margin">Contact</p>
-                            <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">soichiro.h21@gmail.com</p>
-                            <p class="description no-margin" style="font-size: 1rem; font-family: LondonBetween;">904-401-2740</p>
+                            <p class="descriptionContact no-margin">soichiro.h21@gmail.com</p>
+                            <p class="descriptionContact no-margin">904-401-2740</p>
                         </li>
                         <li class="bannerPane align-right paneAlignment" id="bannerPaneResume">
-                            <a href="#" class="description" id="downloadResume" style="font-size: 20px;">Résumé ></a>
+                            <a href="http://soichirohirata.com/download/Resume-Hirata Soichiro.pdf" target="_blank" class="description" id="downloadResume"  style="font-size: 20px;">Résumé ></a>
                         </li>
                     </ul>
                 </div>
@@ -78,7 +102,7 @@
             <!-- About -->
             <div class="aboutBackgroundContainer" id="about" style="z-index: 10; top: 1010px;"> <!--style="z-index: 1001; top: 1000px;"-->
                 <div class="container">
-                    <h1 class="mainFont"> About</h1>
+                    <h1 class="mainFont" id="aboutTitle"> About</h1>
                     <ul class="paneAlignmentAbout">
                         <li>
                             <div class="projectPane" id="profilePane">
@@ -171,7 +195,7 @@
             <!-- Projects -->
             <div class="projectsBackgroundContainer" id="projects" style="z-index: 10;">
                  <div class="container" >
-                    <h1 class="mainFont">Projects</h1>
+                    <h1 class="mainFont" id="projectTitle">Projects</h1>
                     <div class="projectsBackground" >
                         <div class="greyerShade"></div>
                     </div>
@@ -395,8 +419,8 @@
                             </ul>
                         </div>
                         <div class="center buttonContainer">
-                            <img src="image/icons/glyphicons-175-pause.png" id="pauseSlide" class="pausePlay">
-                            <img src="image/icons/glyphicons-174-play.png" id="playSlide" class="pausePlay">
+                            <img src="image/icons/glyphicons-175-pause.png" id="pauseSlide" class="pausePlay" style="width: 25px;height: 25px;">
+                            <img src="image/icons/glyphicons-174-play.png" id="playSlide" class="pausePlay" style="width: 25px;height: 25px;">
                             <div class="slideButtons"></div>
                         </div>
                     </div>
@@ -438,7 +462,8 @@
                 </div>
             </div>
         </main>
-        <script type="text/javascript" src="js/animations.js"></script>
-        <script type="text/javascript" src="js/coreFunctions.js"></script>
+        <link rel="stylesheet" href="stylesheet/mainCss-min.css">
+        <link rel="stylesheet" href="octicons/octicons.css">
+        <script type="text/javascript" src="js/min/animations-min.js"></script>
     </body>
 </html>
