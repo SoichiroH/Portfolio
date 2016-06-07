@@ -655,7 +655,7 @@ button:focus {
   width: 15px;
   margin: 5px 12px;
   border-radius: 50%;
-  background-color: black;
+  background-color: $lightNavy;
   border: 0;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   z-index: 3;
@@ -668,6 +668,16 @@ button:focus {
 .active{
   background-color: $goldish;
 }
+
+//Projects icon Sprite
+
+.iconsplay, .iconsresize, .iconspause
+{ display: inline-block; background: url('../image/icons/icons.png') no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+
+.iconsplay { background-position: -0px -0px; width: 25px; height: 28px; }
+.iconsresize { background-position: -0px -28px; width: 20px; height: 20px; }
+.iconspause { background-position: -0px -48px; width: 18px; height: 28px; }
+
 
 
     /*
