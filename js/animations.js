@@ -12,7 +12,7 @@ function bannerAnimation(){
 
     $('.mainBackground').hide().fadeIn(2300);
 
-    if (window.innerWidth > 1000){
+    if (window.innerWidth > 1100){
         $("#sideNav").delay(700).addClass('comingLeft');
     }
 
@@ -84,7 +84,7 @@ $(function(){
         }
 
         //When mobile, don't apply fixed scroll
-        if(window.innerWidth < 700) {
+        if(window.innerWidth < 1100) {
             var windowHeight = $(window).height();
 
             $('#about').css({'top': windowHeight});
@@ -93,8 +93,8 @@ $(function(){
         }
 
 
-        //Fixed Scroll applies only for windows wider than 700px
-        if(window.innerWidth > 700) {
+        //Fixed Scroll applies only for windows wider than 1100px
+        if(window.innerWidth > 1100) {
 
             var windowHeight = $(window).height();
             var aboutSectionHeight = $('#about').outerHeight();

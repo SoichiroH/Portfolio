@@ -4,13 +4,14 @@
 
 $(document).ready(function(){
 
-//Mobile Optimization
-    if(window.innerWidth < 700) {
+//Mobile Optimization for screen width below 1100. Since iPad mini width is 1024
+    if(window.innerWidth < 1100) {
         $('.mainBackground').css("background-image", "url(../image/background/darkgrey.jpg)");
         $('.aboutBackground').css("background-image", "url(../image/background/grunge_wall.png)");
         $('.projectsBackground').css("background-image", "url(../image/background/grunge_wall.png)");
         $('.greyerShade').css({'background-color': 'rgba(0, 0, 0, 0)'});
         //Font
+        //$('nav').css({'padding-left': '0px'});
         $('#roleTitle').addClass('center');
         $('.bannerPaneContainer').css({'padding-top':'60px'});
         $('.description').css({'font-size':'18px'});
@@ -18,8 +19,10 @@ $(document).ready(function(){
         $('.projectPaneTitle p').css({'font-size':'22px'});
         $('#aboutTitle').add("#projectTitle").css({"color": "#0f6186"});
         //Mask
-        $('#maskProfilePane').add($('#maskWhyPane')).add($('#maskSynopsisPane')).removeClass('mask');
-        //About
+        $('#maskProfilePane').removeClass('mask');
+        $('#maskWhyPane').removeClass('mask');
+        $('#maskSynopsisPane').removeClass('mask');
+        //About animation
         $(window).on('scroll', function() {
 
             var $heightFromTop = $(window).scrollTop();
@@ -34,11 +37,12 @@ $(document).ready(function(){
     }
 
     $(window).resize(function(){
-        if(window.innerWidth < 700) {
+        if(window.innerWidth < 1100) {
             $('.mainBackground').css("background-image", "url(../image/background/darkgrey.jpg)");
             $('.aboutBackground').css("background-image", "url(../image/background/grunge_wall.png)");
             $('.projectsBackground').css("background-image", "url(../image/background/grunge_wall.png)");
             //Font
+            //$('nav').css({'padding-left': '0px'});
             $('#roleTitle').addClass('center');
             $('.bannerPaneContainer').css({'padding-top':'60px'});
             $('.description').css({'font-size':'18px'});
@@ -46,7 +50,9 @@ $(document).ready(function(){
             $('.projectPaneTitle p').css({'font-size':'22px'});
             $('#aboutTitle').add("#projectTitle").css({"color": "#0f6186"});
             //Mask
-            $('#maskProfilePane').add($('#maskWhyPane')).add($('#maskSynopsisPane')).removeClass('mask');
+            $('#maskProfilePane').removeClass('mask');
+            $('#maskWhyPane').removeClass('mask');
+            $('#maskSynopsisPane').removeClass('mask');
             //About
             $(window).on('scroll', function() {
 
@@ -60,7 +66,7 @@ $(document).ready(function(){
                 }
             });
         }
-        if(window.innerWidth > 700) {
+        if(window.innerWidth > 1100) {
             $('.mainBackground').css("background-image", "url(../image/background/cityBW.jpeg)");
             $('.aboutBackground').css("background-image", "url(../image/background/grunge_wall.png)");
             $('.projectsBackground').css("background-image", "url(../image/background/room.jpg)");
@@ -78,7 +84,7 @@ $(document).ready(function(){
     var visible = false;
     var $allSectionContainers = $('#banner').add($('#about')).add($('#projects')).add($('#otherSites'));
 
-    if(window.innerWidth < 1000) {
+    if(window.innerWidth < 1100) {
         var windowHeight = $(window).height();
         $('#banner').css({'height':windowHeight});
         $("#sideNav").css({'transform': 'translateX(-200%)', 'box-shadow': 'none'});
@@ -95,7 +101,7 @@ $(document).ready(function(){
 
     $(window).resize(function(){
         //Side Nav
-        if(window.innerWidth < 1000) {
+        if(window.innerWidth < 1100) {
             var windowHeight = $(window).height();
             $('#banner').css({'height':windowHeight});
             $("#sideNav").css({'transform': 'translateX(-200%)', 'box-shadow': 'none'});
@@ -139,8 +145,8 @@ $(document).ready(function(){
             $('#langAboutPane').hide().delay(600).fadeIn(300).addClass('comingDown');
         }
 
-    //Fixed Scroll applies only for windows wider than 700px
-        if(window.innerWidth > 700) {
+    //Fixed Scroll applies only for windows wider than 1100px
+        if(window.innerWidth > 1100) {
 
             var windowHeight = $(window).height();
             var aboutSectionHeight = $('#about').outerHeight();
@@ -189,12 +195,6 @@ $(document).ready(function(){
     });//End Window Resize
 //End Nav Bar -------------------------------------------------------------------------------
 
-//Banner -------------------------------------------------------------------------------
-    //Download Resume
-    $("#downloadResume").on('click', function () {
-        window.location = 'http://soichirohirata.com/download/Resume-Hirata Soichiro.pdf';
-    });
-//End Banner -------------------------------------------------------------------------------
 
 //About -------------------------------------------------------------------------------
     //Languages Accordion
