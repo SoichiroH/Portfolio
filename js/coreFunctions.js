@@ -268,6 +268,14 @@ $(document).ready(function(){
             $('#posterSynopsisPane').css({'height': containerHeightPosterImage});
         }
     });
+    $(window).resize(function(){
+        var containerHeightPosterImage = $('#column22Poster').innerHeight()-60;
+        if (window.innerWidth < 1300){
+            $('#posterSynopsisPane').add($('#column12Poster')).css({'height': ''});
+        }else {
+            $('#posterSynopsisPane').css({'height': containerHeightPosterImage});
+        }
+    });
 
 
     //Open All Button
