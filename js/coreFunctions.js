@@ -246,12 +246,24 @@ $(document).ready(function(){
 
 //Projects -------------------------------------------------------------------------------
     //Project pane height
+    /*
     var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
-    if (window.innerWidth < 1300){
+       if (window.innerWidth < 1300){
         $('#nwbhsFuncPane').add($('#column22Nwbhs')).css({'height': ''});
     }else {
         $('#nwbhsFuncPane').css({'height': containerHeight});
-    }
+    }*/
+
+    //Match Poster pane height
+    $(window).on('scroll', function(){
+        var containerHeightPosterImage = $('#column22Poster').innerHeight()-60;
+        if (window.innerWidth < 1300){
+            $('#posterSynopsisPane').add($('#column12Poster')).css({'height': ''});
+        }else {
+            $('#posterSynopsisPane').css({'height': containerHeightPosterImage});
+        }
+    });
+
 
     //Open All Button
     var $openAllButton = $('#nwbhsFunc').add($('#nwbhsLang'));

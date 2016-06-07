@@ -519,7 +519,7 @@ button:focus {
   border-color: #a68750; }
 
 #sliderAndButtonContainer {
-  margin-bottom: 350px; }
+  margin-bottom: 150px; }
 
 /*
   Slider -----------------------------------------------------------------------
@@ -593,6 +593,9 @@ button:focus {
   background-position: -0px -48px;
   width: 18px;
   height: 28px; }
+
+#posterPane {
+  margin-bottom: 350px; }
 
 /*
   Links -----------------------------------------------------------------------

@@ -600,7 +600,7 @@ button:focus {
 
 
 #sliderAndButtonContainer {
-  margin-bottom: 350px;
+  margin-bottom: 150px;
 }
 
 
@@ -671,18 +671,33 @@ button:focus {
 
 //Projects icon Sprite
 
-.iconsplay, .iconsresize, .iconspause
-{ display: inline-block; background: url('../image/icons/icons.png') no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+.iconsplay, .iconsresize, .iconspause {
+  display: inline-block;
+  background: url('../image/icons/icons.png') no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
 
 .iconsplay { background-position: -0px -0px; width: 25px; height: 28px; }
 .iconsresize { background-position: -0px -28px; width: 20px; height: 20px; }
 .iconspause { background-position: -0px -48px; width: 18px; height: 28px; }
 
 
+//Poster
 
-    /*
-      Links -----------------------------------------------------------------------
-    */
+
+#posterPane {
+  margin-bottom: 350px;
+}
+
+
+
+
+
+/*
+  Links -----------------------------------------------------------------------
+*/
 
 .linksBackgroundContainer {
   position: relative;
