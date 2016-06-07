@@ -22,6 +22,9 @@ $(document).ready(function(){
         $('#maskProfilePane').removeClass('mask');
         $('#maskWhyPane').removeClass('mask');
         $('#maskSynopsisPane').removeClass('mask');
+        $('#maskAwardNwbhsPane').removeClass('mask');
+        $('#maskPosterSynopsisPane').removeClass('mask');
+
         //About animation
         $(window).on('scroll', function() {
 
@@ -53,6 +56,8 @@ $(document).ready(function(){
             $('#maskProfilePane').removeClass('mask');
             $('#maskWhyPane').removeClass('mask');
             $('#maskSynopsisPane').removeClass('mask');
+            $('#maskAwardNwbhsPane').removeClass('mask');
+            $('#maskPosterSynopsisPane').removeClass('mask');
             //About
             $(window).on('scroll', function() {
 
