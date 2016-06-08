@@ -18,12 +18,6 @@ $(document).ready(function(){
         $('.mainFont').css({'font-size':'30px'});
         $('.projectPaneTitle p').css({'font-size':'22px'});
         $('#aboutTitle').add("#projectTitle").css({"color": "#0f6186"});
-        //Mask
-        $('#maskProfilePane').removeClass('mask');
-        $('#maskWhyPane').removeClass('mask');
-        $('#maskSynopsisPane').removeClass('mask');
-        $('#maskAwardNwbhsPane').removeClass('mask');
-        $('#maskPosterSynopsisPane').removeClass('mask');
 
         //About animation
         $(window).on('scroll', function() {
@@ -52,12 +46,7 @@ $(document).ready(function(){
             $('.mainFont').css({'font-size':'30px'});
             $('.projectPaneTitle p').css({'font-size':'22px'});
             $('#aboutTitle').add("#projectTitle").css({"color": "#0f6186"});
-            //Mask
-            $('#maskProfilePane').removeClass('mask');
-            $('#maskWhyPane').removeClass('mask');
-            $('#maskSynopsisPane').removeClass('mask');
-            $('#maskAwardNwbhsPane').removeClass('mask');
-            $('#maskPosterSynopsisPane').removeClass('mask');
+
             //About
             $(window).on('scroll', function() {
 
@@ -128,6 +117,15 @@ $(document).ready(function(){
                 $("#bannerName").append("<h1 id='newName' class='mainFont'>Soichiro Hirata</h1>");
             }
             visible = false;
+        }
+
+        //About
+        //Position sets to fixed when resizing down
+        if (window.innerWidth < 1100){
+            $('#about').css({
+                'position': 'relative'
+                //'top': (windowHeight - aboutSectionHeight)
+            });
         }
 
         //Project pane height
@@ -230,11 +228,6 @@ $(document).ready(function(){
     //About pane height
     $(window).resize(function(){
 
-        var column1Height = $('.column1-3').outerHeight();
-        var column2Height =  $('.column2-3').outerHeight();
-        var container1Height = $('#profilePane').innerHeight()-40;
-        var container2Height = $('#whyPane').innerHeight()-40;
-
         if (window.innerWidth < 1000){
             $('#profilePane').add($('#whyPane')).add($('#langAboutPane')).css({
                 'height': ''
@@ -242,9 +235,6 @@ $(document).ready(function(){
         }else {
             $('#whyPane').css({
                 'height': ''
-            });
-            $('#profilePane').add($('#langAboutPane')).css({
-                'height': container2Height
             });
         }
     });

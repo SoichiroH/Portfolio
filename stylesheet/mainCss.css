@@ -338,14 +338,6 @@ button:focus {
   border-width: 0.8px;
   border-color: transparent; }
 
-.mask {
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out; }
-
 #langAboutPane {
   margin-bottom: 350px; }
 
