@@ -110,7 +110,7 @@ $(document).ready(function(){
             var windowHeight = $(window).height();
             $('#banner').css({'height':windowHeight});
             $("#sideNav").css({'transform': 'translateX(0)'});
-            $allSectionContainers.css({'padding-left': '150px'});
+            $('#banner').add($('#about')).add($('#projects')).css({'padding-left': '150px'});
             $("#newNav").remove();
             $('#banner').css({'top':'0px'});
             if (visible){

@@ -782,6 +782,33 @@ button:focus {
   }
 }
 
+.comingRight {
+  -webkit-animation: comingRight 1.5s;
+  -o-animation: comingRight 1.5s;
+  animation: comingRight 1.5s;
+  -webkit-transform: translate(0,0);
+  -moz-transform: translate(0,0);
+  -ms-transform: translate(0,0);
+  -o-transform: translate(0,0);
+  transform: translate(0,0);
+}
+@keyframes comingRight {
+  0% {
+    -webkit-transform: translate(200%,0);
+    -moz-transform: translate(200%,0);
+    -ms-transform: translate(200%,0);
+    -o-transform: translate(200%,0);
+    transform: translate(200%,0);
+  }
+
+  100%{
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
 
 .comingUp{
   -webkit-animation: comingUp 0.5s;

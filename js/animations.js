@@ -19,8 +19,8 @@ function bannerAnimation(){
     $('#newName').hide().delay(1400).fadeIn(300).addClass('comingDown');
     $('#roleTitle').hide().delay(1400).fadeIn(300).addClass('comingDown');
 
-    $("#bannerPaneResume").hide().delay(1600).fadeIn(300).addClass('comingDown');
-    $("#bannerPaneContact").hide().delay(1600).fadeIn(300).addClass('comingDown');
+    $("#bannerPaneResume").hide().delay(1500).fadeIn(1000).addClass('comingRight');
+    $("#bannerPaneContact").hide().delay(1600).fadeIn(1000).addClass('comingRight');
 
     $('#scrollDownIcon').hide().delay(1000).fadeIn(3000);
 }
