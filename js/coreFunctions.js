@@ -62,11 +62,11 @@ $(document).ready(function(){
         }
         if(window.innerWidth > 1100) {
             $('.mainBackground').css("background-image", "url(../image/background/cityBW.jpeg)");
-            $('.aboutBackground').css("background-image", "url(../image/background/grunge_wall.png)");
-            $('.projectsBackground').css("background-image", "url(../image/background/room.jpg)");
+            $('.aboutBackground').css("background-image", "url(../image/background/darkgrey.jpg)");
+            $('.projectsBackground').css("background-image", "url(../image/background/darkgrey.jpg)");
 
             $('#roleTitle').removeClass('center');
-            $('.bannerPaneContainer').css({'padding-top':'180px'});
+            $('.bannerPaneContainer').css({'padding-top':'250px'});
             $('.description').css({'font-size':'20px'});
         }
     });

@@ -2,7 +2,7 @@
 /* Colors */
 $beige: #f5dfbf;
 $goldish: #a68750;
-$lightGoldish: #e1c158;
+$lightGoldish: #c3a450;
 $blue: #010101;
 $lightNavy: #0f6186;
 $navy: #0d243a;
@@ -30,7 +30,7 @@ a {
 
 p {
   color: $beige;
-  font-size: 20px;
+  font-size: 19px;
 }
 
 .center {
@@ -299,17 +299,23 @@ button:focus {
 .mainFont {
   font-family: LondonMM, sans-serif;
   font-size: 50px;
+  color: $lightNavy;
+}
+
+#newName {
   color: $beige;
+  text-shadow: 2px 2px rgba(0,0,0,0.6);
 }
 
 .roleFont {
   font-family: LondonMM, sans-serif;
   font-size: 35px;
   color: $beige;
+  text-shadow: 2px 2px rgba(0,0,0,0.6);
 }
 
 .bannerPaneContainer {
-  padding-top: 180px;
+  padding-top: 250px;
 }
 
 .paneAlignment {
@@ -395,7 +401,7 @@ button:focus {
 }
 
 .aboutBackground {
-  background: url("../image/background/grunge_wall.png");
+  background: url("../image/background/darkgrey.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -486,7 +492,7 @@ button:focus {
 }
 
 .projectsBackground {
-  background: url("../image/background/room.jpg");
+  background: url("../image/background/darkgrey.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -502,6 +508,7 @@ button:focus {
   padding: 20px 20px 20px 20px;
   margin-bottom: 20px;
   p {
+    color: $goldish;
     font-size: 28px;
     margin: 0;
   }
@@ -704,7 +711,8 @@ button:focus {
 }
 
 .linksBackground {
-  background: url("../image/background/darkgrey.jpg");
+  //background: url("../image/background/darkgrey.jpg");
+  background-color: #010101;
   position: absolute;
   top: 0;
   left: 0;
