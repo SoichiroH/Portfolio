@@ -255,6 +255,8 @@ $(function(){
     }
     rotateIcon();
 
+
+    //Social Links
     $('#githubIcon').on({mouseenter: function(){
         $(this).removeClass('comingDown').addClass('comingUp');
     },mouseleave: function(){

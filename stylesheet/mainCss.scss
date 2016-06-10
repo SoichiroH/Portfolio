@@ -33,6 +33,10 @@ p {
   font-size: 19px;
 }
 
+td{
+  font-size: 19px;
+}
+
 .center {
   text-align: center;
 }
@@ -146,6 +150,16 @@ button:focus {
 
 .column1 {
   float: none;
+}
+
+.column20{
+  width: 20%;
+  float: left;
+}
+
+.column80{
+  width: 80%;
+  float: left;
 }
 
 
@@ -330,6 +344,7 @@ button:focus {
   margin: 0 0 10px auto;
   padding: 20px 20px 20px 20px;
   z-index: 0;
+  cursor: pointer;
   border-bottom-style: ridge;
   border-width: 0.8px;
   border-color: transparent;
@@ -421,6 +436,8 @@ button:focus {
   height: 150px;
   position: relative;
   overflow: hidden;
+  margin: 0px 5px 5px 5px;
+  border-radius: 50%;
 }
 
 .profile img{
@@ -428,6 +445,17 @@ button:focus {
   margin: 0 auto;
   height: 100%;
   width: auto;
+}
+
+
+#profileHello {
+  color: $goldish;
+  font-size: 32px;
+}
+
+#profileComment{
+  color: $lightGoldish;
+  font-size: 28px;
 }
 
 .description {
@@ -569,6 +597,8 @@ button:focus {
   border: 0;
   margin-bottom: 5px;
   font-size: 15px;
+  min-width:100px;
+  height:35px;
   cursor: pointer;
   color: $beige;
   border-bottom-style: ridge;
@@ -594,11 +624,6 @@ button:focus {
   border-bottom-style: ridge;
   border-width: 0.8px;
   border-color: $goldish;
-}
-
-
-#sliderAndButtonContainer {
-  margin-bottom: 150px;
 }
 
 
@@ -638,7 +663,7 @@ button:focus {
 }
 
 .buttonContainer{
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .pausePlay {
@@ -690,6 +715,11 @@ button:focus {
 }
 
 
+//Divider
+
+.divider {
+  border-color: $lightNavy;
+}
 
 
 

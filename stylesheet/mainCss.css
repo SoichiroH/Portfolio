@@ -15,6 +15,9 @@ p {
   color: #f5dfbf;
   font-size: 19px; }
 
+td {
+  font-size: 19px; }
+
 .center {
   text-align: center; }
 
@@ -99,6 +102,14 @@ button:focus {
 
 .column1 {
   float: none; }
+
+.column20 {
+  width: 20%;
+  float: left; }
+
+.column80 {
+  width: 80%;
+  float: left; }
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -245,6 +256,7 @@ button:focus {
   margin: 0 0 10px auto;
   padding: 20px 20px 20px 20px;
   z-index: 0;
+  cursor: pointer;
   border-bottom-style: ridge;
   border-width: 0.8px;
   border-color: transparent;
@@ -319,13 +331,23 @@ button:focus {
   width: 150px;
   height: 150px;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 0px 5px 5px 5px;
+  border-radius: 50%; }
 
 .profile img {
   display: inline;
   margin: 0 auto;
   height: 100%;
   width: auto; }
+
+#profileHello {
+  color: #a68750;
+  font-size: 32px; }
+
+#profileComment {
+  color: #c3a450;
+  font-size: 28px; }
 
 .description {
   font-family: LondonMM, sans-serif;
@@ -493,6 +515,8 @@ button:focus {
   border: 0;
   margin-bottom: 5px;
   font-size: 15px;
+  min-width: 100px;
+  height: 35px;
   cursor: pointer;
   color: #f5dfbf;
   border-bottom-style: ridge;
@@ -515,9 +539,6 @@ button:focus {
   border-bottom-style: ridge;
   border-width: 0.8px;
   border-color: #a68750; }
-
-#sliderAndButtonContainer {
-  margin-bottom: 150px; }
 
 /*
   Slider -----------------------------------------------------------------------
@@ -547,7 +568,7 @@ button:focus {
   display: block; }
 
 .buttonContainer {
-  margin-bottom: 100px; }
+  margin-bottom: 50px; }
 
 .pausePlay {
   margin-top: 10px;
@@ -594,6 +615,9 @@ button:focus {
 
 #posterPane {
   margin-bottom: 350px; }
+
+.divider {
+  border-color: #0f6186; }
 
 /*
   Links -----------------------------------------------------------------------

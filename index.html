@@ -80,11 +80,11 @@
                 </div>
                 <div class="container bannerPaneContainer">
                     <ul>
-                        <li class="bannerPane align-right paneAlignment" id="bannerPaneContact" style="margin-left: 20px;">
+                        <!--<li class="bannerPane align-right paneAlignment" id="bannerPaneContact" style="margin-left: 20px;">
                             <p class="description no-margin">Contact</p>
                             <p class="descriptionContact no-margin">soichiro.h21@gmail.com</p>
                             <p class="descriptionContact no-margin">904-401-2740</p>
-                        </li>
+                        </li>-->
                         <li class="bannerPane align-right paneAlignment" id="bannerPaneResume">
                             <a href="http://soichirohirata.com/download/Resume-Hirata Soichiro.pdf" target="_blank" class="description" id="downloadResume"  style="font-size: 20px;">Résumé ></a>
                         </li>
@@ -100,88 +100,82 @@
             </div>
 
             <!-- About -->
-            <div class="aboutBackgroundContainer" id="about" style="z-index: 10; top: 1010px;"> <!--style="z-index: 1001; top: 1000px;"-->
+            <div class="aboutBackgroundContainer" id="about" style="z-index: 10; top: 1010px;">
                 <div class="container">
                     <h1 class="mainFont" id="aboutTitle"> About</h1>
                     <ul class="paneAlignmentAbout">
                         <li>
-                            <div class="projectPane" id="profilePane">
-<!--
-                                <p class="description align-left">Profile</p>
--->
-                                <div id="maskProfilePane">
-                                    <div class="center" id="profilePic" style="float: left;">
-                                        <img src="image/profile.jpg" class="profile" style="margin: 0px 5px 5px 5px; border-radius: 50%;">
-                                    </div>
-                                    <p class="description align-left" style="font-size: 32px; color: #a68750;">
+                            <div class="column20">
+                                <div class="center" id="profilePic">
+                                    <img src="image/profile.jpg" class="profile">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="column80">
+                                <div class="projectPane" id="profilePane">
+                                    <p class="description align-left" id="profileHello">
                                         Hello, I'm Soichiro Hirata, Web Developer in Berkeley, CA.
                                     </p>
-                                    <p class="description" style="font-size: 28px; color: #c3a450;">
+                                    <p class="description" id="profileComment">
                                         I like to create websites that can achieve pleasant communication with the user and give them good impression to the presented content.
                                     </p>
                                     <p class="description">
                                         I received two bachelor's degrees, from a university in Japan (BA, Economics) and in the U.S.(BS, Computer Science). Learning economics and working as a sales professional in prior to studying computer science gave me practical insights into the current IT business scene.
                                     </p>
                                     <p class="description">
-                                        My current focus is on front-end web development to create lean websites with rich content and catchy design. My passion lies with skill improvement and learn/apply the latest technology to projects.
+                                        My current focus is on front-end web development to create lean websites with rich content and catchy design.
                                     </p>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div class="projectPane" id="langAboutPane">
-                                <p class="description align-left">
-                                    Experiences Developing in
-                                </p>
-                                <ul class="accordionLangA">
-                                    <li style="display: inline;">
-                                        <button class="accordionButtonLangA">Front End</button>
-                                        <div class="accordionPanelLangA">
-                                            <ul>
-                                                <li style="display: inline;">
-                                                    <div class="langIcons1html5" ></div>
-                                                </li>
-                                                <li style="display: inline;">
-                                                    <div class="langIcons2bootstrap"></div>
-                                                </li>
-                                                <li style="display: inline;">
-                                                    <div class="langIcons3sass"></div>
-                                                </li>
-                                                <li style="display: inline;">
-                                                    <div class="langIcons4jquery"></div>
-                                                </li>
-                                                <li style="display: inline;">
-                                                    <div class="langIcons5coffeescript"></div>
-                                                </li>
-                                                <li style="display: inline;">
-                                                    <div class="langIcons6knockoutjs"></div>
-                                                </li>
-                                                <li style="display: inline;">
-                                                    <div class="langIcons7angularjs"></div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li style="display: inline;">
-                                        <button class="accordionButtonLangA">Back End</button>
-                                        <div class="accordionPanelLangA">
-                                            <ul>
-                                                <li style="display: inline;">
-                                                    <div class="langIcons8mvc" ></div>
-                                                </li>
-                                                <li style="display: inline;">
-                                                    <div class="langIcons9php"></div>
-                                                </li>
-                                                <li style="display: inline;">
-                                                    <div class="langIcons10azure"></div>
-                                                </li>
-                                                <li style="display: inline;">
-                                                    <div class="langIcons11lamp"></div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <div class="column80" style="float: right;">
+                                <div class="projectPane" id="langAboutPane">
+                                    <p class="description">
+                                        Experiences Developing in
+                                    </p>
+                                    <table class="description" style="width:100%">
+                                        <tr>
+                                            <td><u>Front-end</u></td>
+                                            <td><u>Back-end</u></td>
+                                        </tr>
+                                        <tr>
+                                            <td>HTML</td>
+                                            <td>ASP.NET MVC 5 C#</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CSS</td>
+                                            <td>Microsoft SQL Server</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; color:#a68750;">Bootstrap</td>
+                                            <td style="padding-left: 10px; color:#a68750;">Microsoft Azure SQL Database</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; color:#a68750;">Materialize</td>
+                                            <td>PHP</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; color:#a68750;">Sass</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Javascript</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; color:#a68750;">jQuery</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; color:#a68750;">Coffeescript</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; color:#a68750;">Knockout.js</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; color:#a68750;">AngularJS</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -207,6 +201,56 @@
                                 <p style="font-size: 18px;">Web Application</p>
                             </li>
                         </ul>
+                    </div>
+                </div>
+
+                <!--Slider-->
+                <div class="container" >
+                    <div class="projectPane" id="nwbhsSliderPane">
+                        <div id="sliderAndButtonContainer">
+                            <p class="description align-left">
+                                Screenshots
+                            </p>
+                            <div class="imageSlider sliderHeight column1" id="imageSliderNwbhs">
+                                <ul class="slideContainer">
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/caselist.JPG">
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/editcase.JPG">
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/caseinformation.JPG">
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/addforms.JPG">
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/formmanagement.JPG">
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/waitinglist.JPG">
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/caselabels.JPG">
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/manageusers.JPG">
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/activitylogs.JPG">
+                                    </li>
+                                    <li class="slide">
+                                        <img src="image/screenshots/nwbhs/caseinformation.JPG">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="center buttonContainer">
+                                <div id="pauseSlide" class="pausePlay iconspause"></div>
+                                <div id="playSlide" class="pausePlay iconsplay"></div>
+                                <div class="slideButtons"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -379,61 +423,13 @@
                 </div>
                 <!-- End: Description Accordion -->
 
-                <div class="container" >
-                    <div id="sliderAndButtonContainer">
-                        <div class="imageSlider sliderHeight column1" id="imageSliderNwbhs">
-                            <ul class="slideContainer">
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caselist.JPG">
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/editcase.JPG">
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caseinformation.JPG">
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/addforms.JPG">
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/formmanagement.JPG">
-                                </li>
-                                <li class="slide">
-                                   <img src="image/screenshots/nwbhs/waitinglist.JPG">
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caselabels.JPG">
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/manageusers.JPG">
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/activitylogs.JPG">
-                                </li>
-                                <li class="slide">
-                                    <img src="image/screenshots/nwbhs/caseinformation.JPG">
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="center buttonContainer">
-                            <div id="pauseSlide" class="pausePlay iconspause"></div>
-                            <div id="playSlide" class="pausePlay iconsplay"></div>
-                            <div class="slideButtons"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End: nwbhs screen shot sliders -->
 
-                <hr width="0.5%" align="center" style="border-color: #0f6186; ">
-                <hr width="1%" align="center" style="border-color: #0f6186; ">
-                <hr width="2%" align="center" style="border-color: #0f6186;">
-                <hr width="3%" align="center" style="border-color: #0f6186;">
-                <hr width="4%" align="center" style="border-color: #0f6186;">
-                <hr width="3%" align="center" style="border-color: #0f6186;">
-                <hr width="2%" align="center" style="border-color: #0f6186;">
-                <hr width="1%" align="center" style="border-color: #0f6186;">
-                <hr width="0.5%" align="center" style="border-color: #0f6186; margin-bottom: 150px;">
-
+                <!--Project Divider-->
+                <hr class="divider" width="4%" align="center" style="margin-top: 150px;">
+                <hr class="divider" width="3%" align="center">
+                <hr class="divider" width="2%" align="center">
+                <hr class="divider" width="1%" align="center">
+                <hr class="divider" width="0.5%" align="center" style="margin-bottom: 150px;">
 
                 <!--Photoshop Project-->
                 <div class="container">
@@ -482,7 +478,7 @@
                                         Poster
                                     </p>
                                     <div class="center" >
-                                        <img src="image/screenshots/recruitPoster.jpg" style="width: 100%">
+                                        <img src="image/screenshots/recruitPoster.jpg" style="width: 90%">
                                     </div>
                                 </div>
                             </div>

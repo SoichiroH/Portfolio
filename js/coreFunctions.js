@@ -31,6 +31,7 @@ $(document).ready(function(){
                 $('#langAboutPane').hide().delay(600).fadeIn(300).addClass('comingDown');
             }
         });
+        $('.column20').add($('.column80')).css({'width': '100%'});
     }
 
     $(window).resize(function(){
@@ -59,6 +60,7 @@ $(document).ready(function(){
                     $('#langAboutPane').hide().delay(600).fadeIn(300).addClass('comingDown');
                 }
             });
+            $('.column20').add($('.column80')).css({'width': '100%'});
         }
         if(window.innerWidth > 1100) {
             $('.mainBackground').css("background-image", "url(../image/background/cityBW.jpeg)");
@@ -68,9 +70,20 @@ $(document).ready(function(){
             $('#roleTitle').removeClass('center');
             $('.bannerPaneContainer').css({'padding-top':'250px'});
             $('.description').css({'font-size':'20px'});
+            $('#profileHello').css({'font-size': '32px'});
+            $('#profileComment').css({'font-size': '28px'});
+
+            $('.column20').css({'width': '20%'});
+            $('.column80').css({'width': '80%'});
         }
     });
 
+    //Banner
+
+    $('#bannerPaneResume').on('click', function(){
+        //window.location.href = "http://soichirohirata.com/download/Resume-Hirata Soichiro.pdf";
+        window.open("http://soichirohirata.com/download/Resume-Hirata Soichiro.pdf");
+    });
 
 
 //Nav Bar -------------------------------------------------------------------------------
