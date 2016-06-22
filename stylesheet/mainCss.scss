@@ -597,7 +597,7 @@ button:focus {
   border: 0;
   margin-bottom: 5px;
   font-size: 15px;
-  min-width:100px;
+  min-width:300px;
   height:35px;
   cursor: pointer;
   color: $beige;
@@ -718,8 +718,8 @@ button:focus {
 //Divider
 
 .divider {
-  border-color: $lightNavy;
-}
+   border-color: $lightNavy;
+ }
 
 
 
