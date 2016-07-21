@@ -272,6 +272,11 @@ $(function(){
     },mouseleave: function(){
         $(this).addClass('comingDown').removeClass('comingUp');
     }});
+    $('#heartIcon').on({mouseenter: function(){
+        $(this).removeClass('comingDown').addClass('comingUp');
+    },mouseleave: function(){
+        $(this).addClass('comingDown').removeClass('comingUp');
+    }});
 
 });
 

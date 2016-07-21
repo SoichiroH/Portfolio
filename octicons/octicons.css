@@ -33,3 +33,5 @@
 .octicon-mark-github:before { content: '\f00a'} /*  */
 
 .octicon-thumbsup:before { content: '\f0da'} /*  */
+
+.octicon-heart:before { content:"\2665"; }
