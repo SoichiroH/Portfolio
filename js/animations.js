@@ -194,7 +194,12 @@ $(function(){
         //Match container height on rotate action
         var $openAllButton = $('#nwbhsFunc').add($('#nwbhsLang'));
         $window.on('scroll', function(){
-            var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
+
+            //Project pane height
+            var containerHeight = $('#nwbhsFuncPane').innerHeight()-40;
+
+
+            //var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
 
             if ($openAllButton.hasClass('rotateBack')) {
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
@@ -208,7 +213,7 @@ $(function(){
             }
             if (window.innerWidth > 1300) {
                 if ($openAllButton.hasClass('rotateForward' || 'rotateBack') == false) {
-                    $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': containerHeight});
+                    $('#column12Nwbhs').add($('#nwbhsSynopsisPane')).css({'height': containerHeight});
                 }
             }
             if ($('.accordionButtonLangN').hasClass('activeButtonLangN')){

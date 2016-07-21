@@ -275,7 +275,7 @@ button:focus {
 }
 
 .mainBackground {
-  background: url("../image/background/cityBW.jpeg");
+  background: url("../image/background/cityBW.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -530,7 +530,7 @@ button:focus {
 }
 
 .projectPaneTitle {
-  background-color: $darkGrey;
+  //background-color: $darkGrey;
   height: 100%;
   max-width: 370px;
   padding: 20px 20px 20px 20px;
@@ -543,7 +543,7 @@ button:focus {
 }
 
 .projectPane {
-  background-color: $darkGrey;
+  //background-color: $darkGrey;
   height: 100%;
   padding: 20px 20px 20px 20px;
   margin-bottom: 20px;

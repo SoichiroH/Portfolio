@@ -14,10 +14,12 @@ $(document).ready(function(){
         //$('nav').css({'padding-left': '0px'});
         $('#roleTitle').addClass('center');
         $('.bannerPaneContainer').css({'padding-top':'60px'});
-        $('.description').css({'font-size':'18px'});
+        $('.description').add('a').css({'color': '#0d243a', 'font-size':'18px'});
         $('.mainFont').css({'font-size':'30px'});
         $('.projectPaneTitle p').css({'font-size':'22px'});
         $('#aboutTitle').add("#projectTitle").css({"color": "#0f6186"});
+        $('#downloadResume').add($('#linksTitle')).css({'color': '#f5dfbf'});
+        $('.accordionPanel p').css({'color': 'rgb(13, 36, 58)'});
 
         //About animation
         $(window).on('scroll', function() {
@@ -43,10 +45,13 @@ $(document).ready(function(){
             //$('nav').css({'padding-left': '0px'});
             $('#roleTitle').addClass('center');
             $('.bannerPaneContainer').css({'padding-top':'60px'});
-            $('.description').css({'font-size':'18px'});
+            $('.description').add('a').css({'color': '#0d243a', 'font-size':'18px'});
             $('.mainFont').css({'font-size':'30px'});
             $('.projectPaneTitle p').css({'font-size':'22px'});
             $('#aboutTitle').add("#projectTitle").css({"color": "#0f6186"});
+            $('#downloadResume').add($('#linksTitle')).css({'color': '#f5dfbf'});
+            $('.accordionPanel p').css({'color': 'rgb(13, 36, 58)'});
+
 
             //About
             $(window).on('scroll', function() {
@@ -63,13 +68,13 @@ $(document).ready(function(){
             $('.column20').add($('.column80')).css({'width': '100%'});
         }
         if(window.innerWidth > 1100) {
-            $('.mainBackground').css("background-image", "url(../image/background/cityBW.jpeg)");
+            $('.mainBackground').css("background-image", "url(../image/background/cityBW.jpg)");
             $('.aboutBackground').css("background-image", "url(../image/background/darkgrey.jpg)");
             $('.projectsBackground').css("background-image", "url(../image/background/darkgrey.jpg)");
 
             $('#roleTitle').removeClass('center');
             $('.bannerPaneContainer').css({'padding-top':'250px'});
-            $('.description').css({'font-size':'20px'});
+            $('.description').css({'color': '#f5dfbf', 'font-size':'20px'});
             $('#profileHello').css({'font-size': '32px'});
             $('#profileComment').css({'font-size': '28px'});
 
@@ -142,13 +147,19 @@ $(document).ready(function(){
         }
 
         //Project pane height
-        var containerHeight = $('#nwbhsSynopsisPane').innerHeight()-40;
+        var containerHeight = $('#nwbhsFuncPane').innerHeight()-40;
 
         if (window.innerWidth < 1300){
-            $('#nwbhsFuncPane').add($('#column22Nwbhs')).css({'height': ''});
+            $('#nwbhsSynopsisPane').add($('#column12Nwbhs')).css({'height': ''});
         }else {
-            $('#nwbhsFuncPane').css({'height': containerHeight});
+            $('#nwbhsSynopsisPane').css({'height': containerHeight});
         }
+
+        /*        if (window.innerWidth < 1300){
+         $('#nwbhsFuncPane').add($('#column22Nwbhs')).css({'height': ''});
+         }else {
+         $('#nwbhsFuncPane').css({'height': containerHeight});
+         }*/
 
 
         //Should go to animations.js
@@ -308,15 +319,17 @@ $(document).ready(function(){
             $('.accordionButtonLangN').removeClass('activeButtonLangN');
             $('.accordionPanelLangN').slideUp();
             //if rotateForward, height of the box is ''
+            $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
+/*
             if ($('#nwbhsFunc').hasClass('rotateForward')){
                 $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
             }else {
                 $('#column22Nwbhs').css({'height': synopsisContainerHeight});
-            }
+            }*/
         } else {
             $('.accordionButtonLangN').removeClass('activeButtonLangN');
             $('.accordionPanelLangN').slideUp();
-                if ($(this).is($('#backendNwbhs'))){
+                /*if ($(this).is($('#backendNwbhs'))){
                     //backEnd pane went over when the screen width was below 1300
                     if ($(window).innerWidth() < 1300){
                         $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
@@ -331,7 +344,8 @@ $(document).ready(function(){
                     }
                 }else{
                     $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
-                }
+                }*/
+            $('#column22Nwbhs').add($('#nwbhsFuncPane')).css({'height': ''});
             $(this).next('.accordionPanelLangN').not(':animated').slideToggle('fast');
             $(this).addClass('activeButtonLangN');
         }
@@ -520,5 +534,29 @@ $(document).ready(function(){
         }
     });
 //End Projects -------------------------------------------------------------------------------
+
+    //Preview Euler
+    $('#previewEuler').click(function(e) {
+        e.preventDefault(); // if you have a URL in the link
+        console.log("clicked");
+        /*jQuery.ajax({
+            type: "GET",
+            processData: false,
+            url: "http://soichirohirata.com/euler/index.html",
+            data: inputxml,
+            contentType: "application/xml; charset=utf-8",
+            success: function(data)
+            {
+                var iframe = $('<iframe>');
+                iframe.attr('src','http://soichirohirata.com/euler/index.html');
+                $('#targetDiv').append(iframe);
+                console.log("success");
+            }
+        });*/
+        var iframe = $('<iframe>');
+        iframe.attr('src','http://soichirohirata.com/euler/index.html');
+        $('#targetDiv').append(iframe);
+        console.log("success");
+    });
 
 });

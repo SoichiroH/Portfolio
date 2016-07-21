@@ -197,7 +197,7 @@ button:focus {
   padding-left: 150px; }
 
 .mainBackground {
-  background: url("../image/background/cityBW.jpeg");
+  background: url("../image/background/cityBW.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -458,7 +458,6 @@ button:focus {
   z-index: -2; }
 
 .projectPaneTitle {
-  background-color: rgba(1, 1, 1, 0.86);
   height: 100%;
   max-width: 370px;
   padding: 20px 20px 20px 20px;
@@ -469,7 +468,6 @@ button:focus {
     margin: 0; }
 
 .projectPane {
-  background-color: rgba(1, 1, 1, 0.86);
   height: 100%;
   padding: 20px 20px 20px 20px;
   margin-bottom: 20px; }
