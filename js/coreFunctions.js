@@ -9,6 +9,7 @@ $(document).ready(function(){
         $('.mainBackground').css("background-image", "url(../image/background/darkgrey.jpg)");
         $('.aboutBackground').css("background-image", "url(../image/background/grunge_wall.png)");
         $('.projectsBackground').css("background-image", "url(../image/background/grunge_wall.png)");
+        $('.linksBackgroundContainer').css("background-image", "url(../image/background/darkgrey.jpg)");
         $('.greyerShade').css({'background-color': 'rgba(0, 0, 0, 0)'});
         //Font
         //$('nav').css({'padding-left': '0px'});
