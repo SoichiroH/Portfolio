@@ -535,28 +535,5 @@ $(document).ready(function(){
     });
 //End Projects -------------------------------------------------------------------------------
 
-    //Preview Euler
-    $('#previewEuler').click(function(e) {
-        e.preventDefault(); // if you have a URL in the link
-        console.log("clicked");
-        /*jQuery.ajax({
-            type: "GET",
-            processData: false,
-            url: "http://soichirohirata.com/euler/index.html",
-            data: inputxml,
-            contentType: "application/xml; charset=utf-8",
-            success: function(data)
-            {
-                var iframe = $('<iframe>');
-                iframe.attr('src','http://soichirohirata.com/euler/index.html');
-                $('#targetDiv').append(iframe);
-                console.log("success");
-            }
-        });*/
-        var iframe = $('<iframe>');
-        iframe.attr('src','http://soichirohirata.com/euler/index.html');
-        $('#targetDiv').append(iframe);
-        console.log("success");
-    });
-
+  
 });
